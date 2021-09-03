@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>python-lessons.intermediate.driver API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>python-lessons.intermediate.driver</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import uuid
+import datetime
+
+
+class Person(object):
+
+    def __init__(self, *args, **kwargs):
+        self.name = kwargs[&#39;name&#39;]
+        self.age = kwargs[&#39;age&#39;]
+
+    @property
+    def display(self):
+       return f&#39;{self.name} ({self.age})&#39;
+
+
+class Driver(Person):
+    min_age_allowed = 18
+    novel_years = 2
+    motorbike_licence = &#39;A&#39;
+    car_licence = &#39;B&#39;
+    truck_licence = &#39;C&#39;
+    no_licence = &#39;Z&#39;
+
+    def __init__(self, *args, **kwargs):
+        super(Driver, self).__init__(*args, **kwargs)
+        self.driving_id = uuid.uuid4().hex
+        self.valid_from = kwargs.get(&#39;valid_from&#39;)
+        self.driving_licence = kwargs.get(&#39;driving_licence&#39;, self.no_licence)
+        self.driving_id = None
+        if self.driving_licence != self.no_licence:
+            self.driving_id = uuid.uuid4().hex
+
+    @classmethod
+    def driver(cls, name, age, driving_licence, valid_from):
+        return cls(name=name, age=age, driving_licence=driving_licence, valid_from=valid_from)
+
+    @classmethod
+    def teenager(cls, name, age):
+        return cls(name=name, age=age, driving_licence=cls.no_licence)
+
+    @property
+    def can_get_driving_licence(self):
+        return self.age &gt; self.min_age_allowed
+
+    @property
+    def is_novel(self):
+        if not self.valid_from:
+            return False
+        days = 365 * self.novel_years
+        return self.valid_from &gt; datetime.datetime.now() - datetime.timedelta(days=days)
+
+    @property
+    def show_full_licence(self):
+        return f&#39;{self.display} - {self.driving_id} (type {self.driving_licence})&#39;
+
+
+class USADriver(Driver):
+    min_age_allowed = 16
+
+
+class SpainDriver(Driver):
+    novel_years = 1
+
+
+if __name__ == &#34;__main__&#34;:
+    days = 30 * 15
+    experience = datetime.datetime.now() - datetime.timedelta(days=days)
+    javi_usa = USADriver.driver(&#39;Javi&#39;, 32, Driver.motorbike_licence, experience)
+    print(javi_usa.show_full_licence)
+    print(&#39;User can drive? %s&#39; % javi_usa.can_get_driving_licence)
+    print(&#39;User is novel? %s&#39; % javi_usa.is_novel)
+
+    javi_spain = SpainDriver.driver(&#39;Javi&#39;, 32, Driver.car_licence, experience)
+
+    print(javi_spain.show_full_licence)
+    print(&#39;User can drive? %s&#39; % javi_spain.can_get_driving_licence)
+    print(&#39;User is novel? %s&#39; % javi_spain.is_novel)
+
+    usa_teenager = USADriver.teenager(&#39;Teenager&#39;, 17)
+    print(usa_teenager.show_full_licence)
+    print(&#39;User can drive? %s&#39; % usa_teenager.can_get_driving_licence)
+    print(&#39;User is novel? %s&#39; % usa_teenager.is_novel)
+
+    spain_teenager = SpainDriver.teenager(&#39;Teenager&#39;, 17)
+    print(spain_teenager.show_full_licence)
+    print(&#39;User can drive? %s&#39; % spain_teenager.can_get_driving_licence)
+    print(&#39;User is novel? %s&#39; % spain_teenager.is_novel)</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="python-lessons.intermediate.driver.Driver"><code class="flex name class">
+<span>class <span class="ident">Driver</span></span>
+<span>(</span><span>*args, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Driver(Person):
+    min_age_allowed = 18
+    novel_years = 2
+    motorbike_licence = &#39;A&#39;
+    car_licence = &#39;B&#39;
+    truck_licence = &#39;C&#39;
+    no_licence = &#39;Z&#39;
+
+    def __init__(self, *args, **kwargs):
+        super(Driver, self).__init__(*args, **kwargs)
+        self.driving_id = uuid.uuid4().hex
+        self.valid_from = kwargs.get(&#39;valid_from&#39;)
+        self.driving_licence = kwargs.get(&#39;driving_licence&#39;, self.no_licence)
+        self.driving_id = None
+        if self.driving_licence != self.no_licence:
+            self.driving_id = uuid.uuid4().hex
+
+    @classmethod
+    def driver(cls, name, age, driving_licence, valid_from):
+        return cls(name=name, age=age, driving_licence=driving_licence, valid_from=valid_from)
+
+    @classmethod
+    def teenager(cls, name, age):
+        return cls(name=name, age=age, driving_licence=cls.no_licence)
+
+    @property
+    def can_get_driving_licence(self):
+        return self.age &gt; self.min_age_allowed
+
+    @property
+    def is_novel(self):
+        if not self.valid_from:
+            return False
+        days = 365 * self.novel_years
+        return self.valid_from &gt; datetime.datetime.now() - datetime.timedelta(days=days)
+
+    @property
+    def show_full_licence(self):
+        return f&#39;{self.display} - {self.driving_id} (type {self.driving_licence})&#39;</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="python-lessons.intermediate.driver.Person" href="#python-lessons.intermediate.driver.Person">Person</a></li>
+</ul>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li><a title="python-lessons.intermediate.driver.SpainDriver" href="#python-lessons.intermediate.driver.SpainDriver">SpainDriver</a></li>
+<li><a title="python-lessons.intermediate.driver.USADriver" href="#python-lessons.intermediate.driver.USADriver">USADriver</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="python-lessons.intermediate.driver.Driver.car_licence"><code class="name">var <span class="ident">car_licence</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="python-lessons.intermediate.driver.Driver.min_age_allowed"><code class="name">var <span class="ident">min_age_allowed</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="python-lessons.intermediate.driver.Driver.motorbike_licence"><code class="name">var <span class="ident">motorbike_licence</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="python-lessons.intermediate.driver.Driver.no_licence"><code class="name">var <span class="ident">no_licence</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="python-lessons.intermediate.driver.Driver.novel_years"><code class="name">var <span class="ident">novel_years</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="python-lessons.intermediate.driver.Driver.truck_licence"><code class="name">var <span class="ident">truck_licence</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Static methods</h3>
+<dl>
+<dt id="python-lessons.intermediate.driver.Driver.driver"><code class="name flex">
+<span>def <span class="ident">driver</span></span>(<span>name, age, driving_licence, valid_from)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@classmethod
+def driver(cls, name, age, driving_licence, valid_from):
+    return cls(name=name, age=age, driving_licence=driving_licence, valid_from=valid_from)</code></pre>
+</details>
+</dd>
+<dt id="python-lessons.intermediate.driver.Driver.teenager"><code class="name flex">
+<span>def <span class="ident">teenager</span></span>(<span>name, age)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@classmethod
+def teenager(cls, name, age):
+    return cls(name=name, age=age, driving_licence=cls.no_licence)</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Instance variables</h3>
+<dl>
+<dt id="python-lessons.intermediate.driver.Driver.can_get_driving_licence"><code class="name">var <span class="ident">can_get_driving_licence</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def can_get_driving_licence(self):
+    return self.age &gt; self.min_age_allowed</code></pre>
+</details>
+</dd>
+<dt id="python-lessons.intermediate.driver.Driver.is_novel"><code class="name">var <span class="ident">is_novel</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def is_novel(self):
+    if not self.valid_from:
+        return False
+    days = 365 * self.novel_years
+    return self.valid_from &gt; datetime.datetime.now() - datetime.timedelta(days=days)</code></pre>
+</details>
+</dd>
+<dt id="python-lessons.intermediate.driver.Driver.show_full_licence"><code class="name">var <span class="ident">show_full_licence</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def show_full_licence(self):
+    return f&#39;{self.display} - {self.driving_id} (type {self.driving_licence})&#39;</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="python-lessons.intermediate.driver.Person"><code class="flex name class">
+<span>class <span class="ident">Person</span></span>
+<span>(</span><span>*args, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Person(object):
+
+    def __init__(self, *args, **kwargs):
+        self.name = kwargs[&#39;name&#39;]
+        self.age = kwargs[&#39;age&#39;]
+
+    @property
+    def display(self):
+       return f&#39;{self.name} ({self.age})&#39;</code></pre>
+</details>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li><a title="python-lessons.intermediate.driver.Driver" href="#python-lessons.intermediate.driver.Driver">Driver</a></li>
+</ul>
+<h3>Instance variables</h3>
+<dl>
+<dt id="python-lessons.intermediate.driver.Person.display"><code class="name">var <span class="ident">display</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def display(self):
+   return f&#39;{self.name} ({self.age})&#39;</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="python-lessons.intermediate.driver.SpainDriver"><code class="flex name class">
+<span>class <span class="ident">SpainDriver</span></span>
+<span>(</span><span>*args, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class SpainDriver(Driver):
+    novel_years = 1</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="python-lessons.intermediate.driver.Driver" href="#python-lessons.intermediate.driver.Driver">Driver</a></li>
+<li><a title="python-lessons.intermediate.driver.Person" href="#python-lessons.intermediate.driver.Person">Person</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="python-lessons.intermediate.driver.SpainDriver.novel_years"><code class="name">var <span class="ident">novel_years</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+<dt id="python-lessons.intermediate.driver.USADriver"><code class="flex name class">
+<span>class <span class="ident">USADriver</span></span>
+<span>(</span><span>*args, **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class USADriver(Driver):
+    min_age_allowed = 16</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="python-lessons.intermediate.driver.Driver" href="#python-lessons.intermediate.driver.Driver">Driver</a></li>
+<li><a title="python-lessons.intermediate.driver.Person" href="#python-lessons.intermediate.driver.Person">Person</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="python-lessons.intermediate.driver.USADriver.min_age_allowed"><code class="name">var <span class="ident">min_age_allowed</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="python-lessons.intermediate" href="index.html">python-lessons.intermediate</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="python-lessons.intermediate.driver.Driver" href="#python-lessons.intermediate.driver.Driver">Driver</a></code></h4>
+<ul class="">
+<li><code><a title="python-lessons.intermediate.driver.Driver.can_get_driving_licence" href="#python-lessons.intermediate.driver.Driver.can_get_driving_licence">can_get_driving_licence</a></code></li>
+<li><code><a title="python-lessons.intermediate.driver.Driver.car_licence" href="#python-lessons.intermediate.driver.Driver.car_licence">car_licence</a></code></li>
+<li><code><a title="python-lessons.intermediate.driver.Driver.driver" href="#python-lessons.intermediate.driver.Driver.driver">driver</a></code></li>
+<li><code><a title="python-lessons.intermediate.driver.Driver.is_novel" href="#python-lessons.intermediate.driver.Driver.is_novel">is_novel</a></code></li>
+<li><code><a title="python-lessons.intermediate.driver.Driver.min_age_allowed" href="#python-lessons.intermediate.driver.Driver.min_age_allowed">min_age_allowed</a></code></li>
+<li><code><a title="python-lessons.intermediate.driver.Driver.motorbike_licence" href="#python-lessons.intermediate.driver.Driver.motorbike_licence">motorbike_licence</a></code></li>
+<li><code><a title="python-lessons.intermediate.driver.Driver.no_licence" href="#python-lessons.intermediate.driver.Driver.no_licence">no_licence</a></code></li>
+<li><code><a title="python-lessons.intermediate.driver.Driver.novel_years" href="#python-lessons.intermediate.driver.Driver.novel_years">novel_years</a></code></li>
+<li><code><a title="python-lessons.intermediate.driver.Driver.show_full_licence" href="#python-lessons.intermediate.driver.Driver.show_full_licence">show_full_licence</a></code></li>
+<li><code><a title="python-lessons.intermediate.driver.Driver.teenager" href="#python-lessons.intermediate.driver.Driver.teenager">teenager</a></code></li>
+<li><code><a title="python-lessons.intermediate.driver.Driver.truck_licence" href="#python-lessons.intermediate.driver.Driver.truck_licence">truck_licence</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="python-lessons.intermediate.driver.Person" href="#python-lessons.intermediate.driver.Person">Person</a></code></h4>
+<ul class="">
+<li><code><a title="python-lessons.intermediate.driver.Person.display" href="#python-lessons.intermediate.driver.Person.display">display</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="python-lessons.intermediate.driver.SpainDriver" href="#python-lessons.intermediate.driver.SpainDriver">SpainDriver</a></code></h4>
+<ul class="">
+<li><code><a title="python-lessons.intermediate.driver.SpainDriver.novel_years" href="#python-lessons.intermediate.driver.SpainDriver.novel_years">novel_years</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="python-lessons.intermediate.driver.USADriver" href="#python-lessons.intermediate.driver.USADriver">USADriver</a></code></h4>
+<ul class="">
+<li><code><a title="python-lessons.intermediate.driver.USADriver.min_age_allowed" href="#python-lessons.intermediate.driver.USADriver.min_age_allowed">min_age_allowed</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>
