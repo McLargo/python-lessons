@@ -31,36 +31,37 @@ import datetime
 
 
 class Person(object):
-
     def __init__(self, *args, **kwargs):
-        self.name = kwargs[&#39;name&#39;]
-        self.age = kwargs[&#39;age&#39;]
+        self.name = kwargs[&#34;name&#34;]
+        self.age = kwargs[&#34;age&#34;]
 
     @property
     def display(self):
-       return f&#39;{self.name} ({self.age})&#39;
+        return f&#34;{self.name} ({self.age})&#34;
 
 
 class Driver(Person):
     min_age_allowed = 18
     novel_years = 2
-    motorbike_licence = &#39;A&#39;
-    car_licence = &#39;B&#39;
-    truck_licence = &#39;C&#39;
-    no_licence = &#39;Z&#39;
+    motorbike_licence = &#34;A&#34;
+    car_licence = &#34;B&#34;
+    truck_licence = &#34;C&#34;
+    no_licence = &#34;Z&#34;
 
     def __init__(self, *args, **kwargs):
         super(Driver, self).__init__(*args, **kwargs)
         self.driving_id = uuid.uuid4().hex
-        self.valid_from = kwargs.get(&#39;valid_from&#39;)
-        self.driving_licence = kwargs.get(&#39;driving_licence&#39;, self.no_licence)
+        self.valid_from = kwargs.get(&#34;valid_from&#34;)
+        self.driving_licence = kwargs.get(&#34;driving_licence&#34;, self.no_licence)
         self.driving_id = None
         if self.driving_licence != self.no_licence:
             self.driving_id = uuid.uuid4().hex
 
     @classmethod
     def driver(cls, name, age, driving_licence, valid_from):
-        return cls(name=name, age=age, driving_licence=driving_licence, valid_from=valid_from)
+        return cls(
+            name=name, age=age, driving_licence=driving_licence, valid_from=valid_from
+        )
 
     @classmethod
     def teenager(cls, name, age):
@@ -79,7 +80,7 @@ class Driver(Person):
 
     @property
     def show_full_licence(self):
-        return f&#39;{self.display} - {self.driving_id} (type {self.driving_licence})&#39;
+        return f&#34;{self.display} - {self.driving_id} (type {self.driving_licence})&#34;
 
 
 class USADriver(Driver):
@@ -93,26 +94,26 @@ class SpainDriver(Driver):
 if __name__ == &#34;__main__&#34;:
     days = 30 * 15
     experience = datetime.datetime.now() - datetime.timedelta(days=days)
-    javi_usa = USADriver.driver(&#39;Javi&#39;, 32, Driver.motorbike_licence, experience)
+    javi_usa = USADriver.driver(&#34;Javi&#34;, 32, Driver.motorbike_licence, experience)
     print(javi_usa.show_full_licence)
-    print(&#39;User can drive? %s&#39; % javi_usa.can_get_driving_licence)
-    print(&#39;User is novel? %s&#39; % javi_usa.is_novel)
+    print(&#34;User can drive? %s&#34; % javi_usa.can_get_driving_licence)
+    print(&#34;User is novel? %s&#34; % javi_usa.is_novel)
 
-    javi_spain = SpainDriver.driver(&#39;Javi&#39;, 32, Driver.car_licence, experience)
+    javi_spain = SpainDriver.driver(&#34;Javi&#34;, 32, Driver.car_licence, experience)
 
     print(javi_spain.show_full_licence)
-    print(&#39;User can drive? %s&#39; % javi_spain.can_get_driving_licence)
-    print(&#39;User is novel? %s&#39; % javi_spain.is_novel)
+    print(&#34;User can drive? %s&#34; % javi_spain.can_get_driving_licence)
+    print(&#34;User is novel? %s&#34; % javi_spain.is_novel)
 
-    usa_teenager = USADriver.teenager(&#39;Teenager&#39;, 17)
+    usa_teenager = USADriver.teenager(&#34;Teenager&#34;, 17)
     print(usa_teenager.show_full_licence)
-    print(&#39;User can drive? %s&#39; % usa_teenager.can_get_driving_licence)
-    print(&#39;User is novel? %s&#39; % usa_teenager.is_novel)
+    print(&#34;User can drive? %s&#34; % usa_teenager.can_get_driving_licence)
+    print(&#34;User is novel? %s&#34; % usa_teenager.is_novel)
 
-    spain_teenager = SpainDriver.teenager(&#39;Teenager&#39;, 17)
+    spain_teenager = SpainDriver.teenager(&#34;Teenager&#34;, 17)
     print(spain_teenager.show_full_licence)
-    print(&#39;User can drive? %s&#39; % spain_teenager.can_get_driving_licence)
-    print(&#39;User is novel? %s&#39; % spain_teenager.is_novel)</code></pre>
+    print(&#34;User can drive? %s&#34; % spain_teenager.can_get_driving_licence)
+    print(&#34;User is novel? %s&#34; % spain_teenager.is_novel)</code></pre>
 </details>
 </section>
 <section>
@@ -137,23 +138,25 @@ if __name__ == &#34;__main__&#34;:
 <pre><code class="python">class Driver(Person):
     min_age_allowed = 18
     novel_years = 2
-    motorbike_licence = &#39;A&#39;
-    car_licence = &#39;B&#39;
-    truck_licence = &#39;C&#39;
-    no_licence = &#39;Z&#39;
+    motorbike_licence = &#34;A&#34;
+    car_licence = &#34;B&#34;
+    truck_licence = &#34;C&#34;
+    no_licence = &#34;Z&#34;
 
     def __init__(self, *args, **kwargs):
         super(Driver, self).__init__(*args, **kwargs)
         self.driving_id = uuid.uuid4().hex
-        self.valid_from = kwargs.get(&#39;valid_from&#39;)
-        self.driving_licence = kwargs.get(&#39;driving_licence&#39;, self.no_licence)
+        self.valid_from = kwargs.get(&#34;valid_from&#34;)
+        self.driving_licence = kwargs.get(&#34;driving_licence&#34;, self.no_licence)
         self.driving_id = None
         if self.driving_licence != self.no_licence:
             self.driving_id = uuid.uuid4().hex
 
     @classmethod
     def driver(cls, name, age, driving_licence, valid_from):
-        return cls(name=name, age=age, driving_licence=driving_licence, valid_from=valid_from)
+        return cls(
+            name=name, age=age, driving_licence=driving_licence, valid_from=valid_from
+        )
 
     @classmethod
     def teenager(cls, name, age):
@@ -172,7 +175,7 @@ if __name__ == &#34;__main__&#34;:
 
     @property
     def show_full_licence(self):
-        return f&#39;{self.display} - {self.driving_id} (type {self.driving_licence})&#39;</code></pre>
+        return f&#34;{self.display} - {self.driving_id} (type {self.driving_licence})&#34;</code></pre>
 </details>
 <h3>Ancestors</h3>
 <ul class="hlist">
@@ -223,7 +226,9 @@ if __name__ == &#34;__main__&#34;:
 </summary>
 <pre><code class="python">@classmethod
 def driver(cls, name, age, driving_licence, valid_from):
-    return cls(name=name, age=age, driving_licence=driving_licence, valid_from=valid_from)</code></pre>
+    return cls(
+        name=name, age=age, driving_licence=driving_licence, valid_from=valid_from
+    )</code></pre>
 </details>
 </dd>
 <dt id="python-lessons.intermediate.driver.Driver.teenager"><code class="name flex">
@@ -279,7 +284,7 @@ def is_novel(self):
 </summary>
 <pre><code class="python">@property
 def show_full_licence(self):
-    return f&#39;{self.display} - {self.driving_id} (type {self.driving_licence})&#39;</code></pre>
+    return f&#34;{self.display} - {self.driving_id} (type {self.driving_licence})&#34;</code></pre>
 </details>
 </dd>
 </dl>
@@ -295,14 +300,13 @@ def show_full_licence(self):
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">class Person(object):
-
     def __init__(self, *args, **kwargs):
-        self.name = kwargs[&#39;name&#39;]
-        self.age = kwargs[&#39;age&#39;]
+        self.name = kwargs[&#34;name&#34;]
+        self.age = kwargs[&#34;age&#34;]
 
     @property
     def display(self):
-       return f&#39;{self.name} ({self.age})&#39;</code></pre>
+        return f&#34;{self.name} ({self.age})&#34;</code></pre>
 </details>
 <h3>Subclasses</h3>
 <ul class="hlist">
@@ -319,7 +323,7 @@ def show_full_licence(self):
 </summary>
 <pre><code class="python">@property
 def display(self):
-   return f&#39;{self.name} ({self.age})&#39;</code></pre>
+    return f&#34;{self.name} ({self.age})&#34;</code></pre>
 </details>
 </dd>
 </dl>

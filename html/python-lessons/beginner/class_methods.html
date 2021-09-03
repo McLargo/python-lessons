@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 <meta name="generator" content="pdoc 0.10.0" />
 <title>python-lessons.beginner.class_methods API documentation</title>
-<meta name="description" content="This is a sample of classmethod decorator …" />
+<meta name="description" content="Sample of classmethod decorator …" />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
 <link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
@@ -22,7 +22,7 @@
 <h1 class="title">Module <code>python-lessons.beginner.class_methods</code></h1>
 </header>
 <section id="section-intro">
-<p>This is a sample of classmethod decorator.</p>
+<p>Sample of classmethod decorator.</p>
 <p>A classmethod is a method that is associated to the class, and not an object.
 We can use it to easily create objects of the class.</p>
 <p>Careful, updating a class state will affect to all instance!</p>
@@ -31,7 +31,7 @@ We can use it to easily create objects of the class.</p>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">&#34;&#34;&#34;
-This is a sample of classmethod decorator.
+Sample of classmethod decorator.
 
 A classmethod is a method that is associated to the class, and not an object.
 We can use it to easily create objects of the class.
@@ -50,30 +50,30 @@ class Pizza:
 
     @classmethod
     def napolitana(cls):
-        &#34;&#34;&#34; Create a Pizza instance with mozzarella, tomato and basil
+        &#34;&#34;&#34;Create a Pizza instance with mozzarella, tomato and basil
 
         :param cls: Pizza class
         :returns: Pizza instance
         :rtype: Pizza
         &#34;&#34;&#34;
-        ingredients = [&#39;mozzarella&#39;, &#39;tomato&#39;, &#39;basil&#39;]
+        ingredients = [&#34;mozzarella&#34;, &#34;tomato&#34;, &#34;basil&#34;]
         return cls(ingredients=ingredients)
 
     @classmethod
     def four_cheese(cls):
-        &#34;&#34;&#34; Create a Pizza instance with blue cheese, mozzarella,
+        &#34;&#34;&#34;Create a Pizza instance with blue cheese, mozzarella,
         emmental and parmesan
 
         :param cls: Pizza class
         :returns: Pizza instance
         :rtype: Pizza
         &#34;&#34;&#34;
-        ingredients = [&#39;blue cheese&#39;, &#39;mozzarella&#39;, &#39;emmental&#39;, &#39;parmesan&#39;]
+        ingredients = [&#34;blue cheese&#34;, &#34;mozzarella&#34;, &#34;emmental&#34;, &#34;parmesan&#34;]
         return cls(ingredients=ingredients)
 
     @property
     def price(self):
-        &#34;&#34;&#34; price of a Pizza. total ingredients * price_per_ingredient
+        &#34;&#34;&#34;price of a Pizza. total ingredients * price_per_ingredient
 
         :returns: pizza price per ingredient
         :rtype: int, Float
@@ -110,30 +110,30 @@ class Pizza:
 
     @classmethod
     def napolitana(cls):
-        &#34;&#34;&#34; Create a Pizza instance with mozzarella, tomato and basil
+        &#34;&#34;&#34;Create a Pizza instance with mozzarella, tomato and basil
 
         :param cls: Pizza class
         :returns: Pizza instance
         :rtype: Pizza
         &#34;&#34;&#34;
-        ingredients = [&#39;mozzarella&#39;, &#39;tomato&#39;, &#39;basil&#39;]
+        ingredients = [&#34;mozzarella&#34;, &#34;tomato&#34;, &#34;basil&#34;]
         return cls(ingredients=ingredients)
 
     @classmethod
     def four_cheese(cls):
-        &#34;&#34;&#34; Create a Pizza instance with blue cheese, mozzarella,
+        &#34;&#34;&#34;Create a Pizza instance with blue cheese, mozzarella,
         emmental and parmesan
 
         :param cls: Pizza class
         :returns: Pizza instance
         :rtype: Pizza
         &#34;&#34;&#34;
-        ingredients = [&#39;blue cheese&#39;, &#39;mozzarella&#39;, &#39;emmental&#39;, &#39;parmesan&#39;]
+        ingredients = [&#34;blue cheese&#34;, &#34;mozzarella&#34;, &#34;emmental&#34;, &#34;parmesan&#34;]
         return cls(ingredients=ingredients)
 
     @property
     def price(self):
-        &#34;&#34;&#34; price of a Pizza. total ingredients * price_per_ingredient
+        &#34;&#34;&#34;price of a Pizza. total ingredients * price_per_ingredient
 
         :returns: pizza price per ingredient
         :rtype: int, Float
@@ -168,14 +168,14 @@ emmental and parmesan</p>
 </summary>
 <pre><code class="python">@classmethod
 def four_cheese(cls):
-    &#34;&#34;&#34; Create a Pizza instance with blue cheese, mozzarella,
+    &#34;&#34;&#34;Create a Pizza instance with blue cheese, mozzarella,
     emmental and parmesan
 
     :param cls: Pizza class
     :returns: Pizza instance
     :rtype: Pizza
     &#34;&#34;&#34;
-    ingredients = [&#39;blue cheese&#39;, &#39;mozzarella&#39;, &#39;emmental&#39;, &#39;parmesan&#39;]
+    ingredients = [&#34;blue cheese&#34;, &#34;mozzarella&#34;, &#34;emmental&#34;, &#34;parmesan&#34;]
     return cls(ingredients=ingredients)</code></pre>
 </details>
 </dd>
@@ -193,13 +193,13 @@ def four_cheese(cls):
 </summary>
 <pre><code class="python">@classmethod
 def napolitana(cls):
-    &#34;&#34;&#34; Create a Pizza instance with mozzarella, tomato and basil
+    &#34;&#34;&#34;Create a Pizza instance with mozzarella, tomato and basil
 
     :param cls: Pizza class
     :returns: Pizza instance
     :rtype: Pizza
     &#34;&#34;&#34;
-    ingredients = [&#39;mozzarella&#39;, &#39;tomato&#39;, &#39;basil&#39;]
+    ingredients = [&#34;mozzarella&#34;, &#34;tomato&#34;, &#34;basil&#34;]
     return cls(ingredients=ingredients)</code></pre>
 </details>
 </dd>
@@ -217,7 +217,7 @@ def napolitana(cls):
 </summary>
 <pre><code class="python">@property
 def price(self):
-    &#34;&#34;&#34; price of a Pizza. total ingredients * price_per_ingredient
+    &#34;&#34;&#34;price of a Pizza. total ingredients * price_per_ingredient
 
     :returns: pizza price per ingredient
     :rtype: int, Float

@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 <meta name="generator" content="pdoc 0.10.0" />
-<title>python-lessons.beginner.static_methods API documentation</title>
-<meta name="description" content="Sample of staticmethod decorator …" />
+<title>python-lessons.intermediate.use_args_kwargs API documentation</title>
+<meta name="description" content="" />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
 <link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
@@ -19,29 +19,21 @@
 <main>
 <article id="content">
 <header>
-<h1 class="title">Module <code>python-lessons.beginner.static_methods</code></h1>
+<h1 class="title">Module <code>python-lessons.intermediate.use_args_kwargs</code></h1>
 </header>
 <section id="section-intro">
-<p>Sample of staticmethod decorator.</p>
-<p>All method inside class Calculator are static method,
-which means there is no internal dependency with any attribute or method
-of the same class, and can be used without initialize Calculator class</p>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">&#34;&#34;&#34;
-Sample of staticmethod decorator.
 
-All method inside class Calculator are static method,
-which means there is no internal dependency with any attribute or method
-of the same class, and can be used without initialize Calculator class
 &#34;&#34;&#34;
 
 
-class Calculator:
+class ExtendedCalculator:
     @staticmethod
-    def add_numbers(x, y):
+    def add_several_numbers(*args):
         &#34;&#34;&#34;Sum two numbers
 
         :param int, float x: first integer to sum
@@ -50,43 +42,58 @@ class Calculator:
         :returns: sum of 2 params
         :rtype: int, float
         &#34;&#34;&#34;
-        return x + y
+        total = 0
+        for number in args:
+            total += number
+        return total
 
     @staticmethod
-    def subtract_numbers(x, y):
-        &#34;&#34;&#34;Substract two numbers
+    def add_even_numbers(*args):
+        &#34;&#34;&#34;Sum two numbers
 
-        :param int, float x: first integer to substract
-        :param int, float y: second integer to substract
+        :param int, float x: first integer to sum
+        :param int, float y: second integer to sum
         :raises TypeError: params are not int or float
-        :returns: difference bewteen first and second params
+        :returns: sum of 2 params
         :rtype: int, float
         &#34;&#34;&#34;
-        return x - y
+        total_even = 0
+        for number in args:
+            if number % 2 == 0:
+                total_even += number
+        return total_even
 
     @staticmethod
-    def multiple_numbers(x, y):
-        &#34;&#34;&#34;Multiple two numbers
+    def add_prime_numbers(**kwargs):
+        &#34;&#34;&#34;Sum two numbers
 
-        :param int, float x: first integer to multiple
-        :param int, float y: second integer to multiple
+        :param int, float x: first integer to sum
+        :param int, float y: second integer to sum
         :raises TypeError: params are not int or float
-        :returns: multiplication of 2 params
+        :returns: sum of 2 params
         :rtype: int, float
         &#34;&#34;&#34;
-        return x * y
+        total_prime = 0
+        for key, number in kwargs.items():
+            if key == &#34;prime&#34;:
+                total_prime += number
+        return total_prime
 
-    @staticmethod
-    def divide_numbers(x, y):
-        &#34;&#34;&#34;Divide two numbers
 
-        :param int, float x: first integer to divide
-        :param int, float y: second integer to divide
-        :raises TypeError: params are not int or float
-        :returns: quotient of first and second param
-        :rtype: int, float
-        &#34;&#34;&#34;
-        return x // y</code></pre>
+def test_add_several_numbers():
+    assert ExtendedCalculator.add_several_numbers(1, 2, 3) == 6
+    assert ExtendedCalculator.add_several_numbers(xrange(10)) == 6
+
+
+def test_add_even_numbers():
+    assert ExtendedCalculator.add_even_numbers(1, 2, 3) == 2
+    assert ExtendedCalculator.add_even_numbers(xrange(10)) == 6
+
+
+def test_big_n():
+    numbers = {&#34;small&#34;: 12}
+    assert ExtendedCalculator.add_several_numbers(1, 2, 3) == 6
+    assert ExtendedCalculator.add_several_numbers(xrange(10)) == 6</code></pre>
 </details>
 </section>
 <section>
@@ -94,12 +101,10 @@ class Calculator:
 <section>
 </section>
 <section>
-</section>
-<section>
-<h2 class="section-title" id="header-classes">Classes</h2>
+<h2 class="section-title" id="header-functions">Functions</h2>
 <dl>
-<dt id="python-lessons.beginner.static_methods.Calculator"><code class="flex name class">
-<span>class <span class="ident">Calculator</span></span>
+<dt id="python-lessons.intermediate.use_args_kwargs.test_add_even_numbers"><code class="name flex">
+<span>def <span class="ident">test_add_even_numbers</span></span>(<span>)</span>
 </code></dt>
 <dd>
 <div class="desc"></div>
@@ -107,9 +112,57 @@ class Calculator:
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">class Calculator:
+<pre><code class="python">def test_add_even_numbers():
+    assert ExtendedCalculator.add_even_numbers(1, 2, 3) == 2
+    assert ExtendedCalculator.add_even_numbers(xrange(10)) == 6</code></pre>
+</details>
+</dd>
+<dt id="python-lessons.intermediate.use_args_kwargs.test_add_several_numbers"><code class="name flex">
+<span>def <span class="ident">test_add_several_numbers</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def test_add_several_numbers():
+    assert ExtendedCalculator.add_several_numbers(1, 2, 3) == 6
+    assert ExtendedCalculator.add_several_numbers(xrange(10)) == 6</code></pre>
+</details>
+</dd>
+<dt id="python-lessons.intermediate.use_args_kwargs.test_big_n"><code class="name flex">
+<span>def <span class="ident">test_big_n</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def test_big_n():
+    numbers = {&#34;small&#34;: 12}
+    assert ExtendedCalculator.add_several_numbers(1, 2, 3) == 6
+    assert ExtendedCalculator.add_several_numbers(xrange(10)) == 6</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="python-lessons.intermediate.use_args_kwargs.ExtendedCalculator"><code class="flex name class">
+<span>class <span class="ident">ExtendedCalculator</span></span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ExtendedCalculator:
     @staticmethod
-    def add_numbers(x, y):
+    def add_several_numbers(*args):
         &#34;&#34;&#34;Sum two numbers
 
         :param int, float x: first integer to sum
@@ -118,48 +171,47 @@ class Calculator:
         :returns: sum of 2 params
         :rtype: int, float
         &#34;&#34;&#34;
-        return x + y
+        total = 0
+        for number in args:
+            total += number
+        return total
 
     @staticmethod
-    def subtract_numbers(x, y):
-        &#34;&#34;&#34;Substract two numbers
+    def add_even_numbers(*args):
+        &#34;&#34;&#34;Sum two numbers
 
-        :param int, float x: first integer to substract
-        :param int, float y: second integer to substract
+        :param int, float x: first integer to sum
+        :param int, float y: second integer to sum
         :raises TypeError: params are not int or float
-        :returns: difference bewteen first and second params
+        :returns: sum of 2 params
         :rtype: int, float
         &#34;&#34;&#34;
-        return x - y
+        total_even = 0
+        for number in args:
+            if number % 2 == 0:
+                total_even += number
+        return total_even
 
     @staticmethod
-    def multiple_numbers(x, y):
-        &#34;&#34;&#34;Multiple two numbers
+    def add_prime_numbers(**kwargs):
+        &#34;&#34;&#34;Sum two numbers
 
-        :param int, float x: first integer to multiple
-        :param int, float y: second integer to multiple
+        :param int, float x: first integer to sum
+        :param int, float y: second integer to sum
         :raises TypeError: params are not int or float
-        :returns: multiplication of 2 params
+        :returns: sum of 2 params
         :rtype: int, float
         &#34;&#34;&#34;
-        return x * y
-
-    @staticmethod
-    def divide_numbers(x, y):
-        &#34;&#34;&#34;Divide two numbers
-
-        :param int, float x: first integer to divide
-        :param int, float y: second integer to divide
-        :raises TypeError: params are not int or float
-        :returns: quotient of first and second param
-        :rtype: int, float
-        &#34;&#34;&#34;
-        return x // y</code></pre>
+        total_prime = 0
+        for key, number in kwargs.items():
+            if key == &#34;prime&#34;:
+                total_prime += number
+        return total_prime</code></pre>
 </details>
 <h3>Static methods</h3>
 <dl>
-<dt id="python-lessons.beginner.static_methods.Calculator.add_numbers"><code class="name flex">
-<span>def <span class="ident">add_numbers</span></span>(<span>x, y)</span>
+<dt id="python-lessons.intermediate.use_args_kwargs.ExtendedCalculator.add_even_numbers"><code class="name flex">
+<span>def <span class="ident">add_even_numbers</span></span>(<span>*args)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Sum two numbers</p>
@@ -173,7 +225,7 @@ class Calculator:
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">@staticmethod
-def add_numbers(x, y):
+def add_even_numbers(*args):
     &#34;&#34;&#34;Sum two numbers
 
     :param int, float x: first integer to sum
@@ -182,88 +234,72 @@ def add_numbers(x, y):
     :returns: sum of 2 params
     :rtype: int, float
     &#34;&#34;&#34;
-    return x + y</code></pre>
+    total_even = 0
+    for number in args:
+        if number % 2 == 0:
+            total_even += number
+    return total_even</code></pre>
 </details>
 </dd>
-<dt id="python-lessons.beginner.static_methods.Calculator.divide_numbers"><code class="name flex">
-<span>def <span class="ident">divide_numbers</span></span>(<span>x, y)</span>
+<dt id="python-lessons.intermediate.use_args_kwargs.ExtendedCalculator.add_prime_numbers"><code class="name flex">
+<span>def <span class="ident">add_prime_numbers</span></span>(<span>**kwargs)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Divide two numbers</p>
-<p>:param int, float x: first integer to divide
-:param int, float y: second integer to divide
+<div class="desc"><p>Sum two numbers</p>
+<p>:param int, float x: first integer to sum
+:param int, float y: second integer to sum
 :raises TypeError: params are not int or float
-:returns: quotient of first and second param
+:returns: sum of 2 params
 :rtype: int, float</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">@staticmethod
-def divide_numbers(x, y):
-    &#34;&#34;&#34;Divide two numbers
+def add_prime_numbers(**kwargs):
+    &#34;&#34;&#34;Sum two numbers
 
-    :param int, float x: first integer to divide
-    :param int, float y: second integer to divide
+    :param int, float x: first integer to sum
+    :param int, float y: second integer to sum
     :raises TypeError: params are not int or float
-    :returns: quotient of first and second param
+    :returns: sum of 2 params
     :rtype: int, float
     &#34;&#34;&#34;
-    return x // y</code></pre>
+    total_prime = 0
+    for key, number in kwargs.items():
+        if key == &#34;prime&#34;:
+            total_prime += number
+    return total_prime</code></pre>
 </details>
 </dd>
-<dt id="python-lessons.beginner.static_methods.Calculator.multiple_numbers"><code class="name flex">
-<span>def <span class="ident">multiple_numbers</span></span>(<span>x, y)</span>
+<dt id="python-lessons.intermediate.use_args_kwargs.ExtendedCalculator.add_several_numbers"><code class="name flex">
+<span>def <span class="ident">add_several_numbers</span></span>(<span>*args)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Multiple two numbers</p>
-<p>:param int, float x: first integer to multiple
-:param int, float y: second integer to multiple
+<div class="desc"><p>Sum two numbers</p>
+<p>:param int, float x: first integer to sum
+:param int, float y: second integer to sum
 :raises TypeError: params are not int or float
-:returns: multiplication of 2 params
+:returns: sum of 2 params
 :rtype: int, float</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">@staticmethod
-def multiple_numbers(x, y):
-    &#34;&#34;&#34;Multiple two numbers
+def add_several_numbers(*args):
+    &#34;&#34;&#34;Sum two numbers
 
-    :param int, float x: first integer to multiple
-    :param int, float y: second integer to multiple
+    :param int, float x: first integer to sum
+    :param int, float y: second integer to sum
     :raises TypeError: params are not int or float
-    :returns: multiplication of 2 params
+    :returns: sum of 2 params
     :rtype: int, float
     &#34;&#34;&#34;
-    return x * y</code></pre>
-</details>
-</dd>
-<dt id="python-lessons.beginner.static_methods.Calculator.subtract_numbers"><code class="name flex">
-<span>def <span class="ident">subtract_numbers</span></span>(<span>x, y)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Substract two numbers</p>
-<p>:param int, float x: first integer to substract
-:param int, float y: second integer to substract
-:raises TypeError: params are not int or float
-:returns: difference bewteen first and second params
-:rtype: int, float</p></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">@staticmethod
-def subtract_numbers(x, y):
-    &#34;&#34;&#34;Substract two numbers
-
-    :param int, float x: first integer to substract
-    :param int, float y: second integer to substract
-    :raises TypeError: params are not int or float
-    :returns: difference bewteen first and second params
-    :rtype: int, float
-    &#34;&#34;&#34;
-    return x - y</code></pre>
+    total = 0
+    for number in args:
+        total += number
+    return total</code></pre>
 </details>
 </dd>
 </dl>
@@ -279,18 +315,24 @@ def subtract_numbers(x, y):
 <ul id="index">
 <li><h3>Super-module</h3>
 <ul>
-<li><code><a title="python-lessons.beginner" href="index.html">python-lessons.beginner</a></code></li>
+<li><code><a title="python-lessons.intermediate" href="index.html">python-lessons.intermediate</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="python-lessons.intermediate.use_args_kwargs.test_add_even_numbers" href="#python-lessons.intermediate.use_args_kwargs.test_add_even_numbers">test_add_even_numbers</a></code></li>
+<li><code><a title="python-lessons.intermediate.use_args_kwargs.test_add_several_numbers" href="#python-lessons.intermediate.use_args_kwargs.test_add_several_numbers">test_add_several_numbers</a></code></li>
+<li><code><a title="python-lessons.intermediate.use_args_kwargs.test_big_n" href="#python-lessons.intermediate.use_args_kwargs.test_big_n">test_big_n</a></code></li>
 </ul>
 </li>
 <li><h3><a href="#header-classes">Classes</a></h3>
 <ul>
 <li>
-<h4><code><a title="python-lessons.beginner.static_methods.Calculator" href="#python-lessons.beginner.static_methods.Calculator">Calculator</a></code></h4>
+<h4><code><a title="python-lessons.intermediate.use_args_kwargs.ExtendedCalculator" href="#python-lessons.intermediate.use_args_kwargs.ExtendedCalculator">ExtendedCalculator</a></code></h4>
 <ul class="">
-<li><code><a title="python-lessons.beginner.static_methods.Calculator.add_numbers" href="#python-lessons.beginner.static_methods.Calculator.add_numbers">add_numbers</a></code></li>
-<li><code><a title="python-lessons.beginner.static_methods.Calculator.divide_numbers" href="#python-lessons.beginner.static_methods.Calculator.divide_numbers">divide_numbers</a></code></li>
-<li><code><a title="python-lessons.beginner.static_methods.Calculator.multiple_numbers" href="#python-lessons.beginner.static_methods.Calculator.multiple_numbers">multiple_numbers</a></code></li>
-<li><code><a title="python-lessons.beginner.static_methods.Calculator.subtract_numbers" href="#python-lessons.beginner.static_methods.Calculator.subtract_numbers">subtract_numbers</a></code></li>
+<li><code><a title="python-lessons.intermediate.use_args_kwargs.ExtendedCalculator.add_even_numbers" href="#python-lessons.intermediate.use_args_kwargs.ExtendedCalculator.add_even_numbers">add_even_numbers</a></code></li>
+<li><code><a title="python-lessons.intermediate.use_args_kwargs.ExtendedCalculator.add_prime_numbers" href="#python-lessons.intermediate.use_args_kwargs.ExtendedCalculator.add_prime_numbers">add_prime_numbers</a></code></li>
+<li><code><a title="python-lessons.intermediate.use_args_kwargs.ExtendedCalculator.add_several_numbers" href="#python-lessons.intermediate.use_args_kwargs.ExtendedCalculator.add_several_numbers">add_several_numbers</a></code></li>
 </ul>
 </li>
 </ul>
