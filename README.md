@@ -7,3 +7,4 @@ TODO
 ### How to create documentation
 `pdoc -o html --html . --force`
 
+mkdocs serve -f docs/mkdocs.yml -a localhost:9999
