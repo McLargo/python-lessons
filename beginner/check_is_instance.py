@@ -1,15 +1,11 @@
-"""
-Sample of a how to use `isinstance` method
+def is_instance(instance, instance_type) -> bool:
+    """Check if instance is of the type provided.
 
-"""
+    Parameters:
+        instance (object): any kind of object.
+        instance_type (class or tuple): expected instance_type for instance.
 
-
-def is_instance(instance, instance_type):
-    """Check if instance is type expected
-
-    :param object: any kind of object
-    :param class or tuple: expected instance_type for instance
-    :returns: True/False if check of instance is correct
-    :rtype: bool
+    Returns:
+        bool: True if instance is the one expected, false otherwise.
     """
     return isinstance(instance, instance_type)

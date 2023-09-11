@@ -9,7 +9,7 @@ help: ## Show help
 	@egrep -h '\s##\s' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf " -\033[36m  %-20s\033[0m %s\n", $$1, $$2}'
 
 serve: ## Serve mkdocs in local
-	poetry run mkdocs serve --strict
+	poetry run mkdocs serve --strict -w beginner -w intermediate
 
 build: ## Build mkdocs in local
 	poetry run mkdocs build --strict
