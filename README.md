@@ -1,10 +1,16 @@
-Few lessons learned and common good practices, adapted to beginner, intermediate and advance.
-Tests included, so it is easy to understand and to practice with them.
+# python lessons
 
-### Pre-requirements
-TODO
+During my several years working, my main programming language was python. I've
+learned much during this time, and a few lessons were learned, aside from good
+practices.
 
-### How to create documentation
-`pdoc -o html --html . --force`
+This repository is created to group them into different levels
+(beginner, intermediate and advanced). Tests are included, so it is easy to
+understand and practice with them.
 
-mkdocs serve -f docs/mkdocs.yml -a localhost:9999
+TODO: Explain repository structure and mkdocs
+
+## Makefile
+
+`make` commands available for easy usage of mkdocs cli explained above.
+Run `make` or `make help` for extra support.
