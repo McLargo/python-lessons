@@ -15,4 +15,10 @@ plugins:
           show_docstring_parameters: true
 
 nav:
-  - "Check is instance": check_is_instance.md
+  - Beginner:
+    - "Check is instance": beginner/check_is_instance.md
+    # - "dict vs defaultdict": beginner/dict_vs_defaultdict.md
+  # - Intermediate:
+  #   - "dict vs defaultdict": beginner/dict_vs_defaultdict.md
+  # - Advance:
+  #   - "dict vs defaultdict": beginner/dict_vs_defaultdict.md

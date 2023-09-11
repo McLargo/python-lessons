@@ -3,9 +3,9 @@ def is_instance(instance, instance_type) -> bool:
 
     Parameters:
         instance (object): any kind of object.
-        instance_type (class or tuple): expected instance_type for instance.
+        instance_type (class or tuple): expected instance type for instance.
 
     Returns:
-        bool: True if instance is the one expected, false otherwise.
+        bool: true if instance is the one expected, false otherwise.
     """
     return isinstance(instance, instance_type)
