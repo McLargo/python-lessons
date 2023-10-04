@@ -17,7 +17,7 @@ plugins:
 nav:
   - Beginner:
     - "Check is instance": beginner/check_is_instance.md
-    # - "dict vs defaultdict": beginner/dict_vs_defaultdict.md
+  # - "dict vs defaultdict": beginner/dict_vs_defaultdict.md
   # - Intermediate:
   #   - "dict vs defaultdict": beginner/dict_vs_defaultdict.md
   # - Advance:

@@ -21,3 +21,7 @@ Use of mkdocs to generate documentation. With mkdocs, it is possible to generate
         advanced/ # Python code for advanced lessons
         beginner/ # Python code for beginner lessons
         intermediate/ # Python code for intermediate lessons
+    tests/
+        advanced/ # tests for advanced lessons
+        beginner/ # tests for beginner lessons
+        intermediate/ # tests for intermediate lessons

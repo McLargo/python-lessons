@@ -9,3 +9,9 @@ site/
 
 ## vscode settings
 .vscode/
+
+## Coverage
+.coverage
+htmlcov/
+coverage.xml
+coveragejson

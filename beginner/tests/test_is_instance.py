@@ -1,4 +1,4 @@
-from beginner.check_is_instance import is_instance
+from src.beginner.check_is_instance import is_instance
 
 
 def test_is_instance():

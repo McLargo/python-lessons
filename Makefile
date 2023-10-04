@@ -17,3 +17,6 @@ serve: ## Serve mkdocs in local
 
 build: ## Build mkdocs in local
 	poetry run mkdocs build --strict
+
+test: ## Run test
+	poetry run pytest --cov=src --cov-report=term-missing --cov-fail-under=100
