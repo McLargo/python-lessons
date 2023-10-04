@@ -1,17 +1,22 @@
-# Welcome to MkDocs
+# Welcome to python lessons
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+This project is a collection of lessons for learning python. Divided into three levels, beginner, intermediate and advanced, the lessons are designed to be self contained and can be used as a reference for learning python.
 
-## Commands
+Use of mkdocs to generate documentation. With mkdocs, it is possible to generate a static website with the documentation, and also to include python code with the use of docstrings.
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+- [mkdocs](https://www.mkdocs.org/): Project documentation with Markdown.
+- [mkdocstrings-python](https://mkdocstrings.github.io/python/): Python docstrings support for MkDocs.
+- [python docstring example](https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html): Example of docstring using google style.
 
 ## Project layout
 
     mkdocs.yml    # The configuration file.
     docs/
         index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+        adr/      # Architecture Decision Records
+        advanced/ # Advanced lessons
+        beginner/ # Beginner lessons
+        intermediate/ # Intermediate lessons
+    advanced/ # Python code for advanced lessons
+    beginner/ # Python code for beginner lessons
+    intermediate/ # Python code for intermediate lessons
