@@ -14,4 +14,4 @@ site/
 .coverage
 htmlcov/
 coverage.xml
-coveragejson
+coverage.json
