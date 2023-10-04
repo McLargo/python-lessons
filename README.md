@@ -21,3 +21,18 @@ commands to use.
 - ADR-001: [poetry](docs/adr/001-poetry.md)
 
 ## Contributing
+
+Use [conventional commit](https://www.conventionalcommits.org/en/v1.0.0/) to
+your commit messages.
+
+Use gitflow workflow to create your branches. Work on your feature branch, and
+when ready, create a pull request to merge it into **develop** branch.
+
+Keep in mind following structure for your code. All lessons should include at
+least files below:
+
+- `src/<level>/<lesson>/<files.py>`: Include all files needed for the lesson.
+  Remember to import them in `__init__.py` file.
+- `tests/<level>/<lesson>/<test_lesson.py>`: tests for the lesson. One file per
+  lesson.
+- `docs/<level>/<lesson.md>`: documentation for the lesson. One file per lesson.
