@@ -15,6 +15,9 @@ plugins:
           show_docstring_parameters: true
 
 nav:
+  - ADR:
+    - "ADR-001 - Poetry": adr/001-poetry.md
+    - "ADR-002 - MkDocs": adr/002-mkdocs.md
   - Beginner:
     - "Check is instance": beginner/check_is_instance.md
   # - "dict vs defaultdict": beginner/dict_vs_defaultdict.md
