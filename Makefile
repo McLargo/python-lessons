@@ -16,6 +16,8 @@ install: ## Install required dependencies
 	else \
 		poetry install;\
 	fi
+	pip install pre-commit
+	pre-commit install
 
 remove: ## Remove poetry virtualenv
 	@echo "Removing virtualenv $(VIRTUALENV)"

@@ -1,0 +1,28 @@
+exclude: ".git"
+
+repos:
+  - repo: https://github.com/igorshubovych/markdownlint-cli
+    rev: v0.37.0
+    hooks:
+    - id: markdownlint
+      args:
+        - "docs/*"
+
+  - repo: https://github.com/psf/black
+    rev: 23.9.1
+    hooks:
+      - id: black
+        args: ["--config", "pyproject.toml"]
+
+  - repo: https://github.com/PyCQA/bandit
+    rev: 1.7.5
+    hooks:
+      - id: bandit
+        args: ["-c", "pyproject.toml"]
+        additional_dependencies: [".[toml]"]
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.0.291
+    hooks:
+      - id: ruff
+        args: ["--fix"]

@@ -1,3 +1,11 @@
+[tool.bandit]
+exclude_dirs = ["tests"]
+
+[tool.black]
+line-length = 80
+target-version = ["py310"]
+include = '.pyi?$'
+
 [tool.poetry]
 name = "python-lessons"
 version = "0.1.0"
