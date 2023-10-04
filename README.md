@@ -1,16 +1,23 @@
 # python lessons
 
-During my several years working, my main programming language was python. I've
-learned much during this time, and a few lessons were learned, aside from good
-practices.
+During my many years working as developer, my main programming language has been
+python. I've learned many cool features during this time, and a few lessons were
+learned, in addition to use of good practices.
 
-This repository is created to group them into different levels
+This repository is created to group some of these lessons into different levels
 (beginner, intermediate and advanced). Tests are included, so it is easy to
 understand and practice with them.
 
-TODO: Explain repository structure and mkdocs
+## Usage
 
-## Makefile
+TL;DR: `make install` to install dependencies, `make server` to start mkdocs server to access documentation.
 
-`make` commands available for easy usage of mkdocs cli explained above.
-Run `make` or `make help` for extra support.
+Makefile is your friend. All commands are available through it, so it is quite
+easy and friendly usage. Run `make` or `make help` for more information of the
+commands to use.
+
+## ADR
+
+- ADR-001: [poetry](docs/adr/001-poetry.md)
+
+## Contributing
