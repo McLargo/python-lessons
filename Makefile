@@ -24,7 +24,7 @@ remove: ## Remove poetry virtualenv
 	poetry env remove $(VIRTUALENV)
 
 serve: ## Serve mkdocs in local
-	poetry run mkdocs serve --strict -w beginner -w intermediate
+	poetry run mkdocs serve --strict -w src
 
 build: ## Build mkdocs in local
 	poetry run mkdocs build --strict

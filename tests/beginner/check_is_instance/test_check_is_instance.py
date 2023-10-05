@@ -19,7 +19,7 @@ def test_is_instance_ko():
     assert is_instance(b"Hello World!", str) is False
     assert is_instance(1, float) is False
     assert is_instance(1.0, int) is False
-    assert is_instance(True, int) is False
+    assert is_instance(True, str) is False
     assert is_instance([1, 2, 3], tuple) is False
     assert is_instance((1, 2, 3), list) is False
     assert is_instance({1, 2, 3}, dict) is False

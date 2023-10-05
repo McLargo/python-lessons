@@ -27,3 +27,28 @@ pytest-cov = "^4.1.0"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+line-length = 80
+exclude = [
+  ".git",
+  "__pycache__",
+  ".tox",
+  ".mypy_cache",
+  ".venv",
+]
+select = [
+  "E",
+  "F",
+  "W",
+  "I",
+  "N",
+  "COM",
+  "T20",
+  "RET",
+  "DTZ",
+  "PL"
+]
+
+[tool.ruff.flake8-quotes]
+inline-quotes = "double"
