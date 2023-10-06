@@ -4,6 +4,8 @@ default: help
 
 POETRY := $(shell which poetry 2> /dev/null)
 VIRTUALENV=$(shell poetry env list | tr -s ' ' | cut -d ' ' -f 1)
+POETRY_NOT_INSTALLED_MESSAGE := "Poetry could not be found, please run 'make install'"
+PIP := $(if [-z $(shell which pip) ],pip3,pip)
 
 help: ## Show help
 	@echo "\nUsage: \e[1;36mmake [target]\e[0m\n"
@@ -12,22 +14,53 @@ help: ## Show help
 install: ## Install required dependencies
 	@if [ -z $(POETRY) ]; then \
 		echo "Poetry could not be found, installing..."; \
-		pip install poetry;\
+		$(PIP) install poetry; \
 	else \
-		poetry install;\
+		poetry install; \
 	fi
-	pip install pre-commit
+
+	$(PIP) install pre-commit;
 	pre-commit install
 
 remove: ## Remove poetry virtualenv
-	@echo "Removing virtualenv $(VIRTUALENV)"
-	poetry env remove $(VIRTUALENV)
+	@if [ -z $(POETRY) ]; then \
+  		echo $(POETRY_NOT_INSTALLED_MESSAGE); \
+	else \
+	     if [ -z $(VIRTUALENV) ]; then \
+			echo "There is not virtualenv"; \
+		 else \
+		   echo "Removing virtualenv $(VIRTUALENV)"; \
+		   poetry env remove $(VIRTUALENV); \
+		 fi \
+	fi
 
 serve: ## Serve mkdocs in local
-	poetry run mkdocs serve --strict -w src
+	@if [ -z $(POETRY) ]; then \
+		echo $(POETRY_NOT_INSTALLED_MESSAGE); \
+	else \
+	  if [ -z $(VIRTUALENV) ]; then \
+			echo "There is not virtualenv"; \
+		 else \
+		   echo "Removing virtualenv $(VIRTUALENV)"; \
+		   poetry run mkdocs serve --strict -w src; \
+		 fi \
+	fi
 
 build: ## Build mkdocs in local
-	poetry run mkdocs build --strict
+	@if [ -z $(POETRY) ]; then \
+  		echo $(POETRY_NOT_INSTALLED_MESSAGE); \
+  	else \
+	  if [ -z $(VIRTUALENV) ]; then \
+			echo "There is not virtualenv"; \
+		 else \
+		   echo "Removing virtualenv $(VIRTUALENV)"; \
+		   poetry run mkdocs build --strict; \
+		 fi \
+	fi
 
 test: ## Run test
-	poetry run pytest --cov=src --cov-report=term-missing --cov-fail-under=100
+	@if [ -z $(POETRY) ]; then \
+  		echo $(POETRY_NOT_INSTALLED_MESSAGE); \
+  	else \
+		poetry run pytest --cov=src --cov-report=term-missing --cov-fail-under=100; \
+	fi
