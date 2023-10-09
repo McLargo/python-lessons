@@ -20,7 +20,7 @@ commands to use.
 ## ADR
 
 - ADR-001: [poetry](docs/adr/001-poetry.md)
-- ADR-002: [poetry](docs/adr/002-mkdocs.md)
+- ADR-002: [MkDocs](docs/adr/002-mkdocs.md)
 
 ## Contributing
 
