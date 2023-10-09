@@ -24,8 +24,11 @@ custom value) is returned.
 
 ## Use defaultdict
 
-**defaultdict** enables a dict with a default value. Useful in the occasions
-where you need a default value always. String, int, list, None... any type you want.
+**defaultdict** enables a dict with a default value, even if requested with
+square brackets. When setting `defaultdict`, you can send as first argument
+(`default_factory`) a function that will be called when key is not present in
+dict . String, int, list, None... any type you want. If you don't set
+`default_factory`, KeyError will be raised if key is not present.
 
 ::: src.beginner.dict_vs_defaultdict
     options:

@@ -18,6 +18,7 @@ def test_get_value_from_key_with_get():
     my_dict = {"key": "value"}
     assert get_value_from_key_with_get(my_dict, "key") == "value"
     assert get_value_from_key_with_get(my_dict, "key2") is None
+    # assert default value
     assert (
         get_value_from_key_with_get(my_dict, "key2", "default_value")
         == "default_value"
@@ -28,4 +29,5 @@ def test_get_value_from_defaultdict():
     my_dict = {"key": "value"}
     assert get_value_from_defaultdict(my_dict, "key") == "value"
     assert get_value_from_defaultdict(my_dict, "key2") is None
+    # assert default value
     assert get_value_from_defaultdict(my_dict, "key2", "default") == "default"

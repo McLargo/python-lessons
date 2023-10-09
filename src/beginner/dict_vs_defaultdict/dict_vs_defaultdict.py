@@ -50,6 +50,8 @@ def get_value_from_defaultdict(
 ) -> str:
     """
     Get value from a defaultdict using square brackets.
+    If function is send as argument to defaultdict,
+    it will use to return as default value.
 
     Parameters:
         my_dict (dict[str, str]): defaultdict to find value.
