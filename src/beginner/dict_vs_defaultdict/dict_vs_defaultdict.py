@@ -2,7 +2,7 @@ from collections import defaultdict
 from typing import Optional
 
 
-def get_value_from_key_with_square_brackets(
+def get_value_from_dict_with_square_brackets(
     my_dict: dict[str, str],
     key: str,
 ) -> str:
@@ -22,7 +22,7 @@ def get_value_from_key_with_square_brackets(
     return my_dict[key]
 
 
-def get_value_from_key_with_get(
+def get_value_from_dict_with_get(
     my_dict: dict[str, str],
     key: str,
     default: str = None,
