@@ -70,3 +70,18 @@ test: ## Run test
 	  	poetry run pytest --cov=src --cov-report=term-missing --cov-fail-under=100; \
 	  fi \
 	fi
+
+
+coverage_report: ## Run coverage, generate report in html and open in browser
+	@if [ -z $(POETRY) ]; then \
+  		echo $(POETRY_NOT_INSTALLED_MESSAGE); \
+  	else \
+  	  if [ -z $(VIRTUALENV) ]; then \
+	    echo "There is not virtualenv."; \
+	  else \
+	    echo "Running coverage report in html."; \
+	  	poetry run pytest --cov=src --cov-report=html; \
+		echo "Opening htmlcov/index.html report in browser."; \
+		browse htmlcov/index.html >/dev/null 2>&1; \
+	  fi \
+	fi
