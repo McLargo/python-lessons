@@ -52,7 +52,3 @@ select = [
 
 [tool.ruff.flake8-quotes]
 inline-quotes = "double"
-
-
-[tool.ruff.pylint]
-allow-magic-value-types = ["int", "float"]
