@@ -80,6 +80,6 @@ class Pizza:
         It can be a static method, as there is no relation with Pizza instance.
 
         Returns:
-            list[str]: list of ingredients to create a Pizza instance.
+            list[IngredientEnum]: list of ingredients to create a Pizza.
         """
         return [ingredient for ingredient in IngredientEnum]
