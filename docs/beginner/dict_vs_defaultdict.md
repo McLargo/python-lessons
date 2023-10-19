@@ -7,20 +7,18 @@ Inspect the difference between a `dict` and a `defaultdict` in Python.
 The easiest way to access a value inside dictionary is with **[key]** syntax.
 But be careful, if the key does not exist, you will get a `KeyError`.
 
-::: src.beginner.dict_vs_defaultdict
+::: src.beginner.dict_vs_defaultdict.get_value_from_dict_with_square_brackets
     options:
-      members:
-        - get_value_from_key_with_square_brackets
+      show_root_heading: true
 
 ## Access dict by key with get method
 
 Using `get` method is another option. If key is not present in dict, None (or
 custom value) is returned.
 
-::: src.beginner.dict_vs_defaultdict
+::: src.beginner.dict_vs_defaultdict.get_value_from_dict_with_get
     options:
-      members:
-        - get_value_from_key_with_get
+      show_root_heading: true
 
 ## Use defaultdict
 
@@ -30,10 +28,9 @@ square brackets. When setting `defaultdict`, you can send as first argument
 dict . String, int, list, None... any type you want. If you don't set
 `default_factory`, KeyError will be raised if key is not present.
 
-::: src.beginner.dict_vs_defaultdict
+::: src.beginner.dict_vs_defaultdict.get_value_from_defaultdict
     options:
-      members:
-        - get_value_from_defaultdict
+      show_root_heading: true
 
 ## Performance comparison
 
