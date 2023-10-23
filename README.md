@@ -24,35 +24,30 @@ commands to use.
 
 ## Contributing
 
-Use [conventional commit](https://www.conventionalcommits.org/en/v1.0.0/) to
+- Use [conventional commit](https://www.conventionalcommits.org/en/v1.0.0/) to
 your commit messages.
-
-Use gitflow workflow to create your branches. Work on your feature branch, and
+- Use gitflow workflow to create your branches. Work on your feature branch, and
 when ready, create a pull request to merge it into **develop** branch.
-
-Keep in mind following structure for your code. All lessons should include at
+- Keep in mind following structure for your code. All lessons should include at
 least files below:
-
-- `src/<level>/<lesson>/<files.py>`: Include all files needed for the lesson.
-  Remember to import them in `__init__.py` file.
-- `tests/<level>/<lesson>/<test_lesson.py>`: tests for the lesson. One file per
-  lesson.
-- `docs/<level>/<lesson.md>`: documentation for the lesson. One file per lesson.
-
-Make sure to include the lesson in `mkdocs.yml` file, so it is included in the
-documentation, in the corresponding level.
-
-Run always tests and aim for a 100% coverage. Run `make test` to run tests and
-check coverage.
-
-Project is configured to use [pre-commit](https://pre-commit.com/) to check
-python and markdown code to follow the style guide. It should be automatically
-installed when running `make install`. In case is not installed, run
-`pre-commit install` to install it. Run `pre-commit run --all-files` to run
-entire all checks in the entire project. Rules are defined in
-`.pre-commit-config.yaml` and includes:
-
-- markdownlint: markdown code linter
-- black: python code formatter
-- bandit: security linter
-- ruff: python code linter
+  - `src/<level>/<lesson>/<files.py>`: Include all files needed for the lesson.
+    Remember to import them in `__init__.py` file.
+  - `tests/<level>/<lesson>/<test_lesson.py>`: tests for the lesson. One file
+    per lesson.
+  - `docs/<level>/<lesson.md>`: documentation for the lesson. One file per
+    lesson.
+- Make sure to include the lesson in the corresponding level inside `mkdocs.yml`
+  file, so it is visible in the documentation.
+- Run tests and aim for a 100% coverage. Run `make test` to run tests and
+  check coverage.
+- Project is configured to use [pre-commit](https://pre-commit.com/) to check
+  python and markdown files are following the style guide. pre-commit is
+  automatically installed when running `make install`. Rules are defined in
+  `.pre-commit-config.yaml` and includes:
+  - [markdownlint](https://github.com/igorshubovych/markdownlint-cli): markdown
+    code linter
+  - [black](https://github.com/psf/black): Python code formatter
+  - [bandit](https://github.com/PyCQA/bandit): Python security linter
+  - [ruff](https://github.com/astral-sh/ruff-pre-commit): Python code linter
+- Run `pre-commit run --all-files` to run all pre-commits checks for all files
+  in project.
