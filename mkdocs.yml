@@ -24,6 +24,7 @@ nav:
       - "ADR-002 - MkDocs": adr/002-mkdocs.md
   - Beginner:
       - "Check is instance": beginner/check_is_instance.md
+      - "Classes and objects": beginner/classes_and_objects.md
       - "dict vs defaultdict": beginner/dict_vs_defaultdict.md
   # - Intermediate:
   #   - "name": intermediate/dict_vs_defaultdict.md
