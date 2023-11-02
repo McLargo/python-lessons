@@ -6,6 +6,12 @@ line-length = 80
 target-version = ["py310"]
 include = '.pyi?$'
 
+[tool.coverage.report]
+skip_empty = true
+exclude_also = [
+  "@(abc\\.)?abstractmethod",
+]
+
 [tool.poetry]
 name = "python-lessons"
 version = "0.1.0"
@@ -52,3 +58,5 @@ select = [
 
 [tool.ruff.flake8-quotes]
 inline-quotes = "double"
+
+[p]
