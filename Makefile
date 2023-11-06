@@ -67,7 +67,7 @@ test: ## Run test
 	    echo "There is not virtualenv."; \
 	  else \
 	    echo "Running test."; \
-	  	poetry run pytest --cov=src --cov-report=term-missing --cov-fail-under=100; \
+		poetry run python -m pytest --cov=src --cov-report=term-missing --cov-fail-under=100; \
 	  fi \
 	fi
 
@@ -80,7 +80,7 @@ coverage_report: ## Run coverage, generate report in html and open in browser
 	    echo "There is not virtualenv."; \
 	  else \
 	    echo "Running coverage report in html."; \
-	  	poetry run pytest --cov=src --cov-report=html; \
+	  	poetry run python -m pytest --cov=src --cov-report=html; \
 		echo "Opening htmlcov/index.html report in browser."; \
 		browse htmlcov/index.html >/dev/null 2>&1; \
 	  fi \

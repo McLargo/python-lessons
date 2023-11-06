@@ -6,7 +6,7 @@ from dataclasses import dataclass
 @dataclass
 class Driver(ABC):
     """
-    This is a driver, an abstract class that represent a driver.
+    This is a driver, an abstract class that represents a driver.
     """
 
     license_valid_from: datetime.date = None
