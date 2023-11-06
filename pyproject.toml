@@ -58,5 +58,4 @@ select = [
 
 [tool.ruff.flake8-quotes]
 inline-quotes = "double"
-
-[p]
+docstring-quotes = "double"
