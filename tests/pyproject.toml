@@ -1,0 +1,4 @@
+extend = "../pyproject.toml"
+
+[tool.ruff]
+ignore = ["D103"]

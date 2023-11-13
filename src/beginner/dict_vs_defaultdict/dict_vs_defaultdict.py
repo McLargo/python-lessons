@@ -1,3 +1,11 @@
+"""Module to compare dict vs defaultdict.
+
+This module contains the functions to compare the use and performance of dict vs
+defaultdict.
+
+"""
+
+
 from collections import defaultdict
 from typing import Optional
 
@@ -6,8 +14,7 @@ def get_value_from_dict_with_square_brackets(
     my_dict: dict[str, str],
     key: str,
 ) -> str:
-    """
-    Get value from a dict using square brackets.
+    """Get value from a dict using square brackets.
 
     Parameters:
         my_dict (dict[str, str]): dict to find value.
@@ -27,8 +34,8 @@ def get_value_from_dict_with_get(
     key: str,
     default: str = None,
 ) -> Optional[str]:
-    """
-    Get value from a dict using get method.
+    """Get value from a dict using get method.
+
     Return default if key is not in the dict.
 
     Parameters:
@@ -48,10 +55,10 @@ def get_value_from_defaultdict(
     key: str,
     default: str = None,
 ) -> str:
-    """
-    Get value from a defaultdict using square brackets.
-    If function is send as argument to defaultdict,
-    it will use to return as default value.
+    """Get value from a defaultdict using square brackets.
+
+    If a function is send as argument to defaultdict,
+    it will use to return as the default value.
 
     Parameters:
         my_dict (dict[str, str]): defaultdict to find value.

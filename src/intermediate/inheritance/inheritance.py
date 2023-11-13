@@ -1,3 +1,11 @@
+"""Module to show inheritance.
+
+This module contains the an abstract class and 2 subclasses to show inheritance
+with abstractmethod.
+
+"""
+
+
 import datetime
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
@@ -5,15 +13,12 @@ from dataclasses import dataclass
 
 @dataclass
 class Driver(ABC):
-    """
-    This is a driver, an abstract class that represents a driver.
-    """
+    """This is a driver, an abstract class that represents a driver."""
 
     license_valid_from: datetime.date = None
 
     def is_novel(self) -> bool:
-        """
-        Return whatever the driver is novel or not.
+        """Return whatever the driver is novel or not.
 
         Returns:
             is_novel: True if the driver is novel, False otherwise.
@@ -31,9 +36,9 @@ class Driver(ABC):
 
     @abstractmethod
     def speed_limit(self) -> str:
-        """
-        Return the speed limit with metic unit for the driver.
-        Abstract method, must be implemented by subclasses.
+        """Return the speed limit with metic unit for the driver.
+
+        It is an abstract method, must be implemented by subclasses.
 
         Returns:
             speed_limit: speed limit with metric unit for driver.
@@ -43,16 +48,13 @@ class Driver(ABC):
 
 @dataclass
 class UsaDriver(Driver):
-    """
-    Concrete class of a Driver that can drive in USA.
-    """
+    """Concrete class of a Driver that can drive in USA."""
 
     novel_years = 2
     metric_unit = "mph"
 
     def speed_limit(self) -> str:
-        """
-        Return the speed limit with metic unit for the driver.
+        """Return the speed limit with metic unit for the driver.
 
         Returns:
             speed_limit: speed limit with metric unit for driver.
@@ -62,16 +64,13 @@ class UsaDriver(Driver):
 
 @dataclass
 class SpainDriver(Driver):
-    """
-    Concrete class of a Driver that can drive in Spain.
-    """
+    """Concrete class of a Driver that can drive in Spain."""
 
     novel_years = 1
     metric_unit = "km/h"
 
     def speed_limit(self) -> str:
-        """
-        Return the speed limit with metic unit for the driver.
+        """Return the speed limit with metic unit for the driver.
 
         Returns:
             speed_limit: speed limit with metric unit for driver.
