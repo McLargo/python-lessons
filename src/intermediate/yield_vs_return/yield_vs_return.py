@@ -1,9 +1,15 @@
+"""Module to compare yield vs return.
+
+This module contains the functions to compare the use of yield vs return.
+
+"""
+
+
 from typing import Generator
 
 
 def return_even_numbers(n: int) -> list[int]:
-    """
-    Return even numbers until n (inclusive).
+    """Return even numbers until n (inclusive).
 
     Returns:
         even_numbers: List of even numbers until n (inclusive).
@@ -16,8 +22,7 @@ def return_even_numbers(n: int) -> list[int]:
 
 
 def yield_even_numbers(n: int) -> Generator:
-    """
-    yield even numbers until n (inclusive).
+    """Yield even numbers until n (inclusive).
 
     Returns:
         even_numbers: List of even numbers until n (inclusive).
@@ -28,8 +33,7 @@ def yield_even_numbers(n: int) -> Generator:
 
 
 def yield_fibonacci_numbers() -> Generator:
-    """
-    yield Fibonacci series.
+    """Yield Fibonacci series.
 
     Returns:
         fibonacci_numbers: List of numbers of the Fibonacci series.
