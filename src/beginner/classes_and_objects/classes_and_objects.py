@@ -1,8 +1,16 @@
+"""Module to set an instance of a Pizza with Ingredients.
+
+This module contains the enum for all ingredients available to create a Pizza,
+and the class to create a Pizza instance.
+
+"""
+
+
 from enum import Enum
 
 
 class IngredientEnum(Enum):
-    """Enum for all ingredients available to customize a Pizza"""
+    """Enum for all ingredients available to customize a Pizza."""
 
     MOZZARELLA = "mozzarella"
     TOMATO = "tomato"
@@ -25,7 +33,8 @@ class Pizza:
     price_per_ingredient: float = 3
 
     def __init__(self, ingredients: list[IngredientEnum]) -> None:
-        """Constructor for Pizza class
+        """Constructor for Pizza class.
+
         Args:
             ingredients (list[IngredientEnum]): List of ingredients for a Pizza
         """
@@ -34,6 +43,7 @@ class Pizza:
     @classmethod
     def napolitana(cls) -> "Pizza":
         """Class Method to create a Napolitana Pizza instance.
+
         We can create a classmethod, as all napolitana pizzas
         will have the same ingredients.
 
@@ -50,6 +60,7 @@ class Pizza:
     @classmethod
     def four_cheese(cls) -> "Pizza":
         """Class Method to create a Four cheese Pizza instance.
+
         We can create a classmethod, as all four cheese pizzas
         will have the same ingredients.
 
@@ -66,6 +77,7 @@ class Pizza:
 
     def price(self) -> float:
         """Method to get price for Pizza instance.
+
         It depends on the number of ingredients a Pizza has,
         and the price per ingredient.
 
@@ -77,6 +89,7 @@ class Pizza:
     @staticmethod
     def list_all_ingredients() -> list[IngredientEnum]:
         """Static method to list all ingredients available to create a Pizza.
+
         It can be a static method, as there is no relation with Pizza instance.
 
         Returns:
