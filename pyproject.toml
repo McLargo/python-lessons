@@ -44,16 +44,19 @@ exclude = [
   ".venv",
 ]
 select = [
-  "D",
-  "E",
   "F",
+  "E",
   "W",
   "I",
   "N",
+  "D",
   "COM",
-  "T20",
-  "RET",
   "DTZ",
+  "G",
+  "T20",
+  "Q",
+  "RET",
+  "ARG",
   "PL"
 ]
 
