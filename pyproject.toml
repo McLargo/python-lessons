@@ -64,5 +64,5 @@ select = [
 inline-quotes = "double"
 docstring-quotes = "double"
 
-[tool.ruff.lint.pydocstyle]
+[tool.ruff.pydocstyle]
 convention = "google"
