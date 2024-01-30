@@ -1,3 +1,10 @@
+"""Module to check if an instance is of a given type.
+
+This module contains a function to check if an instance is of a given type.
+
+"""
+
+
 def is_instance(instance, instance_type) -> bool:
     """Check if instance is of the type provided.
 

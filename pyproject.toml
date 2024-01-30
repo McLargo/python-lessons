@@ -44,18 +44,25 @@ exclude = [
   ".venv",
 ]
 select = [
-  "E",
   "F",
+  "E",
   "W",
   "I",
   "N",
+  "D",
   "COM",
-  "T20",
-  "RET",
   "DTZ",
+  "G",
+  "T20",
+  "Q",
+  "RET",
+  "ARG",
   "PL"
 ]
 
 [tool.ruff.flake8-quotes]
 inline-quotes = "double"
 docstring-quotes = "double"
+
+[tool.ruff.pydocstyle]
+convention = "google"
