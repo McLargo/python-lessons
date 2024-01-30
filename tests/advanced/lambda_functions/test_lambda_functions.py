@@ -10,6 +10,8 @@ cars = [
     {"brand": "Volkswagen", "model": "Golf GTI", "release_year": 1976},
 ]
 
+numbers = [1, 5, 8, 20, 3, 11, 78]
+
 
 def test_get_a_field_from_a_list_of_dict() -> None:
     brands = get_list_of_fields_from_a_list_dict(cars, "brand")
@@ -19,14 +21,12 @@ def test_get_a_field_from_a_list_of_dict() -> None:
 
 
 def test_get_list_dict_sorted_by_a_field() -> None:
+    expected_brands_sorted_by_model_asc = ["Saab", "Toyota", "Volkswagen"]
     cars = [
         {"brand": "Toyota", "model": "Avensis", "release_year": 2003},
         {"brand": "Saab", "model": "900 Turbo", "release_year": 1978},
         {"brand": "Volkswagen", "model": "Golf GTI", "release_year": 1976},
     ]
-
-    expected_brands_sorted_by_model_asc = ["Saab", "Toyota", "Volkswagen"]
-
     cars_sorted_by_model_asc = sort_a_list_of_dict_by_a_field(cars, "model")
     brands_sorted_asc = get_list_of_fields_from_a_list_dict(
         cars_sorted_by_model_asc,
@@ -67,9 +67,7 @@ def test_get_list_dict_sorted_by_a_field() -> None:
     )
 
 
-def test_pass_a_lambda_function_as_argument() -> None:
-    numbers = [1, 5, 8, 20, 3, 11, 78]
-
+def test_pass_an_even_lambda_function_as_argument() -> None:
     expected_even_numbers = [8, 20, 78]
     even_numbers = filter_by_applying_function_to_elements(
         lambda x: x % 2 == 0,
@@ -77,6 +75,8 @@ def test_pass_a_lambda_function_as_argument() -> None:
     )
     assert all([a == b for a, b in zip(even_numbers, expected_even_numbers)])
 
+
+def test_pass_an_odd_lambda_function_as_argument() -> None:
     expected_odd_numbers = [1, 5, 3, 11]
     odd_numbers = filter_by_applying_function_to_elements(
         lambda x: x % 2 != 0,
@@ -84,6 +84,8 @@ def test_pass_a_lambda_function_as_argument() -> None:
     )
     assert all([a == b for a, b in zip(odd_numbers, expected_odd_numbers)])
 
+
+def test_pass_a_startswith_lambda_function_as_argument() -> None:
     strings = ["a", "aa", "ba", "cc", "ax"]
     expected_start_with_a = ["a", "aa", "ax"]
     start_with_a = filter_by_applying_function_to_elements(

@@ -6,12 +6,9 @@ function.
 
 Lambda expressions are also known as anonymous functions.
 
-Lambda expressions in Python are a short way to declare small, anonymous
-functions (you don't need to provide a name for lambda functions).
-
 Lambda functions behave like normal functions declared with the def keyword.
 They are useful when you want to define a small function concisely.
-They can contain only one expression, so they are not best suited for functions
+They must contain only one expression, so they are not best suited for functions
 with control flow statements.
 
 ## Misused
@@ -29,19 +26,13 @@ the lambda function to every element of a given iterable (list, tuple, etc.).
 For example:
 
 ::: src.advanced.lambda_functions.get_list_of_fields_from_a_list_dict
-    options:
-      show_root_heading: true
 
 ## Apply lambda functions for sorting data
 
 Lambda functions can be used for sorting dada in list, dict, etc.
 
 ::: src.advanced.lambda_functions.sort_a_list_of_dict_by_a_field
-    options:
-      show_root_heading: true
 
 ## Pass a lambda function as parameter to a function
 
 ::: src.advanced.lambda_functions.filter_by_applying_function_to_elements
-    options:
-      show_root_heading: true
