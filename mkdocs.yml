@@ -28,5 +28,5 @@ nav:
     - "dict vs defaultdict": beginner/dict_vs_defaultdict.md
   - Intermediate:
     - "Inheritance": intermediate/inheritance.md
-  # - Advanced:
-  #   - "name": advanced/dict_vs_defaultdict.md
+  - Advanced:
+    - "Lambda functions": advanced/lambda_functions.md
