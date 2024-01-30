@@ -30,5 +30,5 @@ nav:
   - Intermediate:
     - "Inheritance": intermediate/inheritance.md
     - "Yield vs return": intermediate/yield_vs_return.md
-  # - Advanced:
-  #   - "name": advanced/dict_vs_defaultdict.md
+  - Advanced:
+     - "Decorators": advanced/decorators.md
