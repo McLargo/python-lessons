@@ -72,7 +72,7 @@ test: ## Run test
 	fi
 
 
-coverage_report: ## Run coverage, generate report in html and open in browser
+coverage: ## Run coverage, generate report in html and open in browser
 	@if [ -z $(POETRY) ]; then \
   		echo $(POETRY_NOT_INSTALLED_MESSAGE); \
   	else \
