@@ -38,7 +38,7 @@ def sort_a_list_of_dict_by_a_field(
             ascending order.
 
     Returns:
-        list[dict]: content sorted.
+        list[dict[str, str]]: content sorted.
     """
     return sorted(
         content_to_be_sorted,
