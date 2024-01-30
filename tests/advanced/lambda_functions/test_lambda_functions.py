@@ -22,11 +22,7 @@ def test_get_a_field_from_a_list_of_dict() -> None:
 
 def test_get_list_dict_sorted_by_a_field() -> None:
     expected_brands_sorted_by_model_asc = ["Saab", "Toyota", "Volkswagen"]
-    cars = [
-        {"brand": "Toyota", "model": "Avensis", "release_year": 2003},
-        {"brand": "Saab", "model": "900 Turbo", "release_year": 1978},
-        {"brand": "Volkswagen", "model": "Golf GTI", "release_year": 1976},
-    ]
+
     cars_sorted_by_model_asc = sort_a_list_of_dict_by_a_field(cars, "model")
     brands_sorted_asc = get_list_of_fields_from_a_list_dict(
         cars_sorted_by_model_asc,
