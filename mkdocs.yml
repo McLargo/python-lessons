@@ -31,4 +31,5 @@ nav:
     - "Inheritance": intermediate/inheritance.md
     - "Yield vs return": intermediate/yield_vs_return.md
   - Advanced:
-     - "Decorators": advanced/decorators.md
+    - "Decorators": advanced/decorators.md
+    - "Lambda functions": advanced/lambda_functions.md
