@@ -14,6 +14,13 @@ They are useful when you want to define a small function concisely.
 They can contain only one expression, so they are not best suited for functions
 with control flow statements.
 
+## Misused
+
+Lambda functions help to write is just one line, code that would require a
+bunch of lines.
+It can make the code less readable. They are very useful, but overuse can make
+the code difficult to understand.
+
 ## Use with functions like map(), max(), etc
 
 Functions like map() can be used with lambda functions. In that case, map() will
