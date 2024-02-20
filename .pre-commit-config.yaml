@@ -27,6 +27,12 @@ repos:
       - id: ruff
         args: ["--fix"]
 
+  - repo: https://github.com/streetsidesoftware/cspell-cli
+    rev: v8.4.0
+    hooks:
+      - id: cspell
+        args: ["-c", "./cspell/cspell.json", "--show-suggestions"]
+
   - repo: local
     hooks:
       - id: mkdocs-build

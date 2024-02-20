@@ -1,0 +1,29 @@
+# global related
+codespell
+docstrings
+gitflow
+htmlcov
+ipdb
+markdownlint
+mkdocs
+mkdocstrings
+mypy
+noqa
+pycache
+pydocs
+pydocstyle
+pyproject
+pytest
+venv
+VIRTUALENV
+yaspeller
+
+# pizza lesson
+EMMENTAL
+napolitana
+
+# lambda lesson
+Avensis
+
+# code owners
+sergioescudero

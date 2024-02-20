@@ -1,0 +1,14 @@
+{
+    "language": "en",
+    "dictionaryDefinitions": [
+        {
+            "name": "lesson-dictionary",
+            "path": "./dictionaries/lessons.txt"
+        },
+        {
+            "name": "python-dictionary",
+            "path": "./dictionaries/python.txt"
+        }
+    ],
+    "dictionaries": ["lesson-dictionary", "python-dictionary"]
+  }
