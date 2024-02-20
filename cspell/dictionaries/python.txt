@@ -1,0 +1,11 @@
+# only python reserved words
+abstractmethod
+autouse
+caplog
+Dataclasses
+defaultdict
+getsizeof
+kwargs
+levelname
+repr
+timeit

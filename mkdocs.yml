@@ -22,6 +22,7 @@ nav:
   - ADR:
     - "ADR-001 - Poetry": adr/001-poetry.md
     - "ADR-002 - MkDocs": adr/002-mkdocs.md
+    - "ADR-003 - cSpell": adr/003-spelling.md
   - Beginner:
     - "Check is instance": beginner/check_is_instance.md
     - "Classes and objects": beginner/classes_and_objects.md
