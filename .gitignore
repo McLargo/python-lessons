@@ -7,9 +7,6 @@ __pycache__
 ## site folder created by mkdocs
 site/
 
-## vscode settings
-.vscode/
-
 ## Coverage
 .coverage
 htmlcov/

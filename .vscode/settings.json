@@ -1,0 +1,21 @@
+{
+    "cSpell.language": "en",
+    "cSpell.customDictionaries": {
+        "lesson-dictionary": {
+            "name": "lesson-dictionary",
+            "path": "~/personal/python-lessons/cspell/dictionaries/lessons.txt",
+            "addWords": true,
+            "scope": "workspace"
+        },
+        "python-dictionary": {
+            "name": "python-dictionary",
+            "path": "~/personal/python-lesson/cspell/dictionaries/python.txt",
+            "addWords": true,
+            "scope": "workspace"
+        }
+    },
+    "files.exclude": {
+        "site/": true
+    }
+
+}
