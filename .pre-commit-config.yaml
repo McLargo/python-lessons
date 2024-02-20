@@ -32,3 +32,10 @@ repos:
     hooks:
       - id: cspell
         args: ["-c", "./cspell/cspell.json", "--show-suggestions"]
+
+  - repo: local
+    hooks:
+      - id: mkdocs-build
+        name: mkdocs-build
+        entry: bash -c 'make build'
+        language: system
