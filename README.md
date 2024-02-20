@@ -20,7 +20,8 @@ the commands to use.
 ## ADR
 
 - ADR-001: [poetry](docs/adr/001-poetry.md)
-- ADR-002: [MkDocs](docs/adr/002-mkdocs.md)
+- ADR-002: [mkdocs](docs/adr/002-mkdocs.md)
+- ADR-003: [cSpell](docs/adr/003-spelling.md)
 
 ## Contributing
 
@@ -45,9 +46,11 @@ your commit messages.
   automatically installed when running `make install`. Rules are defined in
   `.pre-commit-config.yaml` and include:
   - [markdownlint](https://github.com/igorshubovych/markdownlint-cli): markdown
-    code linter
-  - [black](https://github.com/psf/black): Python code formatter
-  - [bandit](https://github.com/PyCQA/bandit): Python security linter
-  - [ruff](https://github.com/astral-sh/ruff-pre-commit): Python code linter
+    code linter.
+  - [black](https://github.com/psf/black): Python code formatter.
+  - [bandit](https://github.com/PyCQA/bandit): Python security linter.
+  - [ruff](https://github.com/astral-sh/ruff-pre-commit): Python code linter.
+  - [cspell](https://github.com/streetsidesoftware/cspell-cli): Spelling checker.
+  - mkdocs-build: Local hook to make sure mkdocs build is working properly.
 - Run `pre-commit run --all-files` to run all pre-commits checks for all files
-  in the project.
+  in the project, or `pre-commit run <hook_id>` to run a specific hook.

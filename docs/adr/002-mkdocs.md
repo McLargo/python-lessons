@@ -1,5 +1,9 @@
 # ADR-002 - mkdocs
 
+Creation Date | Status | Author
+--- | --- | ---
+04/10/2023 | Accepted | [@mclargo](https://github.com/McLargo)
+
 ## Context and Problem Statement
 
 Goal is to create a live documentation for the python lessons, and also to
@@ -22,6 +26,3 @@ include python code with the use of docstrings
 - Jupyter Notebook: it is possible to include python code in the documentation,
   and execute live, but it is not possible to generate a static website with the
   documentation. Also, requires a lot of dependencies to be installed.
-
-Creation Date: 04/10/2023
-Status: Accepted

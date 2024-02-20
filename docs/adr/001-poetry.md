@@ -1,5 +1,9 @@
 # ADR-001 - poetry installation
 
+Creation Date | Status | Author
+--- | --- | ---
+04/10/2023 | Accepted | [@mclargo](https://github.com/McLargo)
+
 ## Context and Problem Statement
 
 This project is mean to be a collaborative project, and it is important to have
@@ -18,6 +22,3 @@ is easy to install and keep track of the dependencies.
 ## Other Solution Considered
 
 None
-
-Creation Date: 04/10/2023
-Status: Accepted

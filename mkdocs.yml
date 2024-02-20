@@ -3,6 +3,9 @@ site_name: Python lessons
 theme:
   name: "material"
 
+extra_css:
+  - assets/stylesheets/extra.css
+
 plugins:
   - search
   - mkdocstrings:
@@ -20,8 +23,8 @@ nav:
   - "Home": index.md
   - "Template": template.md
   - ADR:
-    - "ADR-001 - Poetry": adr/001-poetry.md
-    - "ADR-002 - MkDocs": adr/002-mkdocs.md
+    - "ADR-001 - poetry": adr/001-poetry.md
+    - "ADR-002 - mkdocs": adr/002-mkdocs.md
     - "ADR-003 - cSpell": adr/003-spelling.md
   - Beginner:
     - "Check is instance": beginner/check_is_instance.md

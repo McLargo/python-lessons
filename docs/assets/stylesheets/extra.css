@@ -1,0 +1,11 @@
+article .md-typeset__table{
+  width: 100%;
+}
+
+article .md-typeset__table table{
+  display: inline-table!important;
+}
+
+article .md-typeset__table table td, .md-typeset__table table th{
+  text-align: center!important;
+}

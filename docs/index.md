@@ -17,18 +17,34 @@ the use of docstrings.
 
 ## Project layout
 
-    mkdocs.yml    # The configuration file.
+    .vscode/
+      settings.json             # vscode settings
+    cspell/
+      dictionaries/             # custom dictionaries
+      cspell.json               # cspell configuration
     docs/
-        index.md  # The documentation homepage.
-        adr/      # Architecture Decision Records
-        advanced/ # Advanced lessons
-        beginner/ # Beginner lessons
-        intermediate/ # Intermediate lessons
+      adr/                      # architecture Decision Records
+      advanced/                 # markdown for advanced lessons
+      assets/                   # stylesheets and other assets
+      beginner/                 # markdown for beginner lessons
+      intermediate/             # markdown for intermediate lessons
+      index.md                  # documentation homepage
+      template.md               # template for the lessons
     src/
-        advanced/ # Python code for advanced lessons
-        beginner/ # Python code for beginner lessons
-        intermediate/ # Python code for intermediate lessons
+      advanced/                 # python code for advanced lessons
+      beginner/                 # python code for beginner lessons
+      intermediate/             # python code for intermediate lessons
     tests/
-        advanced/ # tests for advanced lessons
-        beginner/ # tests for beginner lessons
-        intermediate/ # tests for intermediate lessons
+      advanced/                 # tests for advanced lessons
+      beginner/                 # tests for beginner lessons
+      intermediate/             # tests for intermediate lessons
+
+    .gitignore                  # gitignore file
+    .markdownlint.json          # markdownlint configuration
+    .pre-commit-config.yaml     # pre-commit configuration
+    CODEOWNERS                  # codeowners file for github
+    Makefile                    # makefile for project
+    mkdocs.yml                  # mkdocs configuration
+    poetry.lock                 # poetry lock file
+    pyproject.toml              # poetry configuration
+    README.md                   # README for project

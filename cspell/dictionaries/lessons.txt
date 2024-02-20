@@ -1,4 +1,5 @@
 # global related
+codeowners
 codespell
 docstrings
 gitflow
@@ -26,4 +27,5 @@ napolitana
 Avensis
 
 # code owners
+mclargo
 sergioescudero
