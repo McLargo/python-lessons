@@ -1,5 +1,9 @@
 # ADR-003 - Spelling check
 
+Creation Date | Status | Author
+--- | --- | ---
+20/02/2024 | Accepted | [@mclargo](https://github.com/McLargo)
+
 ## Context and Problem Statement
 
 Python lessons is a project that contains python code, but mainly documentation.
@@ -32,6 +36,3 @@ difference:
   VSCode.
 - [codespell](https://github.com/codespell-project/codespell): much older than
   cSpell, and not as feature-rich. Documentation hard to follow.
-
-Creation Date: 20/02/2024
-Status: Accepted

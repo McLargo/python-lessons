@@ -17,18 +17,35 @@ the use of docstrings.
 
 ## Project layout
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        adr/      # Architecture Decision Records
-        advanced/ # Advanced lessons
-        beginner/ # Beginner lessons
-        intermediate/ # Intermediate lessons
-    src/
-        advanced/ # Python code for advanced lessons
-        beginner/ # Python code for beginner lessons
-        intermediate/ # Python code for intermediate lessons
-    tests/
-        advanced/ # tests for advanced lessons
-        beginner/ # tests for beginner lessons
-        intermediate/ # tests for intermediate lessons
+    .vscode/                    # vscode settings
+
+    cspell/                     # cspell configuration and custom dictionaries
+
+    docs/                       # markdown files for the mkdocs documentation
+      adr/                      # architecture decision records
+      advanced/                 # advance lessons
+      assets/                   # stylesheets and other assets
+      beginner/                 # beginner lessons
+      intermediate/             # intermediate lessons
+      index.md                  # documentation homepage
+      template.md               # template for the lessons
+
+    src/                        # python code for advanced, beginner and intermediate lessons
+      advanced/
+      beginner/
+      intermediate/
+
+    tests/                      # tests for advanced, beginner and intermediate lessons
+      advanced/
+      beginner/
+      intermediate/
+
+    .gitignore                  # gitignore file
+    .markdownlint.json          # markdownlint configuration
+    .pre-commit-config.yaml     # pre-commit configuration
+    CODEOWNERS                  # codeowners file for github
+    Makefile                    # commands to easy use the project
+    mkdocs.yml                  # mkdocs configuration
+    poetry.lock                 # poetry lock file
+    pyproject.toml              # python project configuration
+    README.md                   # README of the project
