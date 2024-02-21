@@ -17,34 +17,35 @@ the use of docstrings.
 
 ## Project layout
 
-    .vscode/
-      settings.json             # vscode settings
-    cspell/
-      dictionaries/             # custom dictionaries
-      cspell.json               # cspell configuration
-    docs/
-      adr/                      # architecture Decision Records
-      advanced/                 # markdown for advanced lessons
+    .vscode/                    # vscode settings
+
+    cspell/                     # cspell configuration and custom dictionaries
+
+    docs/                       # markdown files for the mkdocs documentation
+      adr/                      # architecture decision records
+      advanced/                 # advance lessons
       assets/                   # stylesheets and other assets
-      beginner/                 # markdown for beginner lessons
-      intermediate/             # markdown for intermediate lessons
+      beginner/                 # beginner lessons
+      intermediate/             # intermediate lessons
       index.md                  # documentation homepage
       template.md               # template for the lessons
-    src/
-      advanced/                 # python code for advanced lessons
-      beginner/                 # python code for beginner lessons
-      intermediate/             # python code for intermediate lessons
-    tests/
-      advanced/                 # tests for advanced lessons
-      beginner/                 # tests for beginner lessons
-      intermediate/             # tests for intermediate lessons
+
+    src/                        # python code for advanced, beginner and intermediate lessons
+      advanced/
+      beginner/
+      intermediate/
+
+    tests/                      # tests for advanced, beginner and intermediate lessons
+      advanced/
+      beginner/
+      intermediate/
 
     .gitignore                  # gitignore file
     .markdownlint.json          # markdownlint configuration
     .pre-commit-config.yaml     # pre-commit configuration
     CODEOWNERS                  # codeowners file for github
-    Makefile                    # makefile for project
+    Makefile                    # commands to easy use the project
     mkdocs.yml                  # mkdocs configuration
     poetry.lock                 # poetry lock file
-    pyproject.toml              # poetry configuration
-    README.md                   # README for project
+    pyproject.toml              # python project configuration
+    README.md                   # README of the project
