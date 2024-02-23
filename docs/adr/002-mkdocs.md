@@ -26,7 +26,7 @@ customization, like search, footer and header customization, icons, annotation
 and more. Feel free to check the documentation and see all the features, adding
 those to the documentation if needed.
 
-## Other Solution Considered
+## Other Solutions Considered
 
 - pydocs: python documentation generator. It is a good tool, but it is not
   possible to include python code in the documentation.

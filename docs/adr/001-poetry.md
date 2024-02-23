@@ -19,6 +19,6 @@ Poetry helps to keep dependencies in one place, in a separated virtual
 environment. As it uses pyproject.toml to keep the versions of the libraries, it
 is easy to install and keep track of the dependencies.
 
-## Other Solution Considered
+## Other Solutions Considered
 
 None
