@@ -2,6 +2,7 @@
 codeowners
 codespell
 docstrings
+fontawesome
 gitflow
 htmlcov
 ipdb

@@ -1,8 +1,8 @@
 # ADR-003 - Spelling check
 
-Creation Date | Status | Author
---- | --- | ---
-20/02/2024 | Accepted | [@mclargo](https://github.com/McLargo)
+| Creation Date | Status   | Author                                 |
+| :-----------: | :------: | :------------------------------------: |
+| 20/02/2024    | Accepted | [@mclargo](https://github.com/McLargo) |
 
 ## Context and Problem Statement
 

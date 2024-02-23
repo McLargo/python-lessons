@@ -1,8 +1,8 @@
 # ADR-001 - poetry installation
 
-Creation Date | Status | Author
---- | --- | ---
-04/10/2023 | Accepted | [@mclargo](https://github.com/McLargo)
+| Creation Date | Status   | Author                                 |
+| :-----------: | :------: | :------------------------------------: |
+| 04/10/2023    | Accepted | [@mclargo](https://github.com/McLargo) |
 
 ## Context and Problem Statement
 
