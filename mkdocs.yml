@@ -39,11 +39,13 @@ extra_css:
 plugins:
   - git-revision-date-localized:
       enable_creation_date: true
+      enabled: !ENV [CI, false]
   - search
   - mkdocstrings:
       default_handler: python
       handlers:
         python:
+          paths: [src]
           options:
             show_root_heading: true
             show_source: true
@@ -58,6 +60,7 @@ nav:
     - "ADR-001 - poetry": adr/001-poetry.md
     - "ADR-002 - mkdocs": adr/002-mkdocs.md
     - "ADR-003 - cSpell": adr/003-spelling.md
+    - "ADR-004 - Deployment": adr/004-deployment.md
   - Beginner:
     - "Check is instance": beginner/check_is_instance.md
     - "Classes and objects": beginner/classes_and_objects.md

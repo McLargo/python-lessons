@@ -29,7 +29,7 @@ difference:
 - Compatible with VSCode, which is the main IDE used by the authors.
 - Highly configurable.
 
-## Other Solution Considered
+## Other Solutions Considered
 
 - [yaspeller](https://github.com/hcodes/yaspeller): it is a good tool, but it
   does not support multiple languages in the same file and not compatible with

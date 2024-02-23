@@ -22,6 +22,7 @@ the commands to use.
 - ADR-001: [poetry](docs/adr/001-poetry.md)
 - ADR-002: [mkdocs](docs/adr/002-mkdocs.md)
 - ADR-003: [cSpell](docs/adr/003-spelling.md)
+- ADR-004: [Deployment](docs/adr/004-deployment.md)
 
 ## Contributing
 

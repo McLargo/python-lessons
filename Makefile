@@ -85,3 +85,16 @@ coverage: ## Run coverage, generate report in html and open in browser
 		browse htmlcov/index.html >/dev/null 2>&1; \
 	  fi \
 	fi
+
+
+deploy:  # Triggers a manual deployment of python lessons to gh-pages
+	@if [ -z $(POETRY) ]; then \
+		echo $(POETRY_NOT_INSTALLED_MESSAGE); \
+	else \
+		if [ -z $(VIRTUALENV) ]; then \
+	    echo "There is not virtualenv."; \
+	  else \
+	    echo "Deploying python-lessons to gh-pages."; \
+		poetry run mkdocs gh-deploy --force; \
+	  fi \
+	fi
