@@ -1,8 +1,8 @@
 # ADR-002 - mkdocs
 
-Creation Date | Status | Author
---- | --- | ---
-04/10/2023 | Accepted | [@mclargo](https://github.com/McLargo)
+| Creation Date | Status   | Author                                 |
+| :-----------: | :------: | :------------------------------------: |
+| 04/10/2023    | Accepted | [@mclargo](https://github.com/McLargo) |
 
 ## Context and Problem Statement
 
@@ -18,6 +18,13 @@ documentation website with markdown files (lightweight markup language for
 creating formatted text using a plain-text and simple format) and also to
 include python code with the use of docstrings
 ([mkdocstrings-python](https://mkdocstrings.github.io/python/) library).
+
+Additionally, we are adding
+[mkdocs-material](https://squidfunk.github.io/mkdocs-material/) library. Not
+only provides a nice theme. It also provides a lot of features and
+customization, like search, footer and header customization, icons, annotation
+and more. Feel free to check the documentation and see all the features, adding
+those to the documentation if needed.
 
 ## Other Solution Considered
 
