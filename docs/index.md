@@ -11,8 +11,7 @@ the use of docstrings.
 - [mkdocs](https://www.mkdocs.org/): Project documentation with Markdown.
 - [mkdocstrings-python](https://mkdocstrings.github.io/python/): Python
   docstrings support for MkDocs.
--
-  [python docstring example](https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html):
+- [python docstring example](https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html):
   Example of docstring using google style.
 
 ## Project layout
@@ -44,6 +43,7 @@ the use of docstrings.
     .markdownlint.json          # markdownlint configuration
     .pre-commit-config.yaml     # pre-commit configuration
     CODEOWNERS                  # codeowners file for github
+    CONTRIBUTING.md             # contributing guidelines
     Makefile                    # commands to easy use the project
     mkdocs.yml                  # mkdocs configuration
     poetry.lock                 # poetry lock file
