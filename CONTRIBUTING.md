@@ -34,9 +34,10 @@ Use the following template to submit your request:
 # <Lesson name>
 
 - Level: <Beginner, Intermediate, Advanced>
-- Description: <Briefly describe the purpose of the lesson and your motivation>
 - Topics: <List of topics covered in the lesson>
+- Description: <Briefly describe the purpose of the lesson and your motivation>
 - Time: <Estimated time to complete the lesson>
+- References: <List of references, if any>
 ```
 
 ### Implementing a lesson
