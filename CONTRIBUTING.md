@@ -1,13 +1,13 @@
-# Contributing guidelines
+# Contributions guidelines
 
 This project is open to contributions. If you want to contribute, please read
 the guidelines below.
 
 ## How to get started
 
-Most important thing is to be familiar with the project and the structure of it.
-If not, please feel free to clone the repository, read the documentation and
-play with the code.
+The most important thing is to be familiar with the project and the structure of
+it. If not, please feel free to clone the repository, read the
+[documentation](./README.md) and play with the code.
 
 ## How to report a bug
 
@@ -49,21 +49,26 @@ Please follow the guidelines below:
 
 1. Fork and clone the repository.
 
-2. Checkout the branch associated to the issue. Once you have the branch, you can
-   start implementing the lesson.
+2. Checkout the branch associated to the issue. Once you have the branch, you
+   can start implementing the lesson.
 
 3. Make the necessary changes to the code and documentation. At least:
-   1. Markdown documentation.
-   2. Code related.
-   3. Test to cover the code.
-   4. Link to the lesson in the `mkdocs.yaml` file.
+   1. Markdown documentation, in `docs/<level>/<lesson.md>`.
+   2. Code related in `src/<level>/<lesson>/`. Include all files needed for the
+      lesson. Remember to import them in `__init__.py` file.
+   3. Tests to cover the code in `tests/<level>/<lesson>/`. One file per lesson.
+   4. Link to the lesson in the `mkdocs.yaml` file, so it is visible in the
+      navigation menu.
 
-4. Commit your changes to the branch. Use
+4. Run tests and aim for 100% coverage. Run `make test` and `make coverage` to
+   run tests and check coverage.
+
+5. Commit your changes to the branch. Use
    [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) for
    your commits message. No matter if you create several commits, push request
    will be squashed to the main branch with a single commit message.
 
-5. Push your changes and create a pull request. Select your branch and provide a
+6. Push your changes and create a pull request. Select your branch and provide a
    descriptive title and description for your pull request.
 
 ### Review process

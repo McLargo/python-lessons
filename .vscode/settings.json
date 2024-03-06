@@ -15,7 +15,8 @@
         }
     },
     "files.exclude": {
-        "site/": true
+        "site/": true,
+        "htmlcov/": true,
+        ".coverage": true
     }
-
 }
