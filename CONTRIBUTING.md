@@ -19,9 +19,9 @@ will review the issue and provide feedback to you.
 
 ### Before adding a new lesson
 
-Please make sure it is not already (partially or fully) cover in one existing
-lessons. Suggest topics that are relevant for python and the community, let's
-avoid lessons tight to business logic.
+Please make sure topic is not already (partially or fully) cover in one existing
+lesson. Suggest topics that are relevant to the community, from patterns to
+usage, avoiding content highly tight to business logic.
 
 ### Submit your lesson
 
@@ -34,7 +34,7 @@ Use the following template to submit your request:
 # <Lesson name>
 
 - Level: <Beginner, Intermediate, Advanced>
-- Topics: <List of topics covered in the lesson>
+- Topics: <List of topics/concepts to cover in the lesson>
 - Description: <Briefly describe the purpose of the lesson and your motivation>
 - Time: <Estimated time to complete the lesson>
 - References: <List of references, if any>
@@ -42,10 +42,8 @@ Use the following template to submit your request:
 
 ### Implementing a lesson
 
-If the request is approved, you can start implementing the lesson. Code owners
-assign the issue to you, and also create a branch for the issue.
-
-Please follow the guidelines below:
+If the request is approved, you can start implementing the lesson. Some
+guidelines/tips to follow:
 
 1. Fork and clone the repository.
 
