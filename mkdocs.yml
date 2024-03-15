@@ -68,6 +68,7 @@ nav:
     - "dict vs defaultdict": beginner/dict_vs_defaultdict.md
   - Intermediate:
     - "Inheritance": intermediate/inheritance.md
+    - "Exceptions": intermediate/exceptions.md
     - "Yield vs return": intermediate/yield_vs_return.md
   - Advanced:
     - "Decorators": advanced/decorators.md
