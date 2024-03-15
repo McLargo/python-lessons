@@ -1,5 +1,4 @@
 import pytest
-
 from src.beginner.dataclasses import Circle
 
 
@@ -23,7 +22,8 @@ def test_circle_with_args_no_args():
     decimal_precision = 3
     with pytest.raises(TypeError):
         Circle.set_circle_args(
-            radius=radius, decimal_precision=decimal_precision
+            radius=radius,
+            decimal_precision=decimal_precision,
         )
 
 
@@ -31,7 +31,8 @@ def test_circle_with_kwargs():
     radius = 3
     decimal_precision = 2
     circle: Circle = Circle.set_circle_kwargs(
-        radius=radius, decimal_precision=decimal_precision
+        radius=radius,
+        decimal_precision=decimal_precision,
     )
     assert isinstance(circle, Circle) is True
     assert circle.radius == 3
