@@ -16,7 +16,7 @@ def test_measure_sleeper_1(debug_caplog) -> None:
     assert debug_caplog.records[0].levelname == "DEBUG"
     # As measure can take more than 1 second, we can't test the exact string
     assert debug_caplog.records[0].message.startswith(
-        "Method sleeper executed in 1.00"
+        "Method sleeper executed in 1.00",
     )
     assert debug_caplog.records[0].message.endswith("seconds")
     assert debug_caplog.records[0].name == "src.advanced.decorators.measure"
@@ -29,7 +29,7 @@ def test_measure_sleeper_2(debug_caplog) -> None:
     assert debug_caplog.records[0].levelname == "DEBUG"
     # As measure can take more than 1 second, we can't test the exact string
     assert debug_caplog.records[0].message.startswith(
-        "Method sleeper executed in 2.00"
+        "Method sleeper executed in 2.00",
     )
     assert debug_caplog.records[0].message.endswith("seconds")
     assert debug_caplog.records[0].name == "src.advanced.decorators.measure"

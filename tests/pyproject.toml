@@ -1,4 +1,6 @@
+[tool.ruff]
 extend = "../pyproject.toml"
 
-[tool.ruff]
-ignore = ["D103"]
+[tool.ruff.lint]
+# ignore Docstring lint and Magic value comparison
+ignore = ["D", "PLR2004"]

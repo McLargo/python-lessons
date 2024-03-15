@@ -45,7 +45,7 @@ exclude = [
   ".mypy_cache",
   ".venv",
 ]
-select = [
+lint.select = [
   "F",
   "E",
   "W",
@@ -62,9 +62,9 @@ select = [
   "PL"
 ]
 
-[tool.ruff.flake8-quotes]
+[tool.ruff.lint.flake8-quotes]
 inline-quotes = "double"
 docstring-quotes = "double"
 
-[tool.ruff.pydocstyle]
+[tool.ruff.lint.pydocstyle]
 convention = "google"
