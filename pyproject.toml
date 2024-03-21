@@ -8,6 +8,9 @@ include = '.pyi?$'
 
 [tool.coverage.report]
 skip_empty = true
+fail_under = 100
+show_missing = true
+skip_covered = true
 exclude_also = [
   "@(abc\\.)?abstractmethod",
 ]
@@ -25,6 +28,7 @@ mkdocs = "^1.5.2"
 mkdocstrings = {extras = ["python"], version = "^0.23.0"}
 mkdocs-material = "^9.2.8"
 mkdocs-git-revision-date-localized-plugin = "^1.2.4"
+loguru = "^0.7.2"
 
 
 [tool.poetry.group.dev.dependencies]

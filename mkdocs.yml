@@ -67,7 +67,9 @@ nav:
     - "Dataclasses": beginner/dataclasses.md
     - "dict vs defaultdict": beginner/dict_vs_defaultdict.md
   - Intermediate:
+    - "Exceptions": intermediate/exceptions.md
     - "Inheritance": intermediate/inheritance.md
+    - "Logging": intermediate/logging.md
     - "Yield vs return": intermediate/yield_vs_return.md
   - Advanced:
     - "Decorators": advanced/decorators.md
