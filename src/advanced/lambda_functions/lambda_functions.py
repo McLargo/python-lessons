@@ -4,7 +4,6 @@ This module contains examples about lambda functions.
 
 """
 
-
 from typing import Any, Callable
 
 

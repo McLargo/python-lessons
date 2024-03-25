@@ -5,7 +5,6 @@ and the class to create a Pizza instance.
 
 """
 
-
 from enum import Enum
 
 

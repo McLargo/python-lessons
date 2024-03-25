@@ -4,7 +4,6 @@ This module contains the functions to compare the use of yield vs return.
 
 """
 
-
 from typing import Generator
 
 
