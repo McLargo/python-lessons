@@ -108,4 +108,4 @@ jobs:
         uses: streetsidesoftware/cspell-action@v6
         with:
             config: './cspell/cspell.json'
-            files: '*'
+            incremental_files_only: false
