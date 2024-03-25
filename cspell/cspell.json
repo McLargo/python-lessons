@@ -8,8 +8,11 @@
         {
             "name": "python-dictionary",
             "path": "./dictionaries/python.txt"
+        },
+        {
+            "name": "github-workflows-dictionary",
+            "path": "./dictionaries/github-workflows.txt"
         }
     ],
-    "dictionaries": ["lesson-dictionary", "python-dictionary"],
-    "ignorePaths": ["../.github/workflows/*.yml"]
+    "dictionaries": ["lesson-dictionary", "python-dictionary", "github-workflows-dictionary"]
   }
