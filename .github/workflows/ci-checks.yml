@@ -106,3 +106,5 @@ jobs:
       # =================================
       - name: Run cspell
         uses: streetsidesoftware/cspell-action@v6
+        with:
+            config: 'cspell/cspell.json'

@@ -10,5 +10,6 @@
             "path": "./dictionaries/python.txt"
         }
     ],
-    "dictionaries": ["lesson-dictionary", "python-dictionary"]
+    "dictionaries": ["lesson-dictionary", "python-dictionary"],
+    "ignorePaths": ["../.github/workflows/*.yml"]
   }
