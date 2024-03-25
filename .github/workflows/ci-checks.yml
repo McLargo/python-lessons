@@ -95,9 +95,9 @@ jobs:
       # Run bandit
       # =================================
       - name: Run bandit
-        uses: tj-actions/bandit@v5.1
+        uses: shundor/bandit-action@v1
         with:
-          path: ./src
+            path: "./src"
 
       # =================================
       # Run cspell
