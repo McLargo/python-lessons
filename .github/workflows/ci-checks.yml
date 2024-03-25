@@ -57,10 +57,13 @@ jobs:
         run: poetry run mkdocs build --strict
 
       # =================================
-      # Run coverage
+      # Run cspell
       # =================================
-      - name: Run coverage
-        run: poetry run python -m pytest --cov=src --cov-fail-under=100
+      - name: Run cspell
+        uses: streetsidesoftware/cspell-action@v6
+        with:
+            config: './cspell/cspell.json'
+            incremental_files_only: false
 
       # =================================
       # Run markdown lint
@@ -70,6 +73,12 @@ jobs:
         with:
           config: .markdownlint.json
           files: 'docs/**/*.md'
+
+      # =================================
+      # Run coverage
+      # =================================
+      - name: Run coverage
+        run: poetry run python -m pytest --cov=src --cov-fail-under=100
 
       # =================================
       # Run ruff
@@ -100,12 +109,3 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           path: "./src"
           exit_zero: true
-
-      # =================================
-      # Run cspell
-      # =================================
-      - name: Run cspell
-        uses: streetsidesoftware/cspell-action@v6
-        with:
-            config: './cspell/cspell.json'
-            incremental_files_only: false
