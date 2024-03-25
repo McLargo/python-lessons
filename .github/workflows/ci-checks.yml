@@ -96,8 +96,6 @@ jobs:
       # =================================
       - name: Run bandit
         uses: tj-actions/bandit@v5.1
-        with:
-          version: 1.7.5
 
       # =================================
       # Run cspell
