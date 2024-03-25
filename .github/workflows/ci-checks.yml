@@ -8,6 +8,7 @@ jobs:
       # =================================
       # Check-out repo
       # =================================
+
       - name: Checkout code
         uses: actions/checkout@v4
         with:
@@ -16,6 +17,7 @@ jobs:
       # =================================
       # Set-up python
       # =================================
+
       - name: Set up Python
         uses: actions/setup-python@v3
         with:
@@ -23,6 +25,7 @@ jobs:
       # =================================
       #  Install poetry
       # =================================
+
       - name: Install Poetry
         uses: snok/install-poetry@v1
         with:
@@ -32,25 +35,71 @@ jobs:
       # =================================
       # Load cached venv if cache exists
       # =================================
+
       - name: Load cached venv
         id: cached-poetry-dependencies
         uses: actions/cache@v3
         with:
           path: .venv
           key: venv-${{ runner.os }}-${{ steps.setup-python.outputs.python-version }}-${{ hashFiles('**/poetry.lock') }}
+
       # =================================
       # Install poetry dependencies if cache does not exist
       #----------------------------------------------
       - name: Install dependencies
         if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
         run: poetry install --no-interaction --no-root
+
       # =================================
       # Run mkdocs build
       # =================================
       - name: Run build
         run: poetry run mkdocs build --strict
+
       # =================================
       # Run coverage
       # =================================
       - name: Run coverage
-        run: poetry run python -m pytest --cov=src --cov-report=html
+        run: poetry run python -m pytest --cov=src --cov-fail-under=100
+
+      # =================================
+      # Run markdown lint
+      # =================================
+      - uses: articulate/actions-markdownlint@v1
+        with:
+          config: .mardownlint.json
+          files: 'docs/**/*.md'
+          version: 0.37.0
+
+      # =================================
+      # Run ruff
+      # =================================
+      - name: Run ruff
+        uses: chartboost/ruff-action@v1
+        with:
+          src: "./src"
+          version: v0.3.2
+
+      # =================================
+      # Run black
+      # =================================
+      - name: Run black
+        uses: psf/black@stable
+        with:
+          options: "--check --verbose"
+          src: "./src"
+          version: "24.3.0"
+
+      # =================================
+      # Run bandit
+      # =================================
+      - name: Run bandit
+        uses: tj-actions/bandit@v5.1
+        with:
+          version: 1.7.5
+
+      # =================================
+      # Run cspell
+      # =================================
+      - name: Run cspell
+        uses: streetsidesoftware/cspell-action@v6
