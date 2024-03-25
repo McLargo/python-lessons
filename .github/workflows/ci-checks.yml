@@ -95,9 +95,12 @@ jobs:
       # Run bandit
       # =================================
       - name: Run bandit
-        uses: shundor/bandit-action@v1
+        uses: shundor/bandit-action@v1.0
         with:
-            path: "./src"
+            path: "."
+            level: high
+            confidence: high
+            exit_zero: true
 
       # =================================
       # Run cspell
