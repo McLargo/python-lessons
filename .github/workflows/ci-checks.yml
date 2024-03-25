@@ -1,5 +1,5 @@
 name: ci-checks
-on: [push, pull_request]
+on: push
 
 jobs:
    checks:
@@ -67,9 +67,8 @@ jobs:
       # =================================
       - uses: articulate/actions-markdownlint@v1
         with:
-          config: .mardownlint.json
+          config: .markdownlint.json
           files: 'docs/**/*.md'
-          version: 0.37.0
 
       # =================================
       # Run ruff
