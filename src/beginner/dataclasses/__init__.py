@@ -5,5 +5,4 @@ properties and methods with *args and **kwargs.
 
 """
 
-
 from .dataclasses import Circle  # noqa: F401

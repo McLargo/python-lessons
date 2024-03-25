@@ -1,0 +1,111 @@
+name: ci-checks
+on: push
+
+jobs:
+   checks:
+    runs-on: ubuntu-latest
+    steps:
+      # =================================
+      # Check-out repo
+      # =================================
+
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      # =================================
+      # Set-up python
+      # =================================
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+      # =================================
+      #  Install poetry
+      # =================================
+
+      - name: Install Poetry
+        uses: snok/install-poetry@v1
+        with:
+          virtualenvs-create: true
+          virtualenvs-in-project: true
+          installer-parallel: true
+      # =================================
+      # Load cached venv if cache exists
+      # =================================
+
+      - name: Load cached venv
+        id: cached-poetry-dependencies
+        uses: actions/cache@v4
+        with:
+          path: .venv
+          key: venv-${{ runner.os }}-${{ steps.setup-python.outputs.python-version }}-${{ hashFiles('**/poetry.lock') }}
+
+      # =================================
+      # Install poetry dependencies if cache does not exist
+      #----------------------------------------------
+      - name: Install dependencies
+        if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
+        run: poetry install --no-interaction --no-root
+
+      # =================================
+      # Run mkdocs build
+      # =================================
+      - name: Run build
+        run: poetry run mkdocs build --strict
+
+      # =================================
+      # Run cspell
+      # =================================
+      - name: Run cspell
+        uses: streetsidesoftware/cspell-action@v6
+        with:
+            config: './cspell/cspell.json'
+            incremental_files_only: false
+
+      # =================================
+      # Run markdown lint
+      # =================================
+      - name: Run markdown lint
+        uses: articulate/actions-markdownlint@v1
+        with:
+          config: .markdownlint.json
+          files: 'docs/**/*.md'
+
+      # =================================
+      # Run coverage
+      # =================================
+      - name: Run coverage
+        run: poetry run python -m pytest --cov=src --cov-fail-under=100
+
+      # =================================
+      # Run ruff
+      # =================================
+      - name: Run ruff
+        uses: chartboost/ruff-action@v1
+        with:
+          src: "./src"
+          version: v0.3.2
+          args: -v
+
+      # =================================
+      # Run black
+      # =================================
+      - name: Run black
+        uses: psf/black@stable
+        with:
+          options: "--check --verbose"
+          src: "./src"
+          version: "24.3.0"
+
+      # =================================
+      # Run bandit
+      # =================================
+      - name: Run bandit
+        uses: mdegis/bandit-action@v1.0
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          path: "./src"
+          exit_zero: true

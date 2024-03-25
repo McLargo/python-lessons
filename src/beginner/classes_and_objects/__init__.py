@@ -5,5 +5,4 @@ and the class to create a Pizza instance.
 
 """
 
-
 from .classes_and_objects import IngredientEnum, Pizza  # noqa: F401

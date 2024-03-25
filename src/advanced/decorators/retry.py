@@ -4,6 +4,7 @@ This method is a decorator that retries a function call a number of times, with
 a exponential delay between retries.
 
 """
+
 import logging
 from time import sleep
 from typing import Callable
