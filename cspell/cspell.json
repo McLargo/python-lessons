@@ -14,5 +14,6 @@
             "path": "./dictionaries/github-workflows.txt"
         }
     ],
-    "dictionaries": ["lesson-dictionary", "python-dictionary", "github-workflows-dictionary"]
+    "dictionaries": ["lesson-dictionary", "python-dictionary", "github-workflows-dictionary"],
+    "ignorePaths": ["site/**"]
   }
