@@ -12,18 +12,18 @@ maintain.
 The measure decorator is a very simple example of a decorator. It allows to
 measure the time it takes to execute a function.
 
-::: src.advanced.decorators.measure.measure
+::: src.advanced.decorators.measure
 
 ## Retry decorator
 
 The retry decorator is a more complex example of a decorator. It allows to retry
 a function a number of times if it fails.
 
-:::src.advanced.decorators.retry.retry
+:::src.advanced.decorators.retry
 
 ## Singleton decorator
 
 The singleton decorator is a very useful example of a decorator. It allows to
 ensures that only exists one instance of a class.
 
-:::src.advanced.decorators.singleton.singleton
+:::src.advanced.decorators.singleton
