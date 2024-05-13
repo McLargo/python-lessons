@@ -46,6 +46,9 @@ plugins:
       handlers:
         python:
           paths: [src]
+          setup_commands:
+            - import sys
+            - sys.path.append('../')
           options:
             show_root_heading: true
             show_source: true
