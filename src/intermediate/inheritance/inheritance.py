@@ -1,6 +1,6 @@
 """Module to show inheritance.
 
-This module contains the an abstract class and 2 subclasses to show inheritance
+This module contains an abstract class and 2 subclasses to show inheritance
 with abstractmethod.
 
 """
