@@ -81,12 +81,17 @@ jobs:
         run: poetry run python -m pytest --cov=src --cov-fail-under=100
 
       # =================================
-      # Run ruff
+      # Run ruff checks and format
       # =================================
-      - name: Run ruff
+      - name: Run ruff checks
         uses: astral-sh/ruff-action@v3
         with:
-          args: "check ./src && ruff format --diff ./src"
+          args: "check ./src"
+
+      - name: Run ruff format check
+        uses: astral-sh/ruff-action@v3
+        with:
+          args: "format ./src --diff"
 
       # =================================
       # Run bandit
