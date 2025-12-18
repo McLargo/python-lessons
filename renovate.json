@@ -9,15 +9,22 @@
   },
   "packageRules": [
     {
+      "description": "Group all non-major dependencies except python",
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
-      "matchPackageNames": ["!python"],
+      "excludePackageNames": ["python"],
       "groupName": "all non-major dependencies",
       "groupSlug": "all-minor-patch"
     },
     {
+      "description": "Group python version updates",
       "matchPackageNames": ["python"],
-      "groupName": "python version",
-      "separateMinorPatch": true
+      "groupName": "python-updates",
+      "groupSlug": "python-major-minor"
+    },
+    {
+      "description": "Group all pre-commit updates",
+      "matchManagers": ["pre-commit"],
+      "groupName": "all non-major dependencies"
     }
   ],
   "rangeStrategy": "bump"
