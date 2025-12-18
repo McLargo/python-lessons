@@ -15,5 +15,5 @@
         }
     ],
     "dictionaries": ["lesson-dictionary", "python-dictionary", "github-workflows-dictionary"],
-    "ignorePaths": ["site/**"]
+    "ignorePaths": ["site/**", "../pyproject.toml", "../poetry.lock", "pyproject.toml", "poetry.lock"],
   }
