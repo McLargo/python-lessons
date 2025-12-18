@@ -15,17 +15,25 @@ the `Handler` class. [Notifiers](https://github.com/liiight/notifiers) is a 3pp
 library that provides with extra handlers with the ability to send notifications
 to different services.
 
+Any handler can have different configurations, such as the log level or the log
+format. The log level is used to filter the log messages. The log format is used
+to format the log messages. You can use the built-in log formats or create your
+own format by using the `Formatter` class. Also, a logger can have filters to
+filter the log messages before they are sent to the handlers. This way you can
+have more control over the log messages, like modifying or discarding them.
+
 ## Best practices
 
 - Set different log levels for different environments. For example, you may set
   `DEBUG` level in development and `ERROR` level in production.
 - Set a specific format for the log messages, including the timestamp or the log
-  level. Using a standard format makes it easier to read the log messages. Use
-  the `extra` parameter to pass the data to the log message.
+  level. Using a standard format makes it easier to read the log messages.
+- Use the `extra` parameter to pass the data to the log message.
 - Use pipelines `|` to separate the different parts of the log message. It can be
   useful to filter the log messages, or even to parse them.
-- To include variables in your log message, don't use `format` or `f-string` in
-  the log call, instead use the `%s`, like `logger.info('Variable: %s', value)`.
+- To include variables in your log message aside from `extra`, don't use
+  `format` or `f-string` in the log call. Instead use the `%s`, like
+  `logger.info('Variable: %s', value)`.
 - Use `logging.exception` to log an exception message and the stack trace.
 - Set the different logger instance you are going to use with
   `logging.getLogger`. This way you can configure the logger in one place and
@@ -43,6 +51,8 @@ the root logger.
 ::: src.intermediate.logging.default_logging
 
 ::: src.intermediate.logging.custom_logging_format
+
+::: src.intermediate.logging.CustomFilter
 
 ## loguru library
 
