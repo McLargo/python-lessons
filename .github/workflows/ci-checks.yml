@@ -81,31 +81,14 @@ jobs:
         run: poetry run python -m pytest --cov=src --cov-fail-under=100
 
       # =================================
-      # Run ruff
+      # Run ruff checks and format
       # =================================
-      - name: Run ruff
-        uses: chartboost/ruff-action@v1
+      - name: Run ruff checks
+        uses: astral-sh/ruff-action@v3
         with:
-          src: "./src"
-          version: v0.3.2
-          args: -v
+          args: "check ./src"
 
-      # =================================
-      # Run black
-      # =================================
-      - name: Run black
-        uses: psf/black@stable
+      - name: Run ruff format check
+        uses: astral-sh/ruff-action@v3
         with:
-          options: "--check --verbose"
-          src: "./src"
-          version: "24.3.0"
-
-      # =================================
-      # Run bandit
-      # =================================
-      - name: Run bandit
-        uses: mdegis/bandit-action@v1.0
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          path: "./src"
-          exit_zero: true
+          args: "format ./src --diff"

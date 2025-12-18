@@ -59,9 +59,8 @@ Rules are defined in `.pre-commit-config.yaml` and include:
 
 - [markdownlint](https://github.com/igorshubovych/markdownlint-cli): markdown
     code linter.
-- [black](https://github.com/psf/black): Python code formatter.
-- [bandit](https://github.com/PyCQA/bandit): Python security linter.
-- [ruff](https://github.com/astral-sh/ruff-pre-commit): Python code linter.
+- [ruff](https://github.com/astral-sh/ruff-pre-commit): Python code linter and
+    formatter. Properly configured, I replaced both black and bandit.
 - [cspell](https://github.com/streetsidesoftware/cspell-cli): Spelling checker.
 - mkdocs-build: Local hook to make sure mkdocs build is working properly.
 
