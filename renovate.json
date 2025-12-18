@@ -4,6 +4,9 @@
     "config:base",
     ":enablePreCommit"
   ],
+  "constraints": {
+    "poetry": ">=1.8.0"
+  },
   "packageRules": [
     {
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
