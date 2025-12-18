@@ -10,8 +10,14 @@
   "packageRules": [
     {
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "matchPackageNames": ["!python"],
       "groupName": "all non-major dependencies",
       "groupSlug": "all-minor-patch"
+    },
+    {
+      "matchPackageNames": ["python"],
+      "groupName": "python version",
+      "separateMinorPatch": true
     }
   ],
   "rangeStrategy": "bump"
