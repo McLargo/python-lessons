@@ -75,3 +75,8 @@ The project has been developed using
 
 It is not mandatory to use VSCode, but it is recommended. The project includes a
 settings file to help to maintain similar settings used during the development.
+
+## Renovate
+
+Renovate bot is used to keep dependencies up to date. It is configured to check
+for updates once a week. Configuration file is located in `renovate.json`.
