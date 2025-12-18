@@ -86,8 +86,7 @@ jobs:
       - name: Run ruff
         uses: astral-sh/ruff-action@v3
         with:
-          args: "check ./src && ruff format --check ./src"
-
+          args: "check ./src && ruff format --diff ./src"
 
       # =================================
       # Run bandit
