@@ -60,7 +60,7 @@ jobs:
       # Run cspell
       # =================================
       - name: Run cspell
-        uses: streetsidesoftware/cspell-action@v6
+        uses: streetsidesoftware/cspell-action@v8
         with:
             config: './cspell/cspell.json'
             incremental_files_only: false
