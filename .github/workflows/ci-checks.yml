@@ -84,21 +84,12 @@ jobs:
       # Run ruff
       # =================================
       - name: Run ruff
-        uses: chartboost/ruff-action@v1
+        uses: astral-sh/ruff-action@v3
         with:
           src: "./src"
-          version: v0.3.2
-          args: -v
-
-      # =================================
-      # Run black
-      # =================================
-      - name: Run black
-        uses: psf/black@stable
-        with:
-          options: "--check --verbose"
-          src: "./src"
-          version: "24.3.0"
+        run: |
+          ruff check
+          ruff format --check --diff
 
       # =================================
       # Run bandit
