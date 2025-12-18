@@ -84,7 +84,7 @@ jobs:
       # Run ruff
       # =================================
       - name: Run ruff
-        uses: ruff-action/ruff-action@v3
+        uses: astral-sh/ruff-action@v3
         with:
           args: "check ./src && ruff format --check ./src"
 
