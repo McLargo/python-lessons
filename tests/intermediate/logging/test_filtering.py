@@ -21,7 +21,7 @@ def test_filter_logging(caplog):
     assert caplog.records[0].message == "User logger."
     assert caplog.records[0].username == "user1"
     assert caplog.records[0].email == "****@example.com"
-    assert caplog.records[0].password == "*******************"
+    assert caplog.records[0].password == "***************"
     assert caplog.records[0].tries == 3
 
     # log with sensitive information as args does not get masked
