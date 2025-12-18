@@ -5,6 +5,7 @@ and use.
 
 """
 
+from .filtering import CustomFilter  # noqa: F401
 from .logging import (
     custom_logging_format,  # noqa: F401
     custom_loguru_format_and_level,  # noqa: F401
