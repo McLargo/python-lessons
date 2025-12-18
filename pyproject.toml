@@ -1,6 +1,3 @@
-[tool.bandit]
-exclude_dirs = ["tests"]
-
 [tool.coverage.report]
 skip_empty = true
 fail_under = 100
@@ -59,7 +56,8 @@ lint.select = [
   "Q",
   "RET",
   "ARG",
-  "PL"
+  "PL",
+  "S",
 ]
 
 [tool.ruff.lint.flake8-quotes]

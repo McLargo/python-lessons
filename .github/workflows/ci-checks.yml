@@ -92,13 +92,3 @@ jobs:
         uses: astral-sh/ruff-action@v3
         with:
           args: "format ./src --diff"
-
-      # =================================
-      # Run bandit
-      # =================================
-      - name: Run bandit
-        uses: mdegis/bandit-action@v1.0
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          path: "./src"
-          exit_zero: true
