@@ -33,6 +33,11 @@ separately).
 Still in alpha stage of usage, but so far it looks promising and I hope it will
 save me some time in the future.
 
+You can find Renovate in the Github Apps of your repository settings.
+Configuration file is `renovate.json` and more details about configuration and
+jobs is available in [Mend
+website](https://developer.mend.io/github/McLargo/python-lessons).
+
 ## Other Solutions Considered
 
 I used Dependabot in other project, but it didn't support pre-commit. But I do
