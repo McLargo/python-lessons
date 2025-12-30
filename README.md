@@ -29,6 +29,7 @@ decisions taken on the project. They are located in the `docs/adr` folder.
 - ADR-002: [mkdocs](docs/adr/002-mkdocs.md)
 - ADR-003: [cSpell](docs/adr/003-spelling.md)
 - ADR-004: [Deployment](docs/adr/004-deployment.md)
+- ADR-005: [Dependency Maintenance](docs/adr/005-maintenance.md)
 
 ## Structure
 

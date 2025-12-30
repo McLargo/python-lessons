@@ -61,6 +61,7 @@ nav:
     - "ADR-002 - mkdocs": adr/002-mkdocs.md
     - "ADR-003 - cSpell": adr/003-spelling.md
     - "ADR-004 - Deployment": adr/004-deployment.md
+    - "ADR-005 - Dependency Maintenance": adr/005-maintenance.md
   - Beginner:
     - "Check is instance": beginner/check_is_instance.md
     - "Classes and objects": beginner/classes_and_objects.md
