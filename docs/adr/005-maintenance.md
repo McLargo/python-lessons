@@ -1,4 +1,4 @@
-# ADR-005 - DependencyMaintenance
+# ADR-005 - Dependency Maintenance
 
 | Creation Date | Status   | Author                                 |
 | :-----------: | :------: | :------------------------------------: |
@@ -41,4 +41,4 @@ website](https://developer.mend.io/github/McLargo/python-lessons).
 ## Other Solutions Considered
 
 I used Dependabot in other project, but it didn't support pre-commit. But I do
-remember that it was quite easy to use as well.
+remember that it was quite easy to use too, and requires minimal configuration.
