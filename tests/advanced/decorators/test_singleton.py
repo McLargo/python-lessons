@@ -1,4 +1,4 @@
-from src.advanced.decorators import singleton
+from advanced.decorators import singleton
 
 
 # Set decorated class to test

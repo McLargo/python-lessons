@@ -1,4 +1,4 @@
-from src.beginner.classes_and_objects import IngredientEnum, Pizza
+from beginner.classes_and_objects import IngredientEnum, Pizza
 
 
 def test_pizza() -> None:

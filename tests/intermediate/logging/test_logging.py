@@ -4,7 +4,8 @@ import re
 
 import pytest
 from loguru import logger as logger_loguru
-from src.intermediate.logging import (
+
+from intermediate.logging import (
     custom_logging_format,
     custom_loguru_format_and_level,
     default_logging,
@@ -61,7 +62,7 @@ def test_custom_logging_configuration_format(caplog):
     )
 
     assert caplog.records[0].message == "INFO logging formatted"
-    assert caplog.records[0].name == "src.intermediate.logging.logging"
+    assert caplog.records[0].name == "intermediate.logging.custom_logging"
     assert datetime.datetime.strptime(  # noqa: DTZ007
         caplog.records[0].asctime,
         date_format,

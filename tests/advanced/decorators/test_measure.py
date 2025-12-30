@@ -1,6 +1,6 @@
 from time import sleep
 
-from src.advanced.decorators import measure
+from advanced.decorators import measure
 
 
 # Set decorated function to test
@@ -19,7 +19,7 @@ def test_measure_sleeper_1(debug_caplog) -> None:
         "Method sleeper executed in 1.00",
     )
     assert debug_caplog.records[0].message.endswith("seconds")
-    assert debug_caplog.records[0].name == "src.advanced.decorators.measure"
+    assert debug_caplog.records[0].name == "advanced.decorators.measure"
 
 
 def test_measure_sleeper_2(debug_caplog) -> None:
@@ -32,4 +32,4 @@ def test_measure_sleeper_2(debug_caplog) -> None:
         "Method sleeper executed in 2.00",
     )
     assert debug_caplog.records[0].message.endswith("seconds")
-    assert debug_caplog.records[0].name == "src.advanced.decorators.measure"
+    assert debug_caplog.records[0].name == "advanced.decorators.measure"

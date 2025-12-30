@@ -1,5 +1,6 @@
 import pytest
-from src.intermediate.exceptions import (
+
+from intermediate.exceptions import (
     CustomError,
     exception_controlled,
     exception_controlled_raise_custom_exception,
