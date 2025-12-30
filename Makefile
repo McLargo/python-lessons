@@ -54,7 +54,7 @@ build: check-env ## Build mkdocs in local
 	@echo "Building mkdocs in local."
 	@poetry run mkdocs build --strict
 
-test: check-env ## Run test
+test: check-env clean ## Run test
 	@echo "Running test."
 	@poetry run python -m pytest --cov=src --cov-report=term-missing --cov-fail-under=100
 
