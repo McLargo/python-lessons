@@ -14,7 +14,7 @@ def return_even_numbers(n: int) -> list[int]:
         even_numbers: List of even numbers until n (inclusive).
     """
     numbers: list[int] = []
-    for number in range(1, n):
+    for number in range(2, n):
         if number % 2 == 0:
             numbers.append(number)
     return numbers
@@ -26,7 +26,7 @@ def yield_even_numbers(n: int) -> Generator:
     Returns:
         even_numbers: List of even numbers until n (inclusive).
     """
-    for number in range(1, n):
+    for number in range(2, n):
         if number % 2 == 0:
             yield number
 

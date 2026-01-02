@@ -79,4 +79,5 @@ pythonpath = "src"
 
 [tool.mutmut]
 paths_to_mutate = ["src/"]
+paths_to_exclude = "**/__init__.py"
 runner = "python -m pytest tests/"

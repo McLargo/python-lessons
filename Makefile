@@ -64,7 +64,7 @@ coverage: check-env ## Run coverage, generate report in html and open in browser
 	@echo "Opening htmlcov/index.html report in browser."
 	@browse htmlcov/index.html >/dev/null 2>&1
 
-mutmut: check-env ## Run mutation testing with mutmut
+mutations: check-env clean ## Run mutation testing with mutmut
 	@echo "Running mutational tests."
 	@poetry run mutmut run
 

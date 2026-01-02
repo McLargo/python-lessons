@@ -52,7 +52,9 @@ Coverage report is generated using
 report, use `make coverage`.
 
 Mutation tests are generated using [mutmut](https://mutmut.readthedocs.io/). To
-run mutation tests use `make mutmut`.
+run mutation tests use `make mutations`. I don't expect to have 100% of mutation
+coverage as it is a example repository, but it is a good practice to have it as
+high as possible.
 
 ## CI/CD
 
