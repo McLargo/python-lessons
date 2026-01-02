@@ -5,10 +5,10 @@ and use.
 
 """
 
-from .filtering import CustomFilter  # noqa: F401
-from .logging import (
+from .custom_logging import (
     custom_logging_format,  # noqa: F401
     custom_loguru_format_and_level,  # noqa: F401
     default_logging,  # noqa: F401
     default_loguru,  # noqa: F401
 )
+from .filtering import CustomFilter  # noqa: F401

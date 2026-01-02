@@ -1,5 +1,6 @@
 import pytest
-from src.beginner.dict_vs_defaultdict import (
+
+from beginner.dict_vs_defaultdict import (
     get_value_from_defaultdict,
     get_value_from_dict_with_get,
     get_value_from_dict_with_square_brackets,

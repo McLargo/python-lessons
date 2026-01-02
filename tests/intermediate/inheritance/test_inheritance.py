@@ -1,6 +1,6 @@
 import datetime
 
-from src.intermediate.inheritance import SpainDriver, UsaDriver
+from intermediate.inheritance import SpainDriver, UsaDriver
 
 
 def _generate_date_days_ago(days: int) -> datetime.date:

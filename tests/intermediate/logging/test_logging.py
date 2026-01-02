@@ -4,7 +4,8 @@ import re
 
 import pytest
 from loguru import logger as logger_loguru
-from src.intermediate.logging import (
+
+from intermediate.logging import (
     custom_logging_format,
     custom_loguru_format_and_level,
     default_logging,
@@ -13,8 +14,9 @@ from src.intermediate.logging import (
 
 
 def test_default_logging_level_not_present():
-    with pytest.raises(IndexError):
+    with pytest.raises(IndexError) as exc:
         default_logging(level=100)
+    assert str(exc.value) == "Invalid level to set logging."
 
 
 @pytest.mark.parametrize(
@@ -29,12 +31,32 @@ def test_default_logging_level_not_present():
     ],
 )
 def test_default_logging(level, total_logs, caplog):
-    # set level to caplog
-    caplog.set_level(level)
-
+    # Set logging level
+    caplog.set_level(level=level)
     default_logging(level=level)
 
     assert len(caplog.records) == total_logs
+
+
+def test_default_logging_all_levels(debug_caplog):
+    default_logging(level=logging.DEBUG)
+
+    assert len(debug_caplog.records) == 5
+
+    assert debug_caplog.records[0].levelname == "DEBUG"
+    assert debug_caplog.records[0].message == "DEBUG logging"
+
+    assert debug_caplog.records[1].levelname == "INFO"
+    assert debug_caplog.records[1].message == "INFO logging"
+
+    assert debug_caplog.records[2].levelname == "WARNING"
+    assert debug_caplog.records[2].message == "WARNING logging"
+
+    assert debug_caplog.records[3].levelname == "ERROR"
+    assert debug_caplog.records[3].message == "ERROR logging"
+
+    assert debug_caplog.records[4].levelname == "CRITICAL"
+    assert debug_caplog.records[4].message == "CRITICAL logging"
 
 
 def test_custom_logging_configuration_format(caplog):
@@ -61,7 +83,7 @@ def test_custom_logging_configuration_format(caplog):
     )
 
     assert caplog.records[0].message == "INFO logging formatted"
-    assert caplog.records[0].name == "src.intermediate.logging.logging"
+    assert caplog.records[0].name == "intermediate.logging.custom_logging"
     assert datetime.datetime.strptime(  # noqa: DTZ007
         caplog.records[0].asctime,
         date_format,

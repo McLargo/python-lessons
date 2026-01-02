@@ -1,7 +1,7 @@
 import sys
 from typing import Generator
 
-from src.intermediate.yield_vs_return import (
+from intermediate.yield_vs_return import (
     return_even_numbers,
     yield_even_numbers,
     yield_fibonacci_numbers,

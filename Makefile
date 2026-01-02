@@ -12,6 +12,16 @@ help: ## Show help
 	@echo "\nUsage:\e[1;36m make [target]\e[0m\n"
 	@egrep -h '\s##\s' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf " -\033[36m  %-20s\033[0m %s\n", $$1, $$2}'
 
+check-env:
+	@if [ -z "$(POETRY)" ]; then \
+		echo $(POETRY_NOT_INSTALLED_MESSAGE); \
+		exit 1; \
+	fi
+	@if [ -z "$(VIRTUALENV)" ]; then \
+		echo "There is not virtualenv."; \
+		exit 1; \
+	fi
+
 install: ## Install required dependencies
 	@if [ -z $(POETRY) ]; then \
   		echo "Poetry could not be found, installing..."; \
@@ -23,78 +33,41 @@ install: ## Install required dependencies
 	$(PIP) install pre-commit;
 	pre-commit install
 
-remove: ## Remove poetry virtualenv
-	@if [ -z $(POETRY) ]; then \
-  		echo $(POETRY_NOT_INSTALLED_MESSAGE); \
-	else \
-	  if [ -z $(VIRTUALENV) ]; then \
-	    echo "There is not virtualenv."; \
-	  else \
-	    echo "Removing virtualenv $(VIRTUALENV)."; \
-	    poetry env remove $(VIRTUALENV); \
-	  fi \
-	fi
+remove: check-env ## Remove poetry virtualenv
+	@echo "Removing virtualenv $(VIRTUALENV)."
+	@poetry env remove $(VIRTUALENV)
 
-serve: ## Serve mkdocs in local
-	@if [ -z $(POETRY) ]; then \
-		echo $(POETRY_NOT_INSTALLED_MESSAGE); \
-	else \
-	  if [ -z $(VIRTUALENV) ]; then \
-	    echo "There is not virtualenv."; \
-	  else \
-	    echo "Starting mkdocs server to access documentation."; \
-	  	poetry run mkdocs serve --strict -w src; \
-	  fi \
-	fi
+clean: ## Clean Python cache files and directories
+	@echo "Cleaning Python cache files..."
+	@find . -type d -name "__pycache__" -exec rm -rf {} + 2>/dev/null || true
+	@find . -type f -name "*.pyc" -delete
+	@find . -type f -name "*.pyo" -delete
+	@find . -type d -name "*.egg-info" -exec rm -rf {} + 2>/dev/null || true
+	@rm -rf mutants/ .mutmut-cache 2>/dev/null || true
+	@echo "Cache files cleaned."
 
-build: ## Build mkdocs in local
-	@if [ -z $(POETRY) ]; then \
-  		echo $(POETRY_NOT_INSTALLED_MESSAGE); \
-  	else \
-	  if [ -z $(VIRTUALENV) ]; then \
-	    echo "There is not virtualenv."; \
-	  else \
-	    echo "Building mkdocs in local."; \
-	  	poetry run mkdocs build --strict; \
-	  fi \
-	fi
+serve: check-env ## Serve mkdocs in local
+	@echo "Starting mkdocs server to access documentation."
+	@poetry run mkdocs serve --strict -w src
 
-test: ## Run test
-	@if [ -z $(POETRY) ]; then \
-  		echo $(POETRY_NOT_INSTALLED_MESSAGE); \
-  	else \
-  	  if [ -z $(VIRTUALENV) ]; then \
-	    echo "There is not virtualenv."; \
-	  else \
-	    echo "Running test."; \
-		poetry run python -m pytest --cov=src --cov-report=term-missing --cov-fail-under=100; \
-	  fi \
-	fi
+build: check-env ## Build mkdocs in local
+	@echo "Building mkdocs in local."
+	@poetry run mkdocs build --strict
 
+test: check-env clean ## Run test
+	@echo "Running test."
+	@poetry run python -m pytest --cov=src --cov-report=term-missing --cov-fail-under=100
 
-coverage: ## Run coverage, generate report in html and open in browser
-	@if [ -z $(POETRY) ]; then \
-  		echo $(POETRY_NOT_INSTALLED_MESSAGE); \
-  	else \
-  	  if [ -z $(VIRTUALENV) ]; then \
-	    echo "There is not virtualenv."; \
-	  else \
-	    echo "Running coverage report in html."; \
-	  	poetry run python -m pytest --cov=src --cov-report=html; \
-		echo "Opening htmlcov/index.html report in browser."; \
-		browse htmlcov/index.html >/dev/null 2>&1; \
-	  fi \
-	fi
+coverage: check-env ## Run coverage, generate report in html and open in browser
+	@echo "Running coverage report in html."
+	@poetry run python -m pytest --cov=src --cov-report=html
+	@echo "Opening htmlcov/index.html report in browser."
+	@browse htmlcov/index.html >/dev/null 2>&1
 
+mutations: check-env clean ## Run mutation testing with mutmut
+	@echo "Running mutational tests."
+	@poetry run mutmut run
 
-deploy:  # Triggers a manual deployment of python lessons to gh-pages
-	@if [ -z $(POETRY) ]; then \
-		echo $(POETRY_NOT_INSTALLED_MESSAGE); \
-	else \
-		if [ -z $(VIRTUALENV) ]; then \
-	    echo "There is not virtualenv."; \
-	  else \
-	    echo "Deploying python-lessons to gh-pages."; \
-		poetry run mkdocs gh-deploy --force; \
-	  fi \
-	fi
+deploy: check-env  # Triggers a manual deployment of python lessons to gh-pages
+	@echo "Deploying python-lessons to gh-pages."
+	@poetry run mkdocs gh-deploy --force
