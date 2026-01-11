@@ -1,6 +1,7 @@
 from hypothesis import given
 from hypothesis import strategies as st
-from src.beginner.check_is_instance import is_instance
+
+from beginner.check_is_instance import is_instance
 
 
 @given(st.integers())

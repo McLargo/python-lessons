@@ -4,10 +4,10 @@
 .venv
 __pycache__
 
-## site folder created by mkdocs
+# site folder created by mkdocs
 site/
 
-## Coverage
+# Coverage
 .coverage
 htmlcov/
 coverage.xml
@@ -15,3 +15,6 @@ coverage.json
 
 # Hypothesis
 .hypothesis/
+
+# mutmut
+mutants/
