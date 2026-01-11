@@ -1,11 +1,11 @@
 import logging
 
-from src.intermediate.logging import CustomFilter
+from intermediate.logging import CustomFilter
 
 
 def test_filter_logging(caplog):
     # add CustomFilter to logger
-    logger = logging.getLogger("src.intermediate.logging.logging")
+    logger = logging.getLogger("intermediate.logging.custom_logging")
     logger.addFilter(CustomFilter())
 
     # log with sensitive information in extra gets masked

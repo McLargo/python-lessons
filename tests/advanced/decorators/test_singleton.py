@@ -1,14 +1,15 @@
-from src.advanced.decorators import singleton
-
-
-# Set decorated class to test
-@singleton
-class Demo:
-    def __init__(self, a: int = 0):
-        self.a = a
+from advanced.decorators import singleton
 
 
 def test_singleton() -> None:
+    @singleton
+    class Demo:
+        instance_count = 0
+
+        def __init__(self, a: int = 0):
+            self.a = a
+            Demo.instance_count += 1
+
     demo1 = Demo()
     assert demo1.a == 0
 
@@ -31,3 +32,22 @@ def test_singleton() -> None:
     assert demo4.a == 0
 
     assert demo1 is demo2 is demo3 is demo4
+
+    assert Demo.instance_count == 4
+
+
+def test_singleton_hasattr_check() -> None:
+    @singleton
+    class TestClass:
+        pass
+
+    instance1 = TestClass()
+
+    assert hasattr(TestClass, "_TestClass__singleton") or hasattr(
+        TestClass,
+        "__singleton",
+    )
+
+    instance2 = TestClass()
+
+    assert instance1 is instance2

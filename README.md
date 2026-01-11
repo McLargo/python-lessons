@@ -43,6 +43,20 @@ structure of the code is simple:
 Other folders and files are used to configure the project or help to maintain
 and develop it.
 
+## Testing
+
+Tests are written using [pytest](https://docs.pytest.org/). To run the tests,
+use `make test`.
+
+Coverage report is generated using
+[coverage.py](https://coverage.readthedocs.io/). To generate the coverage
+report, use `make coverage`.
+
+Mutation tests are generated using [mutmut](https://mutmut.readthedocs.io/). To
+run mutation tests use `make mutations`. I don't expect to have 100% of mutation
+coverage as it is a example repository, but it is a good practice to have it as
+high as possible.
+
 ## CI/CD
 
 - The project is configured to use GitHub Actions to automatically deploy the
