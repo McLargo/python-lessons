@@ -13,5 +13,8 @@ htmlcov/
 coverage.xml
 coverage.json
 
+# Hypothesis
+.hypothesis/
+
 # mutmut
 mutants/
