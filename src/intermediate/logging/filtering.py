@@ -28,7 +28,6 @@ class CustomFilter(logging.Filter):
         """
         for key in record.__dict__.keys():
             if key in self.keys_to_mask:
-                # import ipdb; ipdb.set_trace()
                 if isinstance(record.__dict__[key], str):
                     config = self.keys_to_mask[key]
                     mask_func = getattr(self, config["mask_func"])
