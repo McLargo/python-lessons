@@ -1,13 +1,18 @@
 # only python reserved words
 abstractmethod
+asyncio
 autouse
 caplog
 Dataclasses
 defaultdict
+getpid
 getsizeof
 kwargs
 levelname
 loguru
+multiprocess
 mutmut
+picklable
+pids
 repr
 timeit

@@ -75,3 +75,4 @@ nav:
   - Advanced:
     - "Decorators": advanced/decorators.md
     - "Lambda functions": advanced/lambda_functions.md
+    - "Concurrency and Parallelism": advanced/concurrency_parallelism.md
