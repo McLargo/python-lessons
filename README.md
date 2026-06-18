@@ -20,6 +20,16 @@ Makefile is your friend. All commands are available through it, so it is quite
 easy and friendly usage. Run `make` or `make help` to get more information for
 the commands to use.
 
+## Lessons Quality
+
+A comprehensive quality review was conducted on all Python lessons using the
+criteria defined in AGENTS.md. Each lesson was evaluated across four weighted
+categories: Technical Accuracy (35%), Code Quality (25%), Educational Value
+(25%), and Documentation (15%).
+
+See the [full quality review](docs/quality-scores.md) for detailed
+scoring.
+
 ## ADR
 
 Architecture Decision Records (ADR) are used to document the architectural
@@ -30,6 +40,7 @@ decisions taken on the project. They are located in the `docs/adr` folder.
 - ADR-003: [cSpell](docs/adr/003-spelling.md)
 - ADR-004: [Deployment](docs/adr/004-deployment.md)
 - ADR-005: [Dependency Maintenance](docs/adr/005-maintenance.md)
+- ADR-006: [AI Code Agents](docs/adr/006-ai-code-agents.md)
 
 ## Structure
 
@@ -45,8 +56,10 @@ and develop it.
 
 ## Testing
 
-Tests are written using [pytest](https://docs.pytest.org/). To run the tests,
-use `make test`.
+Test are mandatory for all code, and they are required to have 100% of coverage.
+All tests are located in the `tests` folder, and they mirror the structure of
+the `src` folder. Tests are written using [pytest](https://docs.pytest.org/). To
+run the tests, use `make test`.
 
 Coverage report is generated using
 [coverage.py](https://coverage.readthedocs.io/). To generate the coverage
@@ -67,8 +80,8 @@ high as possible.
 ## Pre-commit
 
 The project is configured to use [pre-commit](https://pre-commit.com/) to check
-Python and markdown files are following the style guide. pre-commit is
-automatically installed when running `make install`.
+Python, docstrings and markdown files are following the style guide. pre-commit
+is automatically installed when running `make install`.
 
 Rules are defined in `.pre-commit-config.yaml` and include:
 

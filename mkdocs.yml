@@ -62,6 +62,7 @@ nav:
     - "ADR-003 - cSpell": adr/003-spelling.md
     - "ADR-004 - Deployment": adr/004-deployment.md
     - "ADR-005 - Dependency Maintenance": adr/005-maintenance.md
+    - "ADR-006 - AI Code Agents": adr/006-ai-code-agents.md
   - Beginner:
     - "Check is instance": beginner/check_is_instance.md
     - "Classes and objects": beginner/classes_and_objects.md
