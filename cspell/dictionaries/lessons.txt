@@ -2,10 +2,14 @@
 codeowners
 codespell
 docstrings
+doctest
+doctests
+EAFP
 fontawesome
 gitflow
 htmlcov
 ipdb
+LBYL
 markdownlint
 mkdocs
 mkdocstrings
@@ -15,10 +19,17 @@ pycache
 pydocs
 pydocstyle
 pyproject
+Pythonic
 pytest
 venv
 VIRTUALENV
 yaspeller
+
+# Dataclass
+Dataclass
+
+# isinstance
+isinstance
 
 # pizza lesson
 EMMENTAL
