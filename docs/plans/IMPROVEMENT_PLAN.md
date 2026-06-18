@@ -325,10 +325,7 @@ make test
 2. **Basic Usage** - Single type checking with examples
 3. **Multiple Types** - Using tuples for multiple type checks
 4. **When to Use** - Appropriate use cases (validation, polymorphism)
-5. **When NOT to Use** - Duck typing, type hints, EAFP vs LBYL
-6. **Common Pitfalls** - Bool is subclass of int, etc.
-7. **Practical Examples** - Real-world scenarios
-8. **Best Practices** - Modern Python approaches
+5. **Common Pitfalls** - Bool is subclass of int, etc.
 
 **Verification**:
 
@@ -433,7 +430,6 @@ make server  # Check docstring renders correctly
 **Content**:
 
 - Google-style docstring template
-- Examples section requirements
 - Minimum requirements for functions/classes
 - Integration with mkdocstrings
 
@@ -442,6 +438,7 @@ make server  # Check docstring renders correctly
 - [ ] Create template file
 - [ ] Add to CONTRIBUTING.md
 - [ ] Add to AGENTS.md references
+- [ ] Ensure all lessons follow this standard (don't enforce Examples section)
 
 ### Task 4.2: Enhance Google-Style Docstrings (All Lessons)
 
@@ -452,7 +449,6 @@ make server  # Check docstring renders correctly
 3. Args section (with types and descriptions)
 4. Returns section (with type and description)
 5. Raises section (if applicable)
-6. Examples section (at least one doctest example)
 
 **Priority order** (based on scores):
 
@@ -504,74 +500,12 @@ def example_function(param: str, count: int = 1) -> list[str]:
 
 ```bash
 make server  # Check rendering
-make test    # Ensure doctests pass
+make test    # Ensure tests pass
 ```
 
-### Task 4.3: Add "When NOT to Use" Sections
+### Task 4.3: Review Common Pitfalls Sections
 
-**Add to each lesson markdown**:
-
-**Template**:
-
-```markdown
-## When NOT to Use [Concept]
-
-- **Scenario 1**: [Description] - Use [alternative] instead
-- **Scenario 2**: [Description] - Use [alternative] instead
-- **Scenario 3**: [Description] - Use [alternative] instead
-
-### Examples of Misuse
-
-[Code example showing bad usage]
-
-### Better Alternatives
-
-[Code example showing correct approach]
-```
-
-**Priority lessons** (missing this section):
-
-- [ ] Check isinstance
-- [ ] Classes & Objects
-- [ ] Dataclasses
-- [ ] Dict vs DefaultDict
-- [ ] Exceptions
-- [ ] Inheritance
-- [ ] Logging
-- [ ] Yield vs Return
-- [ ] Behavioral Patterns
-- [ ] Concurrency/Parallelism
-- [ ] Decorators
-- [ ] Lambda Functions (expand existing "Misused" section)
-
-### Task 4.4: Add Common Pitfalls Sections
-
-**Add to each lesson markdown**:
-
-**Template**:
-
-```markdown
-## Common Pitfalls
-
-### Pitfall 1: [Name]
-
-**Problem**: Description of the mistake
-
-**Example**:
-\`\`\`python
-# Bad code example
-\`\`\`
-
-**Why it's wrong**: Explanation
-
-**Solution**:
-\`\`\`python
-# Correct code example
-\`\`\`
-
-### Pitfall 2: [Name]
-...
-```
+Do not enforce this section, only suggest pitfalls to document in each lesson.
 
 **Suggested pitfalls to document**:
 
@@ -583,21 +517,6 @@ make test    # Ensure doctests pass
 - **Decorators**: Forgetting @wraps, decorator order
 - **Lambda**: Late binding in loops, overuse
 - **Logging**: Using root logger, not using lazy formatting
-
-### Task 4.5: Add Error Handling Examples
-
-**For intermediate/advanced lessons, add**:
-
-1. **Error scenarios** in documentation
-2. **Try/except examples** where appropriate
-3. **Tests for error conditions** (verify these exist)
-
-**Priority lessons**:
-
-- [ ] Concurrency/Parallelism - Add race condition examples
-- [ ] Decorators - Show handling exceptions in decorated functions
-- [ ] Behavioral Patterns - Error handling in observers
-- [ ] Logging - Exception logging best practices
 
 ---
 
@@ -617,14 +536,14 @@ make test    # Ensure doctests pass
 nav:
   - Home: index.md
   - Quality Review:
-      - Scores & Status: adr/006-quality-review-scores.md
+      - Scores & Status: quality-scores.md
   - Architecture Decisions:
       - ADR-001 Poetry: adr/001-poetry.md
       - ADR-002 MkDocs: adr/002-mkdocs.md
       - ADR-003 Spelling: adr/003-spelling.md
       - ADR-004 Deployment: adr/004-deployment.md
       - ADR-005 Maintenance: adr/005-maintenance.md
-      - ADR-006 Quality Review: adr/006-quality-review-scores.md
+      - ADR-006 AI Code Agents: adr/006-ai-code-agents.md
   # ... rest of nav
 ```
 
@@ -648,12 +567,6 @@ nav:
 <!-- Rest of lesson content -->
 ```
 
-**Create script to generate badges**:
-
-```python
-# scripts/add_quality_badges.py
-```
-
 **Files to update**:
 
 - [ ] All 12 lesson markdown files
@@ -675,9 +588,9 @@ This repository maintains high quality standards with 100% test coverage and reg
 | ------- | --------- | ------------- | -------- |
 | Beginner | 7.9/10 | Classes & Objects (8.8) | ✅ Good |
 | Intermediate | 8.0/10 | Logging (9.0) ⭐ | ⭐ Outstanding |
-| Advanced | 7.9/10 | Behavioral Patterns (8.7) | ✅ Good |
+| Advanced | 7.9/10 | Concurrency/Parallelism (8.5) | ✅ Good |
 
-See [full quality review](adr/006-quality-review-scores.md) for detailed scoring and improvement plans.
+See [full quality review](quality-scores.md) for detailed scoring.
 ```
 
 **Verification**:
@@ -693,29 +606,15 @@ make server
 
 ## 📋 Phase 6: Systematic Improvements (Priority 6) 🔧
 
-**Estimated Time**: 4-6 hours
+**Estimated Time**: 1-2 hours
 **Dependencies**: All previous phases
 **Target**: Long-term quality maintenance
 
-### Task 6.1: Create Pre-commit Hook for Docstrings
+### Task 6.1: Add Type Checking to CI/CD
 
-**File**: `.pre-commit-config.yaml`
+**File**: `.github/workflows/ci-checks.yml`
 
-**Add docstring linter** (consider pydocstyle or interrogate):
-
-```yaml
-  - repo: https://github.com/PyCQA/pydocstyle
-    rev: 6.3.0
-    hooks:
-      - id: pydocstyle
-        args: [--convention=google]
-```
-
-### Task 6.2: Add Type Checking to CI/CD
-
-**File**: `.github/workflows/test.yml` (or similar)
-
-**Add mypy step**:
+**Add new mypy step**:
 
 ```yaml
 - name: Type check with mypy
@@ -723,37 +622,88 @@ make server
     poetry run mypy src/ --strict
 ```
 
-### Task 6.3: Create Quality Checklist Template
+### Task 6.2: Add new make commands
+
+**File**: `Makefile`
+
+**Add targets**:
+
+```makefile
+lint: check-env ## Run ruff linting checks
+    @echo "Running ruff linting checks (including docstrings)."
+    @poetry run ruff check .
+
+lint-fix: check-env ## Run ruff linting checks and fix issues
+    @echo "Running ruff linting checks and fixing issues (including docstrings)."
+    @poetry run ruff check --fix .
+
+format: check-env ## Format code with ruff
+    @echo "Formatting code with ruff."
+    @poetry run ruff format .
+
+spelling: check-env ## Check spelling in source and docs
+    @echo "Checking spelling in Python and Markdown files."
+    @poetry run cspell "src/**/*.py" "docs/**/*.md"
+```
+
+**Usage**:
+
+```bash
+make lint      # Check code quality and docstrings
+make lint-fix  # Check code quality and docstrings and fix issues
+make format    # Auto-format code
+make spelling  # Check spelling
+```
+
+### Task 6.3: Create Pull Request Template
+
+**Purpose**: Guide reviewers and enforce quality checks on all PRs
 
 **File**: `.github/PULL_REQUEST_TEMPLATE.md`
 
-**Add checklist**:
+**Create new PR template**:
 
 ```markdown
+## Description
+
+<!-- Describe your changes in detail -->
+
+## Type of Change
+
+- [ ] Bug fix (non-breaking change which fixes an issue)
+- [ ] New lesson or feature (non-breaking change which adds functionality)
+- [ ] Documentation update
+- [ ] Refactoring (no functional changes)
+
 ## Quality Checklist
 
-Before submitting, ensure:
-
+### Code Quality
 - [ ] 100% test coverage achieved (`make test`)
-- [ ] All functions have Google-style docstrings with Examples
+- [ ] All functions have Google-style docstrings
 - [ ] Type hints are present and correct
-- [ ] Code passes ruff linting (`ruff check .`)
+- [ ] Code passes ruff linting (`make lint`)
+- [ ] Code is properly formatted (`make format`)
 - [ ] No spelling errors (`make spelling`)
-- [ ] Documentation renders correctly (`make server`)
-- [ ] "When to Use" and "When NOT to Use" sections included
+
+### Documentation
+- [ ] Documentation renders correctly (`make serve`)
+- [ ] No broken links or formatting errors
+- [ ] Examples are clear and practical
+
+### Testing
+- [ ] Tests cover edge cases
+- [ ] All tests pass locally
+- [ ] Pre-commit hooks pass
+
+## New Lesson Only (if applicable)
+- [ ] Achieves minimum quality score of 8.0/10
+- [ ] Includes "When to use" and "When NOT to use" sections
 - [ ] Common pitfalls documented
-- [ ] Error handling examples provided (intermediate/advanced)
+
+## Reviewer Notes
+
+<!-- Any specific areas you'd like reviewers to focus on -->
 ```
-
-### Task 6.4: Schedule Regular Quality Reviews
-
-**Cadence**: Quarterly
-
-**Action items**:
-
-- [ ] Add calendar reminder
-- [ ] Create review template based on AGENTS.md
-- [ ] Document in ADR-005 (Maintenance)
 
 ---
 
@@ -761,24 +711,26 @@ Before submitting, ensure:
 
 ### Phase Completion Status
 
-- [ ] **Phase 1**: Critical Bug Fixes (0/3 tasks complete)
+- [✅] **Phase 1**: Critical Bug Fixes (3/3 tasks complete) - **COMPLETE** ✅
 - [ ] **Phase 2**: Type Error Fixes (0/4 tasks complete)
 - [ ] **Phase 3**: Documentation Improvements (0/4 tasks complete)
-- [ ] **Phase 4**: Consistent Weaknesses (0/5 tasks complete)
+- [ ] **Phase 4**: Consistent Weaknesses (0/3 tasks complete)
 - [ ] **Phase 5**: Display Scores on Website (0/3 tasks complete)
-- [ ] **Phase 6**: Systematic Improvements (0/4 tasks complete)
+- [ ] **Phase 6**: Systematic Improvements (0/3 tasks complete)
 
-**Overall Progress**: 0/23 major tasks complete
+**Overall Progress**: 3/20 major tasks complete (15%)
+
+**Note**: Progress is manually updated by project maintainer as tasks are completed.
 
 ### Lesson Improvement Tracking
 
 | Lesson | Current | Target | Phase 1 | Phase 2 | Phase 3 | Phase 4 | Status |
 | -------- | --------- | -------- | --------- | --------- | --------- | --------- | -------- |
 | Check isinstance | 5.8 | 8.0+ | - | - | ✅ Rewrite | ✅ | ⏳ Not Started |
-| Decorators | 6.9 | 8.5+ | ✅ 2 bugs | - | ✅ Expand | ✅ | ⏳ Not Started |
-| Exceptions | 7.1 | 8.5+ | ✅ 1 bug | ✅ Types | - | ✅ | ⏳ Not Started |
+| Decorators | 6.9 | 8.5+ | ✅ 2 bugs | - | ✅ Expand | ✅ | 🔄 Phase 1 Done |
+| Exceptions | 7.1 | 8.5+ | ✅ 1 bug | ✅ Types | - | ✅ | 🔄 Phase 1 Done |
 | Inheritance | 7.2 | 8.5+ | - | ✅ Types | - | ✅ | ⏳ Not Started |
-| Lambda Functions | 7.3 | 8.5+ | ✅ 1 bug | - | ✅ Expand | ✅ | ⏳ Not Started |
+| Lambda Functions | 7.3 | 8.5+ | ✅ 1 bug | - | ✅ Expand | ✅ | 🔄 Phase 1 Done |
 | Dict vs DefaultDict | 8.1 | 8.5+ | - | ✅ Types | - | ✅ | ⏳ Not Started |
 | Yield vs Return | 8.5 | 9.0+ | - | Minor | - | ✅ | ⏳ Not Started |
 | Concurrency/Parallelism | 8.5 | 9.0+ | - | Minor | - | ✅ | ⏳ Not Started |
@@ -791,11 +743,11 @@ Before submitting, ensure:
 
 ## 🎯 Success Criteria
 
-### Phase 1 Success
+### Phase 1 Success ✅ COMPLETE
 
-- [ ] All critical bugs fixed
-- [ ] No runtime errors when importing modules
-- [ ] All tests passing
+- [✅] All critical bugs fixed
+- [✅] No runtime errors when importing modules
+- [✅] All tests passing
 
 ### Phase 2 Success
 
@@ -824,15 +776,16 @@ Before submitting, ensure:
 
 ### Phase 6 Success
 
-- [ ] Pre-commit hooks enforce docstring standards
 - [ ] CI/CD includes type checking
-- [ ] PR template includes quality checklist
-- [ ] Quarterly review process documented
+- [ ] PR template created with quality checklist for reviewers
+- [ ] Make commands available for lint, format, and spelling checks
 
 ### Overall Project Success
 
 - [ ] Average score improves from 7.9 to 8.5+
 - [ ] No lessons below 7.0
+- [ ] All new lessons achieve minimum score of 8.0/10
+- [ ] Quality standards automated via pre-commit hooks
 - [ ] At least 8 lessons at 8.5+
 - [ ] All critical and type errors resolved
 - [ ] Consistent quality standards across all lessons
@@ -850,11 +803,6 @@ Before submitting, ensure:
 
 - None currently identified
 
-### Questions/Decisions Needed
-
-- Should we set a minimum score threshold for new lessons?
-- Do we want automated quality scoring in CI/CD?
-
 ---
 
 ## 📚 References
@@ -862,4 +810,4 @@ Before submitting, ensure:
 - `AGENTS.md` - AI agent instructions and quality standards
 - `README.md` - Complete quality review results
 - `CONTRIBUTING.md` - Contribution guidelines
-- `Quality Checklist in AGENTS.md` - Pre-completion checklist
+- `docs/quality-scores.md` - Quality scores and metrics
