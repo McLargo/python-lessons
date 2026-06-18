@@ -20,7 +20,7 @@ def get_list_of_fields_from_a_list_dict(
     Returns:
         list[str]: list of the values extracted.
     """
-    return map(lambda d: d[field_to_be_extracted], content)
+    return list(map(lambda d: d[field_to_be_extracted], content))
 
 
 def sort_a_list_of_dict_by_a_field(
