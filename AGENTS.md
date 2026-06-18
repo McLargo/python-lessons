@@ -256,20 +256,31 @@ When user asks about:
 
 ## Quality Checklist
 
-Before considering any lesson complete:
+Before considering any lesson complete (target: minimum 8.0/10), ensure the
+following checklist is satisfied:
 
 - [ ] Code runs without errors
-- [ ] 100% test coverage achieved
-- [ ] All functions/classes have Google-style docstrings
+- [ ] 100% test coverage achieved (`make coverage`)
+- [ ] Mutation testing passes for critical logic (`make mutations`)
+- [ ] Tests cover edge cases and error conditions
+- [ ] Tests use appropriate patterns (parametrize, fixtures, etc.)
+- [ ] All functions/classes have Google-style docstrings with:
+  - Brief one-line summary
+  - Detailed description (if needed)
+  - Args section with types and descriptions
+  - Returns section with type and description
+  - Raises section (if applicable)
 - [ ] Type hints are present and correct
-- [ ] Ruff linting passes
-- [ ] Spelling check passes (cspell)
-- [ ] Documentation renders correctly in mkdocs
+- [ ] Ruff linting passes (`make lint`)
+- [ ] Spelling check passes (`make spelling`)
+- [ ] Documentation renders correctly in mkdocs (`make serve`)
 - [ ] Examples are practical and educational
 - [ ] Appropriate difficulty level
 - [ ] Tests cover edge cases and error conditions
 - [ ] No TODO or FIXME comments remain
 - [ ] ADRs followed for architectural decisions
+- [ ] Common pitfalls or gotchas documented
+- [ ] "When to use" and "When NOT to use" sections (where applicable)
 
 ---
 
