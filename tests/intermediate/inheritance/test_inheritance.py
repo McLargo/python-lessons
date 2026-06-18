@@ -53,3 +53,8 @@ def test_difference_novel():
     # usa driver is novel, spain driver is not
     assert usa_driver.is_novel() is True
     assert spain_driver.is_novel() is False
+
+
+def test_driver_with_no_license_date():
+    usa_driver: UsaDriver = UsaDriver(license_valid_from=None)
+    assert usa_driver.is_novel() is False

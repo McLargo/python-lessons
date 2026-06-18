@@ -5,7 +5,7 @@ This method is a decorator to ensures that only exists one instance of a class.
 """
 
 
-def singleton(cls: type):
+def singleton(cls: type) -> type:
     """Singleton decorator.
 
     Method to decorate a class as a singleton. This decorator ensures that
@@ -18,7 +18,7 @@ def singleton(cls: type):
         (type): Instance of the decorated class
     """
 
-    def __new__singleton(cls: type, *args, **kwargs):  # noqa: ARG001
+    def __new__singleton(cls: type, *args, **kwargs) -> object:  # noqa: ARG001
         if not hasattr(cls, "__singleton"):
             cls.__singleton = object.__new__(cls)
         return cls.__singleton

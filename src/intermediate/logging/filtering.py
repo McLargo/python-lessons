@@ -38,11 +38,11 @@ class CustomFilter(logging.Filter):
                     )
         return True
 
-    def mask_password(self, match_obj):
+    def mask_password(self, match_obj: re.Match) -> str:
         """Mask password completely."""
         return "*" * len(match_obj.group(0))
 
-    def mask_email(self, match_obj):
+    def mask_email(self, match_obj: re.Match) -> str:
         """Mask email address, showing only first character before @."""
         local_part, domain = match_obj.group(0).split("@")
         masked_local = "*" * (len(local_part))

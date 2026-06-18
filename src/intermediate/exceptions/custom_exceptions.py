@@ -8,10 +8,10 @@ This class is just an example of a CustomError class.
 class CustomError(Exception):
     """Custom error class."""
 
-    message = str
-    exception = Exception
+    message: str
+    exception: Exception
 
-    def __init__(self, **kwargs):
+    def __init__(self, **kwargs) -> None:
         """Init CustomError exception."""
         self.message = kwargs["message"]
         self.exception = kwargs["exception"]

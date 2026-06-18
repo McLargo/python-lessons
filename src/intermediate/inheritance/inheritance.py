@@ -14,7 +14,9 @@ from dataclasses import dataclass
 class Driver(ABC):
     """This is a driver, an abstract class that represents a driver."""
 
-    license_valid_from: datetime.date = None
+    novel_years: int = 0
+    metric_unit: str = ""
+    license_valid_from: datetime.date | None = None
 
     def is_novel(self) -> bool:
         """Return whatever the driver is novel or not.
@@ -22,6 +24,9 @@ class Driver(ABC):
         Returns:
             is_novel: True if the driver is novel, False otherwise.
         """
+        if self.license_valid_from is None:
+            return False
+
         novel_days: int = 365 * self.novel_years
         novel_until: datetime.date = (
             self.license_valid_from + datetime.timedelta(days=novel_days)
@@ -49,8 +54,8 @@ class Driver(ABC):
 class UsaDriver(Driver):
     """Concrete class of a Driver that can drive in USA."""
 
-    novel_years = 2
-    metric_unit = "mph"
+    novel_years: int = 2
+    metric_unit: str = "mph"
 
     def speed_limit(self) -> str:
         """Return the speed limit with metic unit for the driver.
@@ -65,8 +70,8 @@ class UsaDriver(Driver):
 class SpainDriver(Driver):
     """Concrete class of a Driver that can drive in Spain."""
 
-    novel_years = 1
-    metric_unit = "km/h"
+    novel_years: int = 1
+    metric_unit: str = "km/h"
 
     def speed_limit(self) -> str:
         """Return the speed limit with metic unit for the driver.
