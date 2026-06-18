@@ -6,7 +6,6 @@ defaultdict.
 """
 
 from collections import defaultdict
-from typing import Optional
 
 
 def get_value_from_dict_with_square_brackets(
@@ -31,8 +30,8 @@ def get_value_from_dict_with_square_brackets(
 def get_value_from_dict_with_get(
     my_dict: dict[str, str],
     key: str,
-    default: str = None,
-) -> Optional[str]:
+    default: str | None = None,
+) -> str | None:
     """Get value from a dict using get method.
 
     Return default if key is not in the dict.
@@ -52,8 +51,8 @@ def get_value_from_dict_with_get(
 def get_value_from_defaultdict(
     my_dict: dict[str, str],
     key: str,
-    default: str = None,
-) -> str:
+    default: str | None = None,
+) -> str | None:
     """Get value from a defaultdict using square brackets.
 
     If a function is send as argument to defaultdict,
@@ -68,6 +67,6 @@ def get_value_from_defaultdict(
     Returns:
         value (str): value of the defaultdict for the key provided.
     """
-    default_dict = defaultdict(lambda: default)
+    default_dict: defaultdict[str, str | None] = defaultdict(lambda: default)
     default_dict.update(**my_dict)
     return default_dict[key]

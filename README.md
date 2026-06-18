@@ -27,7 +27,7 @@ criteria defined in AGENTS.md. Each lesson was evaluated across four weighted
 categories: Technical Accuracy (35%), Code Quality (25%), Educational Value
 (25%), and Documentation (15%).
 
-**Status**: Phase 1 complete ✅ - See [Improvement Plan](docs/plans/IMPROVEMENT_PLAN.md)
+**Status**: Phase 1 & 2 complete ✅ - See [Improvement Plan](docs/plans/IMPROVEMENT_PLAN.md)
 for ongoing quality improvements.
 
 ### Overall Summary Table
