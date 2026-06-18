@@ -2,14 +2,10 @@
 codeowners
 codespell
 docstrings
-doctest
-doctests
-EAFP
 fontawesome
 gitflow
 htmlcov
 ipdb
-LBYL
 markdownlint
 mkdocs
 mkdocstrings

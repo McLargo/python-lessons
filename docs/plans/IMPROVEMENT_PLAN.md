@@ -466,7 +466,7 @@ def example_function(param: str, count: int = 1) -> list[str]:
 
 ```bash
 make server  # Check rendering
-make test    # Ensure doctests pass
+make test    # Ensure tests pass
 ```
 
 ### Task 4.3: Review Common Pitfalls Sections
@@ -677,14 +677,14 @@ make spelling  # Check spelling
 
 ### Phase Completion Status
 
-- [ ] **Phase 1**: Critical Bug Fixes (0/3 tasks complete)
+- [✅] **Phase 1**: Critical Bug Fixes (3/3 tasks complete) - **COMPLETE** ✅
 - [ ] **Phase 2**: Type Error Fixes (0/4 tasks complete)
 - [ ] **Phase 3**: Documentation Improvements (0/4 tasks complete)
 - [ ] **Phase 4**: Consistent Weaknesses (0/3 tasks complete)
 - [ ] **Phase 5**: Display Scores on Website (0/3 tasks complete)
 - [ ] **Phase 6**: Systematic Improvements (0/3 tasks complete)
 
-**Overall Progress**: 0/20 major tasks complete
+**Overall Progress**: 3/20 major tasks complete (15%)
 
 **Note**: Progress is manually updated by project maintainer as tasks are completed.
 
@@ -693,10 +693,10 @@ make spelling  # Check spelling
 | Lesson | Current | Target | Phase 1 | Phase 2 | Phase 3 | Phase 4 | Status |
 | -------- | --------- | -------- | --------- | --------- | --------- | --------- | -------- |
 | Check isinstance | 5.8 | 8.0+ | - | - | ✅ Rewrite | ✅ | ⏳ Not Started |
-| Decorators | 6.9 | 8.5+ | ✅ 2 bugs | - | ✅ Expand | ✅ | ⏳ Not Started |
-| Exceptions | 7.1 | 8.5+ | ✅ 1 bug | ✅ Types | - | ✅ | ⏳ Not Started |
+| Decorators | 6.9 | 8.5+ | ✅ 2 bugs | - | ✅ Expand | ✅ | 🔄 Phase 1 Done |
+| Exceptions | 7.1 | 8.5+ | ✅ 1 bug | ✅ Types | - | ✅ | 🔄 Phase 1 Done |
 | Inheritance | 7.2 | 8.5+ | - | ✅ Types | - | ✅ | ⏳ Not Started |
-| Lambda Functions | 7.3 | 8.5+ | ✅ 1 bug | - | ✅ Expand | ✅ | ⏳ Not Started |
+| Lambda Functions | 7.3 | 8.5+ | ✅ 1 bug | - | ✅ Expand | ✅ | 🔄 Phase 1 Done |
 | Dict vs DefaultDict | 8.1 | 8.5+ | - | ✅ Types | - | ✅ | ⏳ Not Started |
 | Yield vs Return | 8.5 | 9.0+ | - | Minor | - | ✅ | ⏳ Not Started |
 | Concurrency/Parallelism | 8.5 | 9.0+ | - | Minor | - | ✅ | ⏳ Not Started |
@@ -709,11 +709,11 @@ make spelling  # Check spelling
 
 ## 🎯 Success Criteria
 
-### Phase 1 Success
+### Phase 1 Success ✅ COMPLETE
 
-- [ ] All critical bugs fixed
-- [ ] No runtime errors when importing modules
-- [ ] All tests passing
+- [✅] All critical bugs fixed
+- [✅] No runtime errors when importing modules
+- [✅] All tests passing
 
 ### Phase 2 Success
 
