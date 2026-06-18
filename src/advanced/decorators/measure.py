@@ -8,7 +8,7 @@ import logging
 from time import time
 from typing import Callable
 
-logging.basicConfig(name=__name__, format="%(message)s", level=logging.DEBUG)
+logging.basicConfig(format="%(message)s", level=logging.DEBUG)
 logger = logging.getLogger(__name__)
 
 
@@ -27,7 +27,7 @@ def measure(func: Callable):
 
     def wrapper(*args, **kwargs):
         start = time()
-        func(*args, **kwargs)
+        result = func(*args, **kwargs)
         elapsed_sec = time() - start
         elapsed_format = f"{elapsed_sec:.3f}"
         logger.debug(
@@ -35,5 +35,6 @@ def measure(func: Callable):
             func.__name__,
             elapsed_format,
         )
+        return result
 
     return wrapper

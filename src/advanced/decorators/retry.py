@@ -9,7 +9,7 @@ import logging
 from time import sleep
 from typing import Callable
 
-logging.basicConfig(name=__name__, format="%(message)s", level=logging.DEBUG)
+logging.basicConfig(format="%(message)s", level=logging.DEBUG)
 logger = logging.getLogger(__name__)
 
 

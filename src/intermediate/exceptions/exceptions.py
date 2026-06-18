@@ -8,7 +8,7 @@ import logging
 
 from .custom_exceptions import CustomError
 
-logging.basicConfig(name=__name__, format="%(message)s", level=logging.DEBUG)
+logging.basicConfig(format="%(message)s", level=logging.DEBUG)
 logger = logging.getLogger(__name__)
 
 
