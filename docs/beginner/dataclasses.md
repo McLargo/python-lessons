@@ -4,7 +4,7 @@ Dataclasses are a new feature in Python 3.7. They are a convenient way to create
 classes which are mainly used to store data. By default, dataclasses provide a
 __repr__ and __init__ method, so we don't have to write them ourselves.
 
-::: src.beginner.dataclasses
+::: src.beginner.dataclass
     options:
       members:
         - Circle

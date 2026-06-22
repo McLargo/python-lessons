@@ -1,8 +1,8 @@
-"""Module to set an instance of a Pizza with Ingredients.
+"""Dataclass examples demonstrating Python's dataclass decorator.
 
-This module contains the enum for all ingredients available to create a Pizza,
-and the class to create a Pizza instance.
-
+This module shows how to use dataclasses for creating classes that primarily
+store data, with automatic generation of special methods. Includes examples
+of properties, calculated fields, and argument unpacking.
 """
 
 from dataclasses import dataclass
