@@ -1,6 +1,5 @@
 import pytest
-
-from beginner.dataclasses import Circle
+from beginner.dataclass import Circle
 
 
 def test_circle_with_args():

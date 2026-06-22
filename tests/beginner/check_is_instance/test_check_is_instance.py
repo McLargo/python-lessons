@@ -1,7 +1,7 @@
 from hypothesis import given
 from hypothesis import strategies as st
 
-from beginner.check_is_instance import is_instance
+from beginner.check_is_instance import is_instance, is_instance_using_type
 
 
 @given(st.integers())
@@ -62,3 +62,27 @@ def test_is_instance_bytes(bts):
 def test_is_instance_none(none_val):
     assert is_instance(none_val, type(None)) is True
     assert is_instance(None, int) is False
+
+
+@given(st.booleans())
+def test_is_instance_bool_int_subclass(bol):
+    assert is_instance(bol, bool) is True
+    assert is_instance(bol, int) is True
+
+
+def test_is_instance_tuple_of_types():
+    assert is_instance(1, (int, str)) is True
+    assert is_instance("1", (int, str)) is True
+    assert is_instance(1.0, (int, str)) is False
+
+
+@given(st.booleans())
+def test_is_instance_with_type_bool(bol):
+    assert is_instance_using_type(bol, bool) is True
+    assert is_instance_using_type(bol, int) is False
+
+
+@given(st.text())
+def test_is_instance_with_type_str(s):
+    assert is_instance_using_type(s, str) is True
+    assert is_instance_using_type(s, bytes) is False
