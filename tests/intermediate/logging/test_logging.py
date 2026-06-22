@@ -10,6 +10,7 @@ from intermediate.logging import (
     custom_loguru_format_and_level,
     default_logging,
     default_loguru,
+    lazy_logging_format,
 )
 
 
@@ -88,6 +89,18 @@ def test_custom_logging_configuration_format(caplog):
         caplog.records[0].asctime,
         date_format,
     )
+
+
+def test_lazy_logging_format(caplog):
+    lazy_logging_format()
+
+    assert len(caplog.records) == 1
+
+    assert (
+        caplog.records[0].message
+        == "Using lazy formatting: INFO logging formatted"
+    )
+    assert caplog.records[0].name == "intermediate.logging.custom_logging"
 
 
 def test_default_loguru(writer):

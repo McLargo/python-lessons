@@ -22,6 +22,28 @@ positional arguments, and `**kwargs` represents a dict of keyword arguments.
 This is useful when we want to pass a variable number of arguments to a method,
 or when we want to capture arguments that we don't know about.
 
+## Common pitfalls
+
+Remember to avoid using mutable default values for dataclass fields. They are
+shared across all instances of the dataclass, which can lead to unexpected
+behavior.
+
+```python
+# bad example
+@dataclass
+class Team:
+    name: str
+    members: list = []  # BUG: All instances share the same list!
+
+# correct example
+from dataclasses import dataclass, field
+
+@dataclass
+class Team:
+    name: str
+    members: list = field(default_factory=list)  # Creates new list per instance
+```
+
 ## References
 
 - [Dataclasses](https://docs.python.org/3/library/dataclasses.html)

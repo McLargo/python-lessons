@@ -12,6 +12,8 @@ existing code.
 
 - Multiple decorators can be applied to a single function or method, separating
   concerns and maintaining a clean and readable codebase.
+- They are applied from bottom to top. Last defined decorator is the first to
+  be applied.
 - Parametrized, allowing to customize their behavior without having to define
   multiple decorators for each case.
 
@@ -38,3 +40,9 @@ The singleton decorator is a very useful example of a decorator. It allows to
 ensures that only exists one instance of a class.
 
 ::: src.advanced.decorators.singleton
+
+## Common pitfalls
+
+Remember to use `functools.wraps` to preserve the original function's metadata,
+such as its name, docstring, and module. This is important for debugging and
+introspection.

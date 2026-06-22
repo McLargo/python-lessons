@@ -13,7 +13,8 @@ the corresponding exception.
 ## Controlling exceptions
 
 Exceptions can be caught and handled using a `try` block. You can catch the
-exception, do something (like logging), and continue running the program.
+exception, do something (like logging, metrics...), and continue running the
+program.
 
 ::: src.intermediate.exceptions.exception_controlled
 
@@ -22,16 +23,25 @@ the execution.
 
 ::: src.intermediate.exceptions.exception_controlled_raise_exception
 
-Similar way, ou can catch the exception, logging and raise another type of
-exception. You can terminate the execution of a running program by raising an
-exception at any time.
+Similar way, you can catch the exception, logging and raise another your custom
+exception (always use `from` to preserve the original exception context). You
+can terminate the execution of a running program by raising an exception at any
+time.
 
 ::: src.intermediate.exceptions.exception_controlled_raise_custom_exception
 
 With the finally block, you can run code that will always run, regardless if the
 code in the try block raises an exception. It will be always executed.
 
-::: src.intermediate.exceptions.exception_controlled_raise_custom_exception
+::: src.intermediate.exceptions.exception_with_finally
+
+## Common pitfalls
+
+Do not catch `Exception` or `BaseException` unless you have a very good reason
+and you have great observability of your code. Catching these exceptions can
+hide bugs and make it difficult to debug your code. The best approach is to
+catch the exceptions that you expect to occur and handle them appropriately, and
+let the unexpected exceptions propagate all the way up.
 
 ## References
 

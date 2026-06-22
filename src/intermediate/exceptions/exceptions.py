@@ -13,10 +13,15 @@ logger = logging.getLogger(__name__)
 
 
 def exception_uncontrolled() -> None:
-    """Method that raises an exception that is not handled correctly.
+    """Example of an unhandled exception that propagates to the caller.
+
+    This function intentionally performs an invalid operation (adding an
+    integer and a string) without catching the exception. This shows what
+    happens when exceptions are not handled - they propagate up the call
+    stack until caught or the program crashes.
 
     Raises:
-        TypeError: cannot sum int&string types
+        TypeError: When attempting to add incompatible types (int + str).
     """
     number = 1
     char = "a"
@@ -24,7 +29,12 @@ def exception_uncontrolled() -> None:
 
 
 def exception_controlled() -> None:
-    """Method that control the exception, no raise."""
+    """Example of proper exception handling by catching and logging.
+
+    This function shows how to catch an exception, log it, and continue
+    execution gracefully. This is appropriate when the error is expected
+    and recoverable, and you want the program to continue running.
+    """
     number = 1
     char = "a"
     try:
@@ -35,10 +45,15 @@ def exception_controlled() -> None:
 
 
 def exception_controlled_raise_exception() -> None:
-    """Method that control the exception, raising the same exception.
+    """Example of catching and re-raising the same exception.
+
+    This function shows how to catch an exception, log relevant information,
+    and then re-raise the same exception. This pattern is useful when you
+    want to add logging or perform cleanup while still propagating the
+    error to the caller.
 
     Raises:
-        TypeError: cannot sum int&string types
+        TypeError: When attempting to add incompatible types (int + str).
     """
     number = 1
     char = "a"
@@ -50,10 +65,15 @@ def exception_controlled_raise_exception() -> None:
 
 
 def exception_controlled_raise_custom_exception() -> None:
-    """Method that control the exception, raising custom exception.
+    """Example of catching and raising a custom exception.
+
+    This function shows how to catch a built-in exception and raise a
+    custom exception instead. This pattern is useful for wrapping
+    low-level exceptions with domain-specific errors that provide
+    better context to callers.
 
     Raises:
-        TypeError: cannot sum int&string types
+        CustomError: A custom exception wrapping the original TypeError.
     """
     number = 1
     char = "a"
@@ -64,17 +84,24 @@ def exception_controlled_raise_custom_exception() -> None:
         raise CustomError(
             message="Controlled TypeError",
             exception=exc,
-        )
+        ) from exc
 
 
 def exception_with_finally(raise_exception: bool) -> None:
-    """Method that control the exception, raising custom exception.
+    """Example of using finally clause for cleanup code.
 
-    Arguments:
-        raise_exception (bool): flag to raise exception or not
+    This function shows how the finally block executes regardless of
+    whether an exception is raised or not. The finally block is useful
+    for cleanup operations that must always run, such as closing files
+    or releasing resources.
+
+    Args:
+        raise_exception: If True, raises a TypeError. If False, executes
+            successfully without raising an exception.
 
     Raises:
-        TypeError: cannot sum int&string types
+        TypeError: When raise_exception is True and attempting to add
+            incompatible types (int + str).
     """
     number = 1
     char = "a"

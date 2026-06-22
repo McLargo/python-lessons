@@ -19,3 +19,12 @@ Subclass SpainDriver represents a Driver in Spain. It defines the novel years
 and the metric unit for the speed. Abstract method `speed_limit` is implemented.
 
 ::: src.intermediate.inheritance.inheritance.SpainDriver
+
+## Common pitfalls
+
+Don't forget to implement the abstract method in the subclass. If you don't, you
+will get a `TypeError` when you try to instantiate the subclass.
+
+Additionally, don't make too many levels of inheritance. It is better to have a
+flat hierarchy than a deep one. You can alway use composition instead of
+inheritance.

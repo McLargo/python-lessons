@@ -61,13 +61,36 @@ guidelines/tips to follow:
 4. Run tests and aim for 100% coverage. Run `make test` and `make coverage` to
    run tests and check coverage.
 
-5. Commit your changes to the branch. Use
+5. Follow documentation and code quality standards:
+   1. **Docstrings**: All public functions, classes, and methods must have
+      Google-style docstrings. See [Docstring Standards](docs/contributing/docstring-standards.md)
+      for detailed requirements and templates.
+   2. **Type Hints**: Include type hints for all function parameters and return
+      values.
+   3. **Code Style**: Follow PEP 8 and run `make lint` to check for issues.
+   4. **Spelling**: Run `make spelling` to check for spelling errors in code and
+      documentation.
+
+6. Commit your changes to the branch. Use
    [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) for
    your commits message. No matter if you create several commits, push request
    will be squashed to the main branch with a single commit message.
 
-6. Push your changes and create a pull request. Select your branch and provide a
+7. Push your changes and create a pull request. Select your branch and provide a
    descriptive title and description for your pull request.
+
+### Quality Standards
+
+All lessons must meet minimum quality standards before being merged:
+
+- **100% Test Coverage**: All code must be covered by tests
+- **Comprehensive Docstrings**: Follow [Google-style docstring standards](docs/contributing/docstring-standards.md)
+- **Type Hints**: All functions must have proper type annotations
+- **Clear Documentation**: Markdown documentation must be clear, accurate, and well-formatted
+- **Practical Examples**: Include real-world use cases, not just toy examples
+- **Minimum Score**: New lessons should target a quality score of 8.0/10 or higher
+
+See [Quality Scores](docs/quality-scores.md) for detailed scoring criteria.
 
 ### Review process
 

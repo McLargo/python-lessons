@@ -5,6 +5,7 @@ This method is a decorator that measures the execution time of a function.
 """
 
 import logging
+from functools import wraps
 from time import time
 from typing import Callable
 
@@ -25,6 +26,7 @@ def measure(func: Callable):
         (func): Decorated function
     """
 
+    @wraps(func)
     def wrapper(*args, **kwargs):
         start = time()
         result = func(*args, **kwargs)

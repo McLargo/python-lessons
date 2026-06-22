@@ -48,3 +48,8 @@ print("Get missing collection default dict:", timeit(
 Get missing collection default dict: 0.0706390929999543
 
 ```
+
+## Common pitfalls
+
+`defaultdict` creates a new entry in the dictionary when you access a missing
+key. This can lead to unexpected behavior if you are not careful.
