@@ -1,5 +1,17 @@
 # Logging
 
+<!-- markdownlint-disable MD046 -->
+!!! info "Quality Score"
+    **Overall Score**: 9.0/10 ⭐ Outstanding
+
+    - Technical Accuracy: 30/35
+    - Code Quality: 22/25
+    - Educational Value: 24/25
+    - Documentation: 14/15
+
+    Last reviewed: June 22, 2026
+<!-- markdownlint-enable MD046 -->
+
 Logging is a very important part of any application. It allows you to track the
 code execution and to debug the application. Python has a built-in logging
 module that allows you to log messages to the console, to a file, or to a remote

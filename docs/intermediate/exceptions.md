@@ -1,5 +1,17 @@
 # Exceptions
 
+<!-- markdownlint-disable MD046 -->
+!!! info "Quality Score"
+    **Overall Score**: 7.1/10 ⚠️ Good/Needs Work
+
+    - Technical Accuracy: 20/35
+    - Code Quality: 18/25
+    - Educational Value: 22/25
+    - Documentation: 11/15
+
+    Last reviewed: June 22, 2026
+<!-- markdownlint-enable MD046 -->
+
 Exceptions are a mechanism for handling errors in Python (and most programming
 language). When an error occurs when running your code, Python raises an
 exception. There are multiple types of exceptions. Each exception has a name and

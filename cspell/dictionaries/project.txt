@@ -1,4 +1,5 @@
 chartboost
 mdegis
+livereload
 snok
 virtualenvs

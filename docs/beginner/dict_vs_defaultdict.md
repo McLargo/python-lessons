@@ -1,5 +1,17 @@
 # dict vs defaultdict
 
+<!-- markdownlint-disable MD046 -->
+!!! info "Quality Score"
+    **Overall Score**: 8.1/10 ✅ Good
+
+    - Technical Accuracy: 28/35
+    - Code Quality: 20/25
+    - Educational Value: 20/25
+    - Documentation: 13/15
+
+    Last reviewed: June 22, 2026
+<!-- markdownlint-enable MD046 -->
+
 Inspect the difference between a `dict` and a `defaultdict` in Python.
 
 ## Access dict by key with square brackets

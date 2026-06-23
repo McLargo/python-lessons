@@ -55,7 +55,10 @@ plugins:
 
 nav:
   - "Home": index.md
-  - "Template": template.md
+  - "Contributing":
+    - "Template": template.md
+    - "Docstring Standards": contributing/docstring-standards.md
+    - "Scores & Status": quality-scores.md
   - ADR:
     - "ADR-001 - poetry": adr/001-poetry.md
     - "ADR-002 - mkdocs": adr/002-mkdocs.md
@@ -63,6 +66,8 @@ nav:
     - "ADR-004 - Deployment": adr/004-deployment.md
     - "ADR-005 - Dependency Maintenance": adr/005-maintenance.md
     - "ADR-006 - AI Code Agents": adr/006-ai-code-agents.md
+  - Spec-Driven Development:
+    - "Improvement Plan": plans/IMPROVEMENT_PLAN.md
   - Beginner:
     - "Check is instance": beginner/check_is_instance.md
     - "Classes and objects": beginner/classes_and_objects.md

@@ -1,5 +1,17 @@
 # Decorators
 
+<!-- markdownlint-disable MD046 -->
+!!! info "Quality Score"
+    **Overall Score**: 9.1/10 ⭐ Excellent
+
+    - Technical Accuracy: 30/35
+    - Code Quality: 25/25
+    - Educational Value: 22/25
+    - Documentation: 14/15
+
+    Last reviewed: June 22, 2026
+<!-- markdownlint-enable MD046 -->
+
 A decorator is a structural design pattern in Python that allows to add new
 functionality to an existing object or function without modifying its structure.
 

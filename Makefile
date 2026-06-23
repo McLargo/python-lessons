@@ -48,7 +48,7 @@ clean: ## Clean Python cache files and directories
 
 serve: check-env ## Serve mkdocs in local
 	@echo "Starting mkdocs server to access documentation."
-	@poetry run mkdocs serve --strict -w src
+	@poetry run mkdocs serve --strict --livereload
 
 build: check-env ## Build mkdocs in local
 	@echo "Building mkdocs in local."
