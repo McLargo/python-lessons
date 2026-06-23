@@ -58,6 +58,22 @@ test: check-env clean ## Run test
 	@echo "Running test."
 	@poetry run python -m pytest --cov=src --cov-report=term-missing --cov-fail-under=100
 
+lint: check-env ## Run ruff linting checks
+	@echo "Running ruff linting checks (including docstrings)."
+	@poetry run ruff check .
+
+lint-fix: check-env ## Run ruff linting checks and fix issues
+	@echo "Running ruff linting checks and fixing issues (including docstrings)."
+	@poetry run ruff check --fix .
+
+format: check-env ## Format code with ruff
+	@echo "Formatting code with ruff."
+	@poetry run ruff format .
+
+spelling: check-env ## Check spelling in source and docs
+	@echo "Checking spelling in Python and Markdown files."
+	@poetry run codespell src/ docs/ README.md CONTRIBUTING.md
+
 coverage: check-env ## Run coverage, generate report in html and open in browser
 	@echo "Running coverage report in html."
 	@poetry run python -m pytest --cov=src --cov-report=html
