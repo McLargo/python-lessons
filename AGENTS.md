@@ -79,6 +79,9 @@ Use Google-style docstrings with:
 - Raises: document exceptions
 - Examples: when helpful
 
+For complete docstring standards, templates, and best practices, see
+[Docstring Standards](docs/contributing/docstring-standards.md).
+
 Example:
 
 ```python

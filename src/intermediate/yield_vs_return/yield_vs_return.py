@@ -8,10 +8,19 @@ from typing import Generator
 
 
 def return_even_numbers(n: int) -> list[int]:
-    """Return even numbers until n (inclusive).
+    """Return a list of all even numbers from 2 up to n (exclusive).
+
+    This function demonstrates the use of return to produce a complete list
+    at once. All even numbers are collected in memory before returning,
+    which can be memory-intensive for large values of n.
+
+    Args:
+        n: The upper limit (exclusive) for generating even numbers.
+            Only even numbers less than n will be included.
 
     Returns:
-        even_numbers: List of even numbers until n (inclusive).
+        A list containing all even numbers from 2 up to (but not including) n.
+        Returns an empty list if n <= 2.
     """
     numbers: list[int] = []
     for number in range(2, n):
@@ -21,10 +30,23 @@ def return_even_numbers(n: int) -> list[int]:
 
 
 def yield_even_numbers(n: int) -> Generator:
-    """Yield even numbers until n (inclusive).
+    """Yield even numbers from 2 up to n (exclusive) one at a time.
+
+    This function demonstrates the use of yield to create a generator.
+    Numbers are produced on-demand rather than all at once, making this
+    memory-efficient for large values of n. Each number is computed only
+    when requested by the caller.
+
+    Args:
+        n: The upper limit (exclusive) for generating even numbers.
+            Only even numbers less than n will be yielded.
+
+    Yields:
+        Even numbers from 2 up to (but not including) n, one at a time.
 
     Returns:
-        even_numbers: List of even numbers until n (inclusive).
+        A Generator that yields even numbers. The generator is lazy and
+        produces values on-demand.
     """
     for number in range(2, n):
         if number % 2 == 0:
@@ -32,10 +54,22 @@ def yield_even_numbers(n: int) -> Generator:
 
 
 def yield_fibonacci_numbers() -> Generator:
-    """Yield Fibonacci series.
+    """Yield Fibonacci numbers in an infinite sequence.
+
+    This function demonstrates an infinite generator using yield. It produces
+    Fibonacci numbers indefinitely without storing them in memory. The caller
+    controls how many numbers to consume, making this pattern ideal for
+    potentially infinite sequences.
+
+    The Fibonacci sequence starts with 0 and 1, and each subsequent number
+    is the sum of the two preceding numbers: 0, 1, 1, 2, 3, 5, 8, 13, ...
+
+    Yields:
+        The next number in the Fibonacci sequence, starting from 0.
 
     Returns:
-        fibonacci_numbers: List of numbers of the Fibonacci series.
+        A Generator that yields Fibonacci numbers indefinitely. The generator
+        will continue producing values until explicitly stopped by the caller.
     """
     c1, c2 = 0, 1
     count = 0

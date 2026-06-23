@@ -25,3 +25,23 @@ A class can have different methods and attributes:
 An object is an instance of a class. It is a concrete entity based on arguments
 during creation. Two objects of the same class are different, with or without
 the same values.
+
+## Common pitfalls
+
+Do not use mutable objects as default values for the class creation or
+arguments. They are shared across all instances of the class, and this is
+usually something with unexpected effects, and it is hard to debug.
+
+```python
+# bad example
+class Pizza:
+    def __init__(self, toppings=[]):
+        self.toppings = toppings
+
+# correct example
+class Pizza:
+    def __init__(self, toppings=None):
+        if toppings is None:
+            toppings = []
+        self.toppings = toppings
+```

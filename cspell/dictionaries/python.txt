@@ -5,6 +5,8 @@ autouse
 caplog
 Dataclasses
 defaultdict
+doctest
+functools
 getpid
 getsizeof
 kwargs

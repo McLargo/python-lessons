@@ -52,7 +52,13 @@ the root logger.
 
 ::: src.intermediate.logging.custom_logging_format
 
+::: src.intermediate.logging.lazy_logging_format
+
 ::: src.intermediate.logging.CustomFilter
+
+Always customize the logging configuration to your needs. The default
+configuration is very basic and may not be suitable for your application,
+specially to debug it.
 
 ## loguru library
 

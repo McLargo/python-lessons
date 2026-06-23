@@ -14,15 +14,20 @@ def get_value_from_dict_with_square_brackets(
 ) -> str:
     """Get value from a dict using square brackets.
 
-    Parameters:
-        my_dict (dict[str, str]): dict to find value.
-        key (str): key to find in the dict.
+    This demonstrates direct dictionary access using square bracket notation.
+    This approach raises a KeyError if the key doesn't exist, which can be
+    useful when you want to ensure the key is present.
+
+    Args:
+        my_dict: Dictionary with string keys and string values
+            to search for the value.
+        key: Key to look up in the dictionary.
 
     Returns:
-        value (str): value of the dict for the key provided.
+        The value associated with the key in the dictionary.
 
     Raises:
-        KeyError: If key is not in the dict.
+        KeyError: If the key is not found in the dictionary.
     """
     return my_dict[key]
 
@@ -34,16 +39,19 @@ def get_value_from_dict_with_get(
 ) -> str | None:
     """Get value from a dict using get method.
 
-    Return default if key is not in the dict.
+    The get() method provides a safe way to access dictionary values,
+    returning a default value instead of raising KeyError when the key
+    is not found. This is preferred when missing keys are expected.
 
-    Parameters:
-        my_dict (dict[str, str]): dict to find value.
-        key (str): key to find in the dict.
-        default (str): default value to return if key is not in the
-            dict.
+    Args:
+        my_dict: Dictionary with string keys and string values
+            to search for the value.
+        key: Key to look up in the dictionary.
+        default: Value to return if key is not found. Defaults to None.
 
     Returns:
-        value (str, None): value of the dict for the key provided.
+        The value associated with the key, or the default value if the
+        key is not found.
     """
     return my_dict.get(key, default)
 
@@ -55,17 +63,20 @@ def get_value_from_defaultdict(
 ) -> str | None:
     """Get value from a defaultdict using square brackets.
 
-    If a function is send as argument to defaultdict,
-    it will use to return as the default value.
+    Demonstrates how defaultdict automatically provides default values for
+    missing keys. When a lambda function is passed to defaultdict, it's
+    called to generate the default value whenever a missing key is accessed.
 
-    Parameters:
-        my_dict (dict[str, str]): defaultdict to find value.
-        key (str): key to find in the defaultdict.
-        default (str): default value class to return if key is not in the
-            defaultdict.
+    Args:
+        my_dict: Regular dictionary with string keys and string values
+            to convert to defaultdict.
+        key: Key to look up in the defaultdict.
+        default: Value that the lambda function should return for missing
+            keys. Defaults to None.
 
     Returns:
-        value (str): value of the defaultdict for the key provided.
+        The value associated with the key, or the default value if the
+        key was not in the original dictionary.
     """
     default_dict: defaultdict[str, str | None] = defaultdict(lambda: default)
     default_dict.update(**my_dict)

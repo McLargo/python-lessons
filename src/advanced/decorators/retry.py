@@ -6,6 +6,7 @@ a exponential delay between retries.
 """
 
 import logging
+from functools import wraps
 from time import sleep
 from typing import Callable
 
@@ -30,6 +31,7 @@ def retry(attempts: int = 3, delay: float = 1.0):
     """
 
     def decorator(func: Callable):
+        @wraps(func)
         def wrapper(*args, **kwargs):
             exception = None
             for current_attempt in range(1, attempts + 1):
