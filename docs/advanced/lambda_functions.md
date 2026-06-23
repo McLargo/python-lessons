@@ -1,5 +1,17 @@
 # Lambda functions
 
+<!-- markdownlint-disable MD046 -->
+!!! info "Quality Score"
+    **Overall Score**: 9.2/10 ⭐ Excellent
+
+    - Technical Accuracy: 28/35
+    - Code Quality: 25/25
+    - Educational Value: 24/25
+    - Documentation: 15/15
+
+    Last reviewed: June 22, 2026
+<!-- markdownlint-enable MD046 -->
+
 Lambda expressions are ideally used when we need to do something simple and are
 more interested in getting the job done quickly rather than formally naming the
 function.
@@ -54,7 +66,6 @@ lambda function captures the variable by reference, not by value. This can lead
 to unexpected behavior when the lambda function is executed later.
 
 ```python
-
 # bad example: Lambda captures variable by reference
 functions = []
 for i in range(5):

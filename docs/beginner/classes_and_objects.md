@@ -1,5 +1,17 @@
 # Classes and objects
 
+<!-- markdownlint-disable MD046 -->
+!!! info "Quality Score"
+    **Overall Score**: 8.8/10 ✅ Excellent
+
+    - Technical Accuracy: 32/35
+    - Code Quality: 22/25
+    - Educational Value: 21/25
+    - Documentation: 13/15
+
+    Last reviewed: June 22, 2026
+<!-- markdownlint-enable MD046 -->
+
 ## Class
 
 A class is the common structure for all objects or instances.

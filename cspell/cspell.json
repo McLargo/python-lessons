@@ -10,10 +10,10 @@
             "path": "./dictionaries/python.txt"
         },
         {
-            "name": "github-workflows-dictionary",
-            "path": "./dictionaries/github-workflows.txt"
+            "name": "project-dictionary",
+            "path": "./dictionaries/project.txt"
         }
     ],
-    "dictionaries": ["lesson-dictionary", "python-dictionary", "github-workflows-dictionary"],
+    "dictionaries": ["lesson-dictionary", "python-dictionary", "project-dictionary"],
     "ignorePaths": ["site/**", "../pyproject.toml", "../poetry.lock", "pyproject.toml", "poetry.lock"],
   }

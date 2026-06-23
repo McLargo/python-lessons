@@ -1,5 +1,17 @@
 # Yield vs return
 
+<!-- markdownlint-disable MD046 -->
+!!! info "Quality Score"
+    **Overall Score**: 8.5/10 ✅ Excellent
+
+    - Technical Accuracy: 32/35
+    - Code Quality: 22/25
+    - Educational Value: 19/25
+    - Documentation: 12/15
+
+    Last reviewed: June 22, 2026
+<!-- markdownlint-enable MD046 -->
+
 ## Return
 
 `return` keyword implies the output of a function. It stops the function after
