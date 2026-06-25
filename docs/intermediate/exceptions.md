@@ -2,25 +2,32 @@
 
 <!-- markdownlint-disable MD046 -->
 !!! info "Quality Score"
-    **Overall Score**: 7.1/10 ⚠️ Good/Needs Work
+    **Overall Score**: 8.6/10 ✅ Excellent
 
-    - Technical Accuracy: 20/35
-    - Code Quality: 18/25
-    - Educational Value: 22/25
-    - Documentation: 11/15
+    - Technical Accuracy: 28/35
+    - Code Quality: 24/25
+    - Educational Value: 21/25
+    - Documentation: 13/15
 
-    Last reviewed: June 22, 2026
+    Last reviewed: June 25, 2026
 <!-- markdownlint-enable MD046 -->
 
 Exceptions are a mechanism for handling errors in Python (and most programming
-language). When an error occurs when running your code, Python raises an
-exception. There are multiple types of exceptions. Each exception has a name and
-a message.
+languages). When an error occurs when running a piece of code, Python raises an
+exception. There are multiple types of exceptions (built-in and custom).
+`BaseException` is the base class for all built-in exceptions, but commonly used
+exceptions inherit from `Exception`. You can also create your own custom
+exceptions by inheriting from `Exception` or any of its subclasses.
 
 If the exception is not caught, the program will terminate immediately, raising
-the corresponding exception.
+the corresponding exception and traceback.
 
 ::: src.intermediate.exceptions.exception_uncontrolled
+
+Always raise proper exception when building your python code. It will help you
+and your team to understand the error and how to fix it. A proper
+module/library, should implement a consistent and robust mechanism to raise
+exceptions, including in the docstrings sections of the module.
 
 ## Controlling exceptions
 
@@ -46,6 +53,29 @@ With the finally block, you can run code that will always run, regardless if the
 code in the try block raises an exception. It will be always executed.
 
 ::: src.intermediate.exceptions.exception_with_finally
+
+Adding the `else` block, you can run code that will only run if the code in the
+try block does not raise an exception. It will be executed only if the try block
+succeeds.
+
+::: src.intermediate.exceptions.exception_with_else
+
+Multiple exceptions can be caught in a single `except` block by specifying a
+tuple of exception types. This is useful when you want to handle different
+exceptions in the same way.
+
+::: src.intermediate.exceptions.multiple_exceptions_controlled
+
+You can also create your own custom exceptions, by inheriting from `Exception`
+or any of its subclasses. This allows you to create exceptions that are specific
+to your application or library. You can also add custom attributes and methods
+to your custom exceptions, enriching the information that can be provided when
+the exception is raised.
+
+::: src.intermediate.exceptions.CustomError
+    options:
+      members:
+        - CustomError
 
 ## Common pitfalls
 
