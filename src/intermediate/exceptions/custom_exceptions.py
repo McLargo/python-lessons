@@ -19,19 +19,29 @@ class CustomError(Exception):
     """
 
     message: str
-    exception: Exception
+    exception: Exception | None
 
-    def __init__(self, **kwargs) -> None:
+    def __init__(
+        self,
+        message: str,
+        exception: Exception | None = None,
+    ) -> None:
         """Initialize CustomError with message and exception.
 
         Args:
-            **kwargs: Keyword arguments that must include:
-                message (str): A descriptive message explaining the error.
-                exception (Exception): The original exception being wrapped.
-
-        Raises:
-            KeyError: If 'message' or 'exception' keys are not provided
-                in kwargs.
+            message (str): A descriptive message explaining the error.
+            exception (Exception | None): The original exception being wrapped.
+                Defaults to None if no exception is being wrapped.
         """
-        self.message = kwargs["message"]
-        self.exception = kwargs["exception"]
+        super().__init__(message)
+        self.message = message
+        self.exception = exception
+
+    def __str__(self) -> str:
+        """Return a string representation of the CustomError."""
+        if self.exception:
+            return (
+                f"{self.message} (caused by "
+                f"{type(self.exception).__name__}: {self.exception})"
+            )
+        return self.message

@@ -10,5 +10,7 @@ from .exceptions import (
     exception_controlled_raise_custom_exception,  # noqa: F401
     exception_controlled_raise_exception,  # noqa: F401
     exception_uncontrolled,  # noqa: F401
+    exception_with_else,  # noqa: F401
     exception_with_finally,  # noqa: F401
+    multiple_exceptions_controlled,  # noqa: F401
 )

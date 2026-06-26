@@ -64,7 +64,10 @@ def exception_controlled_raise_exception() -> None:
         raise exc
 
 
-def exception_controlled_raise_custom_exception() -> None:
+def exception_controlled_raise_custom_exception(
+    number: int = 1,
+    char: str = "a",
+) -> None:
     """Example of catching and raising a custom exception.
 
     This function shows how to catch a built-in exception and raise a
@@ -72,11 +75,13 @@ def exception_controlled_raise_custom_exception() -> None:
     low-level exceptions with domain-specific errors that provide
     better context to callers.
 
+    Args:
+        number: An integer to be added. Default is 1.
+        char: A string to be added. Default is "a".
+
     Raises:
         CustomError: A custom exception wrapping the original TypeError.
     """
-    number = 1
-    char = "a"
     try:
         number + char  # raise TypeError, cannot sum int&string types
     except TypeError as exc:
@@ -115,3 +120,59 @@ def exception_with_finally(raise_exception: bool) -> None:
         raise exc
     finally:
         logger.debug("Finally is executed.")
+
+
+def exception_with_else(raise_exception: bool) -> None:
+    """Example of using else clause for code that runs if no exception occurs.
+
+    This function shows how the else block executes only if no exception is
+    raised in the try block. The else block is useful for code that should
+    run only when the try block succeeds, such as processing results or
+    performing follow-up actions.
+
+    Args:
+        raise_exception: If True, raises a TypeError. If False, executes
+            successfully without raising an exception.
+
+    Raises:
+        TypeError: When raise_exception is True and attempting to add
+            incompatible types (int + str).
+    """
+    number = 1
+    char = "a"
+    try:
+        if raise_exception:
+            number + char  # raise TypeError, cannot sum int&string types
+        else:
+            number + 10
+    except TypeError as exc:
+        logger.error("Cannot sum int + string. Raising TypeError.")
+        raise exc
+    else:
+        logger.debug("Else is executed.")
+
+
+def multiple_exceptions_controlled(type_error: bool) -> None:
+    """Example of multiple exception handling with specific except blocks.
+
+    This function shows how to handle multiple exceptions in a single try block
+    by using multiple except clauses. Each except clause can handle a specific
+    type of exception, allowing for more granular error handling.
+
+    Args:
+        type_error: If True, raises a TypeError. If False, raises a ValueError.
+
+    Raises:
+        TypeError: When attempting to add incompatible types (int + str).
+        ValueError: When attempting to convert a non-numeric string to int.
+    """
+    number = 1
+    char = "a"
+    try:
+        if type_error:
+            number + char  # raise TypeError, cannot sum int&string types
+        else:
+            int(char)  # raise ValueError, cannot convert str to int
+    except (TypeError, ValueError) as exc:
+        logger.error("An error occurred: %s. Raising the exception.", exc)
+        raise exc
