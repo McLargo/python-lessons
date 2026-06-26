@@ -9,16 +9,17 @@
 | | Classes & Objects | **8.8/10** | ✅ Excellent |
 | | Dataclasses | **8.7/10** | ✅ Excellent |
 | | Dict vs DefaultDict | **8.1/10** | ✅ Good |
-| **Intermediate** | **Average: 8.3/10** | **7.1 - 9.0** | Best: Logging (9.0) ⭐ |
+| **Intermediate** | **Average: 8.7/10** | **8.5 - 9.0** | Best: Logging (9.0) ⭐ |
 | | Logging | **9.0/10** | ⭐ Outstanding |
+| | Exceptions | **8.6/10** | ✅ Excellent |
 | | Yield vs Return | **8.5/10** | ✅ Excellent |
 | | Inheritance | **8.5/10** | ✅ Excellent |
-| | Exceptions | **7.1/10** | ⚠️ Good/Needs Work |
 | **Advanced** | **Average: 8.9/10** | **8.5 - 9.2** | Best: Lambda Functions (9.2) ⭐ |
 | | Lambda Functions | **9.2/10** | ⭐ Excellent |
 | | Decorators | **9.1/10** | ⭐ Excellent |
+| | Strategy Pattern | **8.8/10** | ✅ Excellent |
 | | Concurrency/Parallelism | **8.5/10** | ✅ Excellent |
-| **Overall** | **All Lessons** | **8.6/10** | 11 lessons total |
+| **Overall** | **All Lessons** | **8.8/10** | 12 lessons total |
 
 ## Detailed Scores by Level
 
@@ -36,9 +37,9 @@
 | Lesson | Tech (35%) | Code (25%) | Edu (25%) | Docs (15%) | Total |
 | -------- | ---------- | ---------- | --------- | ---------- | ----- |
 | Logging | 30 | 22 | 24 | 14 | **9.0** |
+| Exceptions | 28 | 24 | 21 | 13 | **8.6** |
 | Yield vs Return | 32 | 22 | 19 | 12 | **8.5** |
 | Inheritance | 31 | 22 | 20 | 12 | **8.5** |
-| Exceptions | 20 | 18 | 22 | 11 | **7.1** |
 
 ### Advanced Lessons
 
@@ -46,4 +47,5 @@
 | -------- | ---------- | ---------- | --------- | ---------- | ----- |
 | Lambda Functions | 28 | 25 | 24 | 15 | **9.2** |
 | Decorators | 30 | 25 | 22 | 14 | **9.1** |
+| Strategy Pattern | 31 | 23 | 21 | 13 | **8.8** |
 | Concurrency/Parallelism | 33 | 18 | 21 | 13 | **8.5** |
