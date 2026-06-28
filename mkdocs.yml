@@ -82,4 +82,5 @@ nav:
     - "Concurrency and Parallelism": advanced/concurrency_parallelism.md
     - "Decorators": advanced/decorators.md
     - "Lambda functions": advanced/lambda_functions.md
+    - "Observer Pattern": advanced/observer_pattern.md
     - "Strategy Pattern": advanced/strategy_pattern.md

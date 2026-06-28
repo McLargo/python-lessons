@@ -30,13 +30,13 @@ lessons are of high quality and meet the needs of the learners.
 This repository maintains high quality standards with 100% test coverage and
 regular quality reviews.
 
-**Overall Project Score**: 8.6/10 ⭐ Excellent
+**Overall Project Score**: 8.6/10 ⭐ Excellent (13 lessons)
 
-| Level | Average | Best Lesson | Status |
-| ------------ | ------- | ----------------------- | ------------ |
-| Beginner | 8.8/10 | Check isinstance (9.5) ⭐ | ⭐ Excellent |
-| Intermediate | 8.3/10 | Logging (9.0) ⭐ | ✅ Good |
-| Advanced | 8.9/10 | Lambda Functions (9.2) ⭐ | ⭐ Excellent |
+| Level | Lessons | Average | Best Lesson | Status |
+| ------------ | ------- | ------- | ----------------------- | ------------ |
+| Beginner | 4 | 8.8/10 | Check isinstance (9.5) ⭐ | ⭐ Excellent |
+| Intermediate | 4 | 8.3/10 | Logging (9.0) ⭐ | ✅ Good |
+| Advanced | 5 | 8.9/10 | Lambda Functions (9.2) ⭐ | ⭐ Excellent |
 
 See [full quality review](quality-scores.md) for detailed scoring.
 
