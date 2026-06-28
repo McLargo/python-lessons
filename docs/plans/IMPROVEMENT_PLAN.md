@@ -434,9 +434,8 @@ of properties, calculated fields, and argument unpacking.
 7. [x] Yield vs Return (8.5/10)
 8. [x] Concurrency/Parallelism (8.5/10)
 9. [x] Dataclasses (8.7/10)
-10. [x] Behavioral Patterns (8.7/10)
-11. [x] Classes & Objects (8.8/10)
-12. [x] Logging (9.0/10)
+10. [x] Classes & Objects (8.8/10)
+11. [x] Logging (9.0/10)
 
 **Example docstring**:
 
@@ -774,14 +773,13 @@ make spelling   # Check spelling
 | Yield vs Return | 8.7 ⭐ | 9.0+ | - | Minor | - | ✅ Docstrings | 🔄 Near Target |
 | Concurrency/Parallelism | 8.7 ⭐ | 9.0+ | - | Minor | - | ✅ Docstrings | 🔄 Near Target |
 | Dataclasses | 8.9 ⭐ | 9.0+ | - | - | Minor | ✅ Docs+Pitfalls | 🔄 Near Target |
-| Behavioral Patterns | 8.7 | 9.0+ | - | - | - | ✅ Docstrings | 🔄 Near Target |
 | Classes & Objects | 9.0 ⭐ | 9.0+ | - | - | - | ✅ Docs+Pitfalls | ✅ Target Met |
 | Logging | 9.1 ⭐ | 9.5+ | - | Minor | - | ✅ Docstrings | 🔄 Near Target |
 
 **Updated Average Score**: **8.9/10** (up from 8.7/10) ⭐
 
-**Lessons at or above target**: 6/12 (50%)
-**Lessons rated Excellent (9.0+)**: 6/12 (50%)
+**Lessons at or above target**: 6/11 (50%)
+**Lessons rated Excellent (9.0+)**: 6/11 (50%)
 
 ---
 

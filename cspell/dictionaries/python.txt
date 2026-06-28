@@ -3,6 +3,7 @@ abstractmethod
 asyncio
 autouse
 caplog
+codepoint
 Dataclasses
 defaultdict
 doctest

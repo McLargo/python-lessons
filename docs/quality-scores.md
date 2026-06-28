@@ -17,8 +17,9 @@
 | **Advanced** | **Average: 8.9/10** | **8.5 - 9.2** | Best: Lambda Functions (9.2) ⭐ |
 | | Lambda Functions | **9.2/10** | ⭐ Excellent |
 | | Decorators | **9.1/10** | ⭐ Excellent |
+| | Strategy Pattern | **8.8/10** | ✅ Excellent |
 | | Concurrency/Parallelism | **8.5/10** | ✅ Excellent |
-| **Overall** | **All Lessons** | **8.7/10** | 11 lessons total |
+| **Overall** | **All Lessons** | **8.8/10** | 12 lessons total |
 
 ## Detailed Scores by Level
 
@@ -46,4 +47,5 @@
 | -------- | ---------- | ---------- | --------- | ---------- | ----- |
 | Lambda Functions | 28 | 25 | 24 | 15 | **9.2** |
 | Decorators | 30 | 25 | 22 | 14 | **9.1** |
+| Strategy Pattern | 31 | 23 | 21 | 13 | **8.8** |
 | Concurrency/Parallelism | 33 | 18 | 21 | 13 | **8.5** |
