@@ -19,3 +19,4 @@ picklable
 pids
 repr
 timeit
+userstate
