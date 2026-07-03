@@ -52,6 +52,7 @@ plugins:
             show_docstring_parameters: true
             heading_level: 3
             show_root_members_full_path: true
+            members: no
 
 nav:
   - "Home": index.md
@@ -83,4 +84,5 @@ nav:
     - "Decorators": advanced/decorators.md
     - "Lambda functions": advanced/lambda_functions.md
     - "Observer Pattern": advanced/observer_pattern.md
+    - "State Pattern": advanced/state_pattern.md
     - "Strategy Pattern": advanced/strategy_pattern.md

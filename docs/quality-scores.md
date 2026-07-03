@@ -14,13 +14,14 @@
 | | Exceptions | **8.6/10** | ✅ Excellent |
 | | Yield vs Return | **8.5/10** | ✅ Excellent |
 | | Inheritance | **8.5/10** | ✅ Excellent |
-| **Advanced** | **Average: 8.7/10** | **8.5 - 9.2** | Best: Lambda Functions (9.2) ⭐ |
+| **Advanced** | **Average: 8.9/10** | **8.5 - 9.3** | Best: State Pattern (9.3) ⭐ |
+| | State Pattern | **9.3/10** | ⭐ Excellent |
 | | Lambda Functions | **9.2/10** | ⭐ Excellent |
 | | Decorators | **9.1/10** | ⭐ Excellent |
 | | Strategy Pattern | **8.8/10** | ✅ Excellent |
 | | Observer Pattern | **8.6/10** | ✅ Excellent |
 | | Concurrency/Parallelism | **8.5/10** | ✅ Excellent |
-| **Overall** | **All Lessons** | **8.7/10** | 13 lessons total |
+| **Overall** | **All Lessons** | **8.8/10** | 14 lessons total |
 
 ## Detailed Scores by Level
 
@@ -46,6 +47,7 @@
 
 | Lesson | Tech (35%) | Code (25%) | Edu (25%) | Docs (15%) | Total |
 | -------- | ---------- | ---------- | --------- | ---------- | ----- |
+| State Pattern | 33 | 25 | 21 | 14 | **9.3** |
 | Lambda Functions | 28 | 25 | 24 | 15 | **9.2** |
 | Decorators | 30 | 25 | 22 | 14 | **9.1** |
 | Strategy Pattern | 31 | 23 | 21 | 13 | **8.8** |
