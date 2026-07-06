@@ -37,21 +37,21 @@ The observer pattern is composed of three main components:
   detach, and notify them. It is responsible for managing the state and
   notifying observers of any changes.
 
-::: src.advanced.observer.Subject
+::: src.advanced.observer_pattern.Subject
 
 - **Observer Interface**: Defines the update method that observers must
   implement to receive notifications from the subject. It establishes a contract
   for communication between the subject and observers.
 
-::: src.advanced.observer.Observer
+::: src.advanced.observer_pattern.Observer
 
 - **Concrete Observers**: Implement the observer interface and define the
   specific behavior to be executed when notified of a state change in the
   subject. Each concrete observer can have its own unique response to the
   notification.
 
-::: src.advanced.observer.KafkaObserver
-::: src.advanced.observer.RabbitMQObserver
+::: src.advanced.observer_pattern.KafkaObserver
+::: src.advanced.observer_pattern.RabbitMQObserver
 
 Some real-world examples are: event-driven systems, notification systems,
 pub-sub architectures, real-time data updates...
