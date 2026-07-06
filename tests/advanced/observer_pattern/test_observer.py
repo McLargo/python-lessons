@@ -3,7 +3,7 @@
 from hypothesis import given
 from hypothesis import strategies as st
 
-from advanced.observer import (
+from advanced.observer_pattern import (
     KafkaObserver,
     Observer,
     RabbitMQObserver,
