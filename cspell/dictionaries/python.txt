@@ -7,6 +7,8 @@ codepoint
 Dataclasses
 defaultdict
 doctest
+excinfo
+ENDEND
 functools
 getpid
 getsizeof
