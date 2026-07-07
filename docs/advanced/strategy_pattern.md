@@ -27,21 +27,26 @@ between them at runtime. Main benefits of this pattern are:
 
 The strategy pattern is composed of three main components:
 
-- **Strategy Interface**: Defines the common interface for all supported
-  algorithms. The responsibility is to know how to execute, not when to use the
-  strategy.
+## Strategy Interface
+
+Defines the common interface for all supported algorithms. The responsibility is
+to know how to execute, not when to use the strategy.
 
 ::: src.advanced.strategy_pattern.GreetingStrategy
 
-- **Concrete Strategies**: Implement the specific algorithm to be used. Each
-  concrete strategy encapsulates a different behavior.
+## Concrete Strategies
+
+Implement the specific algorithm to be used. Each concrete strategy encapsulates
+a different behavior.
 
 ::: src.advanced.strategy_pattern.EnglishGreeting
 ::: src.advanced.strategy_pattern.FrenchGreeting
 ::: src.advanced.strategy_pattern.SpanishGreeting
 
-- **Context**: Maintains a reference to a Strategy object to use and delegates
-  algorithm execution to it.
+## Context
+
+Maintains a reference to a Strategy object to use and delegates algorithm
+execution to it.
 
 ::: src.advanced.strategy_pattern.GreetingProcessor
 

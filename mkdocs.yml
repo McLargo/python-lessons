@@ -80,6 +80,7 @@ nav:
     - "Logging": intermediate/logging.md
     - "Yield vs return": intermediate/yield_vs_return.md
   - Advanced:
+    - "Chain of Responsibility Pattern": advanced/chain_of_responsibility_pattern.md
     - "Concurrency and Parallelism": advanced/concurrency_parallelism.md
     - "Decorators": advanced/decorators.md
     - "Lambda functions": advanced/lambda_functions.md

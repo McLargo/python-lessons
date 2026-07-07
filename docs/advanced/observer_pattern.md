@@ -33,22 +33,27 @@ notified and updated automatically. The benefits of this pattern are:
 
 The observer pattern is composed of three main components:
 
-- **Subject**: Maintains a list of observers and provides methods to attach,
+## Subject
+
+Maintains a list of observers and provides methods to attach,
   detach, and notify them. It is responsible for managing the state and
   notifying observers of any changes.
 
 ::: src.advanced.observer_pattern.Subject
 
-- **Observer Interface**: Defines the update method that observers must
+## Observer Interface
+
+Defines the update method that observers must
   implement to receive notifications from the subject. It establishes a contract
   for communication between the subject and observers.
 
 ::: src.advanced.observer_pattern.Observer
 
-- **Concrete Observers**: Implement the observer interface and define the
-  specific behavior to be executed when notified of a state change in the
-  subject. Each concrete observer can have its own unique response to the
-  notification.
+## Concrete Observers
+
+Implement the observer interface and define the specific behavior to be executed
+when notified of a state change in the subject. Each concrete observer can have
+its own unique response to the notification.
 
 ::: src.advanced.observer_pattern.KafkaObserver
 ::: src.advanced.observer_pattern.RabbitMQObserver

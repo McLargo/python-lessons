@@ -235,8 +235,10 @@ generation. Then, the agent should review the content lesson.
 
 When assisting with this project:
 
-1. **Always check test coverage**: Run `make test` after code changes
-2. **Verify documentation renders**: Use `make server` to preview
+1. **Always check test coverage**: Run tests using Poetry (`poetry run pytest`)
+   to ensure proper dependency management. Use `make test` for full test suite
+   or `poetry run pytest <test_file>` for specific tests.
+2. **Verify documentation renders**: Use `make serve` to preview
 3. **Follow the template**: Use `docs/template.md` for new lessons
 4. **Check ADRs**: Consult Architecture Decision Records for context on decisions
 5. **Maintain consistency**: Follow patterns from existing lessons
@@ -245,6 +247,36 @@ When assisting with this project:
 8. **Update related files**: If changing code, update docs and tests
 9. **Update Lesson Quality in Readme**: If a lesson is added or modified, update
    the quality review section in README.md
+
+## Running Tests
+
+**IMPORTANT**: Always use Poetry to run tests to ensure proper dependency
+management and environment isolation:
+
+```bash
+# Run all tests
+poetry run pytest
+
+# Run specific test file
+poetry run pytest tests/path/to/test_file.py
+
+# Run with verbose output
+poetry run pytest tests/path/to/test_file.py -v
+
+# Check coverage
+poetry run pytest tests/path/to/test_file.py --cov=src/module/path --cov-report=term-missing
+
+# Or use make commands which use Poetry internally
+make test          # Run all tests with coverage
+make coverage      # Generate HTML coverage report
+```
+
+**Why Poetry?**: Using `poetry run` ensures:
+
+- Correct dependency versions (e.g., hypothesis, pytest-cov)
+- Proper virtual environment activation
+- Consistent behavior across different environments
+- Access to all dev dependencies defined in pyproject.toml
 
 ## Keywords for Context
 
@@ -282,8 +314,7 @@ following checklist is satisfied:
 - [ ] Tests cover edge cases and error conditions
 - [ ] No TODO or FIXME comments remain
 - [ ] ADRs followed for architectural decisions
-- [ ] Common pitfalls or gotchas documented
-- [ ] "When to use" and "When NOT to use" sections (where applicable)
+- [ ] Common pitfalls or gotchas documented (where applicable)
 
 ---
 
