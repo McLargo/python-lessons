@@ -14,7 +14,8 @@
 | | Exceptions | **8.6/10** | ✅ Excellent |
 | | Yield vs Return | **8.5/10** | ✅ Excellent |
 | | Inheritance | **8.5/10** | ✅ Excellent |
-| **Advanced** | **Average: 9.0/10** | **8.5 - 9.4** | Best: Chain of Responsibility (9.4) ⭐ |
+| **Advanced** | **Average: 9.1/10** | **8.5 - 9.5** | Best: Builder Pattern (9.5) ⭐ |
+| | Builder Pattern | **9.5/10** | ⭐ Outstanding |
 | | Chain of Responsibility | **9.4/10** | ⭐ Outstanding |
 | | State Pattern | **9.3/10** | ⭐ Excellent |
 | | Lambda Functions | **9.2/10** | ⭐ Excellent |
@@ -22,7 +23,7 @@
 | | Strategy Pattern | **8.8/10** | ✅ Excellent |
 | | Observer Pattern | **8.6/10** | ✅ Excellent |
 | | Concurrency/Parallelism | **8.5/10** | ✅ Excellent |
-| **Overall** | **All Lessons** | **8.9/10** | 15 lessons total |
+| **Overall** | **All Lessons** | **8.9/10** | 16 lessons total |
 
 ## Detailed Scores by Level
 
@@ -48,6 +49,7 @@
 
 | Lesson | Tech (35%) | Code (25%) | Edu (25%) | Docs (15%) | Total |
 | -------- | ---------- | ---------- | --------- | ---------- | ----- |
+| Builder Pattern | 33 | 25 | 23 | 14 | **9.5** |
 | Chain of Responsibility | 33 | 25 | 23 | 14 | **9.4** |
 | State Pattern | 33 | 25 | 21 | 14 | **9.3** |
 | Lambda Functions | 28 | 25 | 24 | 15 | **9.2** |
