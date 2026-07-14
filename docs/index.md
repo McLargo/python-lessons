@@ -30,13 +30,13 @@ lessons are of high quality and meet the needs of the learners.
 This repository maintains high quality standards with 100% test coverage and
 regular quality reviews.
 
-**Overall Project Score**: 8.9/10 ⭐ Excellent (16 lessons)
+**Overall Project Score**: 9.0/10 ⭐ Excellent (17 lessons)
 
 | Level | Lessons | Average | Best Lesson | Status |
 | ------------ | ------- | ------- | --------------------------------- | ------------ |
 | Beginner | 4 | 8.8/10 | Check isinstance (9.5) ⭐ | ⭐ Excellent |
 | Intermediate | 4 | 8.7/10 | Logging (9.0) ⭐ | ✅ Excellent |
-| Advanced | 8 | 9.1/10 | Builder Pattern (9.5) ⭐ | ⭐ Excellent |
+| Advanced | 9 | 9.2/10 | Builder/Factory (9.5) ⭐ | ⭐ Outstanding |
 
 See [full quality review](quality-scores.md) for detailed scoring.
 
