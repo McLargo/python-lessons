@@ -13,13 +13,14 @@
 <!-- markdownlint-enable MD046 -->
 
 The factory method pattern is a creational design pattern that provides an
-interface (a factory) for creating objects. It is commonly misunderstood, as
-just seem inheritance with extra steps. But the main idea is to decouple the
-code,so the libraries that use it must work with any concrete class. It also
-allows for easy extension of the codebase by adding new concrete classes (even
-new concrete classes can be used for mocking in tests). The factory method
-pattern is used when a class cannot anticipate the type of objects it needs to
-create. The main benefits of this pattern are:
+interface (a factory) for creating objects (products). Ideally, one factory
+should be responsible for creating one type of product. It is commonly
+misunderstood, as just seem inheritance with extra steps. But the main idea is
+to decouple the code, so the libraries that use it must work with any concrete
+class. It also allows for easy extension of the codebase by adding new concrete
+classes (even new concrete classes can be used for mocking in tests). The
+factory method pattern is used when a class cannot anticipate the type of
+objects it needs to create. The main benefits of this pattern are:
 
 - **Decoupling**: The factory method pattern decouples the client code from the
   concrete classes that it needs to instantiate, allowing for more flexible and
@@ -66,3 +67,14 @@ to start the work. Additionally, you can add new exporters without changing the
 code that uses the factory.
 
 ::: src.advanced.factory_method_pattern.DataExportService
+
+You can even combine the factory method pattern with the
+[strategy pattern](../advanced/strategy_pattern.md) and
+[singleton](../advanced/decorators.md/#singleton-decorator) to create a more
+complex, reusable and flexible design.
+
+Abstract factories are a more complex version of the factory method pattern,
+where a single factory can create multiple types of related products. An
+abstract factory is a factory of factories, where each concrete factory is
+responsible for creating a family of related products, so there are no mistakes
+between the products created by different factories.
