@@ -80,11 +80,12 @@ nav:
     - "Logging": intermediate/logging.md
     - "Yield vs return": intermediate/yield_vs_return.md
   - Advanced:
-    - "Builder Pattern": advanced/builder_pattern.md
-    - "Chain of Responsibility Pattern": advanced/chain_of_responsibility_pattern.md
-    - "Concurrency and Parallelism": advanced/concurrency_parallelism.md
+    - "Builder pattern": advanced/builder_pattern.md
+    - "Chain of responsibility pattern": advanced/chain_of_responsibility_pattern.md
+    - "Concurrency and parallelism": advanced/concurrency_parallelism.md
     - "Decorators": advanced/decorators.md
+    - "Factory method pattern": advanced/factory_method_pattern.md
     - "Lambda functions": advanced/lambda_functions.md
-    - "Observer Pattern": advanced/observer_pattern.md
-    - "State Pattern": advanced/state_pattern.md
-    - "Strategy Pattern": advanced/strategy_pattern.md
+    - "Observer pattern": advanced/observer_pattern.md
+    - "State pattern": advanced/state_pattern.md
+    - "Strategy pattern": advanced/strategy_pattern.md
