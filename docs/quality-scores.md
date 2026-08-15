@@ -14,7 +14,8 @@
 | | Exceptions | **8.6/10** | ✅ Excellent |
 | | Yield vs Return | **8.5/10** | ✅ Excellent |
 | | Inheritance | **8.5/10** | ✅ Excellent |
-| **Advanced** | **Average: 9.2/10** | **8.5 - 9.5** | Best: Builder/Factory (9.5) ⭐ |
+| **Advanced** | **Average: 9.2/10** | **8.5 - 9.6** | Best: Facade (9.6) ⭐ |
+| | Facade Pattern | **9.6/10** | ⭐ Outstanding |
 | | Builder Pattern | **9.5/10** | ⭐ Outstanding |
 | | Factory Method Pattern | **9.5/10** | ⭐ Outstanding |
 | | Chain of Responsibility | **9.4/10** | ⭐ Outstanding |
@@ -24,7 +25,7 @@
 | | Strategy Pattern | **8.8/10** | ✅ Excellent |
 | | Observer Pattern | **8.6/10** | ✅ Excellent |
 | | Concurrency/Parallelism | **8.5/10** | ✅ Excellent |
-| **Overall** | **All Lessons** | **9.0/10** | 17 lessons total |
+| **Overall** | **All Lessons** | **9.1/10** | 18 lessons total |
 
 ## Detailed Scores by Level
 
@@ -56,6 +57,7 @@
 | State Pattern | 33 | 25 | 21 | 14 | **9.3** |
 | Lambda Functions | 28 | 25 | 24 | 15 | **9.2** |
 | Decorators | 30 | 25 | 22 | 14 | **9.1** |
+| Facade Pattern | 34 | 25 | 23 | 14 | **9.6** |
 | Strategy Pattern | 31 | 23 | 21 | 13 | **8.8** |
 | Observer Pattern | 30 | 24 | 20 | 12 | **8.6** |
 | Concurrency/Parallelism | 33 | 18 | 21 | 13 | **8.5** |
