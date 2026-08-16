@@ -2,14 +2,14 @@ exclude: ".git"
 
 repos:
   - repo: https://github.com/igorshubovych/markdownlint-cli
-    rev: v0.49.0
+    rev: v0.49.1
     hooks:
     - id: markdownlint
       args:
         - "docs/*"
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.15.18
+    rev: v0.16.3
     hooks:
       - id: ruff-check
         args: ["--fix"]
