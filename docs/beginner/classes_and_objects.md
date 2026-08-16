@@ -50,6 +50,7 @@ class Pizza:
     def __init__(self, toppings=[]):
         self.toppings = toppings
 
+
 # correct example
 class Pizza:
     def __init__(self, toppings=None):

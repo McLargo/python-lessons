@@ -84,6 +84,7 @@ nav:
     - "Chain of responsibility pattern": advanced/chain_of_responsibility_pattern.md
     - "Concurrency and parallelism": advanced/concurrency_parallelism.md
     - "Decorators": advanced/decorators.md
+    - "Facade pattern": advanced/facade_pattern.md
     - "Factory method pattern": advanced/factory_method_pattern.md
     - "Lambda functions": advanced/lambda_functions.md
     - "Observer pattern": advanced/observer_pattern.md
