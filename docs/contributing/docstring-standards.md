@@ -238,6 +238,7 @@ def public_function():
     """This will appear in documentation."""
     pass
 
+
 def _private_function():
     """This will NOT appear unless explicitly included."""
     pass
@@ -286,6 +287,7 @@ def complex_calculation(data: list[int]) -> float:
     """Calculate result."""
     # ... 50 lines of complex logic ...
 
+
 # GOOD: Extended description explains the algorithm
 def complex_calculation(data: list[int]) -> float:
     """Calculate the weighted moving average of the input data.
@@ -317,6 +319,7 @@ def fetch_data(limit: int = 100) -> list[dict]:
         List of data records.
     """
 
+
 # GOOD: Default value explained
 def fetch_data(limit: int = 100) -> list[dict]:
     """Fetch data from API.
@@ -337,6 +340,7 @@ def fetch_data(limit: int = 100) -> list[dict]:
 def divide(a: float, b: float) -> float:
     """Divide a by b."""
     return a / b
+
 
 # GOOD: Exception documented
 def divide(a: float, b: float) -> float:

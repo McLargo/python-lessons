@@ -234,7 +234,9 @@ class CustomError(Exception):
     message: str  # Add type annotation
     exception: Exception  # Add type annotation
 
-    def __init__(self, message: str, exception: Exception, **kwargs: Any) -> None:
+    def __init__(
+        self, message: str, exception: Exception, **kwargs: Any
+    ) -> None:
         """Initialize custom error."""
         super().__init__(message)
         self.message = message

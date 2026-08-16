@@ -47,8 +47,10 @@ class Team:
     name: str
     members: list = []
 
+
 # correct example
 from dataclasses import dataclass, field
+
 
 @dataclass
 class Team:

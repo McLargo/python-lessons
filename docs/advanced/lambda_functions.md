@@ -86,6 +86,7 @@ function is defined.
 multiplier = 2
 multiply = lambda x: x * multiplier
 
+
 # good example: Use a regular function for clarity
 def create_multiplier(multiplier):
     return lambda x: x * multiplier
