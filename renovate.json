@@ -1,7 +1,7 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:base",
+    "config:recommended",
     ":enablePreCommit"
   ],
   "constraints": {
@@ -11,7 +11,7 @@
     {
       "description": "Group all non-major dependencies except python",
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
-      "excludePackageNames": ["python"],
+      "matchPackageNames": ["!python"],
       "groupName": "all non-major dependencies",
       "groupSlug": "all-minor-patch"
     },
