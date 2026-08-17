@@ -60,7 +60,7 @@ jobs:
       # Run cspell
       # =================================
       - name: Run cspell
-        uses: streetsidesoftware/cspell-action@v8
+        uses: streetsidesoftware/cspell-action@v9
         with:
             config: './cspell/cspell.json'
             incremental_files_only: false
@@ -69,10 +69,10 @@ jobs:
       # Run markdown lint
       # =================================
       - name: Run markdown lint
-        uses: articulate/actions-markdownlint@v1
+        uses: DavidAnson/markdownlint-cli2-action@v24
         with:
           config: .markdownlint.json
-          files: 'docs/**/*.md'
+          globs: 'docs/**/*.md'
 
       # =================================
       # Run coverage
@@ -84,11 +84,11 @@ jobs:
       # Run ruff checks and format
       # =================================
       - name: Run ruff checks
-        uses: astral-sh/ruff-action@v3
+        uses: astral-sh/ruff-action@v4.1.0
         with:
           args: "check ./src"
 
       - name: Run ruff format check
-        uses: astral-sh/ruff-action@v3
+        uses: astral-sh/ruff-action@v4.1.0
         with:
           args: "format ./src --diff"
