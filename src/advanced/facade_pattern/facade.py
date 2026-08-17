@@ -235,7 +235,7 @@ class BookstoreFacade:
         inject custom or pre-configured subsystems (e.g. in tests).
 
         Returns:
-            A new ``BookstoreFacade`` backed by default subsystem instances.
+            A new BookstoreFacade backed by default subsystem instances.
         """
         book_manager = BookManager()
         inventory_stock = InventoryBookStock()
@@ -262,7 +262,7 @@ class BookstoreFacade:
             quantity: The stock level to set for the book.
 
         Raises:
-            ValueError: If ``isbn`` is not a valid ISBN-10 or ISBN-13.
+            ValueError: If isbn is not a valid ISBN-10 or ISBN-13.
         """
         if not self.isbn_validator.is_valid_isbn(isbn):
             raise ValueError(f"Invalid ISBN: {isbn}")

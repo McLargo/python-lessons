@@ -14,7 +14,7 @@
 | | Exceptions | **8.6/10** | ✅ Excellent |
 | | Yield vs Return | **8.5/10** | ✅ Excellent |
 | | Inheritance | **8.5/10** | ✅ Excellent |
-| **Advanced** | **Average: 9.2/10** | **8.5 - 9.6** | Best: Facade (9.6) ⭐ |
+| **Advanced** | **Average: 9.1/10** | **8.5 - 9.6** | Best: Facade (9.6) ⭐ |
 | | Facade Pattern | **9.6/10** | ⭐ Outstanding |
 | | Builder Pattern | **9.5/10** | ⭐ Outstanding |
 | | Factory Method Pattern | **9.5/10** | ⭐ Outstanding |
@@ -22,10 +22,11 @@
 | | State Pattern | **9.3/10** | ⭐ Excellent |
 | | Lambda Functions | **9.2/10** | ⭐ Excellent |
 | | Decorators | **9.1/10** | ⭐ Excellent |
+| | Adapter Pattern | **9.0/10** | ⭐ Excellent |
 | | Strategy Pattern | **8.8/10** | ✅ Excellent |
 | | Observer Pattern | **8.6/10** | ✅ Excellent |
 | | Concurrency/Parallelism | **8.5/10** | ✅ Excellent |
-| **Overall** | **All Lessons** | **9.1/10** | 18 lessons total |
+| **Overall** | **All Lessons** | **9.0/10** | 19 lessons total |
 
 ## Detailed Scores by Level
 
@@ -60,4 +61,5 @@
 | Facade Pattern | 34 | 25 | 23 | 14 | **9.6** |
 | Strategy Pattern | 31 | 23 | 21 | 13 | **8.8** |
 | Observer Pattern | 30 | 24 | 20 | 12 | **8.6** |
+| Adapter Pattern | 32 | 25 | 20 | 13 | **9.0** |
 | Concurrency/Parallelism | 33 | 18 | 21 | 13 | **8.5** |

@@ -1,4 +1,5 @@
 # global related
+adaptee
 codeowners
 codespell
 creational
