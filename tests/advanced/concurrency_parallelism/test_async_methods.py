@@ -8,15 +8,15 @@ from advanced.concurrency_parallelism import (
 
 
 def test_async_method_not_blocked():
-    loop = asyncio.get_event_loop()
+    async def _run():
+        await asyncio.gather(
+            async_method_not_blocked(),
+            async_method_not_blocked(),
+            async_method_not_blocked(),
+        )
+
     start = time.time()
-    loop.run_until_complete(
-        asyncio.gather(
-            async_method_not_blocked(),
-            async_method_not_blocked(),
-            async_method_not_blocked(),
-        ),
-    )
+    asyncio.run(_run())
     non_blocked_time = time.time() - start
 
     # assert, total time around 1 second
@@ -25,15 +25,15 @@ def test_async_method_not_blocked():
 
 
 def test_async_method_blocked():
-    loop = asyncio.get_event_loop()
+    async def _run():
+        await asyncio.gather(
+            async_method_blocked(),
+            async_method_blocked(),
+            async_method_blocked(),
+        )
+
     start = time.time()
-    loop.run_until_complete(
-        asyncio.gather(
-            async_method_blocked(),
-            async_method_blocked(),
-            async_method_blocked(),
-        ),
-    )
+    asyncio.run(_run())
     blocked_time = time.time() - start
 
     # assert, total time around 3 seconds
