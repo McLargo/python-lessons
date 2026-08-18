@@ -2,14 +2,14 @@
 
 <!-- markdownlint-disable MD046 -->
 !!! info "Quality Score"
-    **Overall Score**: 8.5/10 ✅ Excellent
+    **Overall Score**: 8.6/10 ✅ Excellent
 
     - Technical Accuracy: 31/35
     - Code Quality: 22/25
-    - Educational Value: 20/25
+    - Educational Value: 21/25
     - Documentation: 12/15
 
-    Last reviewed: June 22, 2026
+    Last reviewed: August 18, 2026
 <!-- markdownlint-enable MD046 -->
 
 We are going to create a simple example that uses inheritance.

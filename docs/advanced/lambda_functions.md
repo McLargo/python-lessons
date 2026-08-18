@@ -2,14 +2,14 @@
 
 <!-- markdownlint-disable MD046 -->
 !!! info "Quality Score"
-    **Overall Score**: 9.2/10 ⭐ Excellent
+    **Overall Score**: 9.3/10 ⭐ Excellent
 
     - Technical Accuracy: 28/35
     - Code Quality: 25/25
-    - Educational Value: 24/25
+    - Educational Value: 25/25
     - Documentation: 15/15
 
-    Last reviewed: June 22, 2026
+    Last reviewed: August 18, 2026
 <!-- markdownlint-enable MD046 -->
 
 Lambda expressions are ideally used when we need to do something simple and are

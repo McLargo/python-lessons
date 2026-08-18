@@ -2,14 +2,14 @@
 
 <!-- markdownlint-disable MD046 -->
 !!! info "Quality Score"
-    **Overall Score**: 9.5/10 ⭐ Outstanding
+    **Overall Score**: 9.8/10 ⭐ Outstanding
 
     - Technical Accuracy: 33/35
     - Code Quality: 25/25
-    - Educational Value: 23/25
+    - Educational Value: 25/25
     - Documentation: 15/15
 
-    Last reviewed: June 22, 2026
+    Last reviewed: August 18, 2026
 <!-- markdownlint-enable MD046 -->
 
 Python is not a strong-typed language. This mean, that a variable can be

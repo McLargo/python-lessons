@@ -1,5 +1,17 @@
 # Bridge pattern
 
+<!-- markdownlint-disable MD046 -->
+!!! info "Quality Score"
+    **Overall Score**: 9.4/10 ⭐ Outstanding
+
+    - Technical Accuracy: 32/35
+    - Code Quality: 25/25
+    - Educational Value: 24/25
+    - Documentation: 13/15
+
+    Last reviewed: August 18, 2026
+<!-- markdownlint-enable MD046 -->
+
 The bridge pattern is a structural design pattern that decouples an abstraction
 from its implementation, allowing the two to vary independently. It is useful
 when you want to avoid a permanent binding between an abstraction and its

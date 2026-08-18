@@ -2,14 +2,14 @@
 
 <!-- markdownlint-disable MD046 -->
 !!! info "Quality Score"
-    **Overall Score**: 9.5/10 ⭐ Outstanding
+    **Overall Score**: 9.8/10 ⭐ Outstanding
 
     - Technical Accuracy: 35/35
     - Code Quality: 24/25
     - Educational Value: 25/25
     - Documentation: 14/15
 
-    Last reviewed: July 14, 2026
+    Last reviewed: August 18, 2026
 <!-- markdownlint-enable MD046 -->
 
 The factory method pattern is a creational design pattern that provides an

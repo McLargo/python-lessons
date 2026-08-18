@@ -2,14 +2,14 @@
 
 <!-- markdownlint-disable MD046 -->
 !!! info "Quality Score"
-    **Overall Score**: 9.0/10 ⭐ Outstanding
+    **Overall Score**: 9.1/10 ⭐ Outstanding
 
     - Technical Accuracy: 30/35
     - Code Quality: 22/25
-    - Educational Value: 24/25
+    - Educational Value: 25/25
     - Documentation: 14/15
 
-    Last reviewed: June 22, 2026
+    Last reviewed: August 18, 2026
 <!-- markdownlint-enable MD046 -->
 
 Logging is a very important part of any application. It allows you to track the

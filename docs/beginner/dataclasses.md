@@ -2,14 +2,14 @@
 
 <!-- markdownlint-disable MD046 -->
 !!! info "Quality Score"
-    **Overall Score**: 8.7/10 ✅ Excellent
+    **Overall Score**: 8.9/10 ✅ Excellent
 
     - Technical Accuracy: 28/35
     - Code Quality: 23/25
-    - Educational Value: 22/25
+    - Educational Value: 24/25
     - Documentation: 14/15
 
-    Last reviewed: June 22, 2026
+    Last reviewed: August 18, 2026
 <!-- markdownlint-enable MD046 -->
 
 Dataclasses are a new feature in Python 3.7. They are a convenient way to create

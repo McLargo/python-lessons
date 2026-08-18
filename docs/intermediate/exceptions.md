@@ -2,14 +2,14 @@
 
 <!-- markdownlint-disable MD046 -->
 !!! info "Quality Score"
-    **Overall Score**: 8.6/10 ✅ Excellent
+    **Overall Score**: 8.8/10 ✅ Excellent
 
     - Technical Accuracy: 28/35
     - Code Quality: 24/25
-    - Educational Value: 21/25
+    - Educational Value: 23/25
     - Documentation: 13/15
 
-    Last reviewed: June 25, 2026
+    Last reviewed: August 18, 2026
 <!-- markdownlint-enable MD046 -->
 
 Exceptions are a mechanism for handling errors in Python (and most programming

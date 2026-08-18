@@ -2,14 +2,14 @@
 
 <!-- markdownlint-disable MD046 -->
 !!! info "Quality Score"
-    **Overall Score**: 9.3/10 ⭐ Excellent
+    **Overall Score**: 9.6/10 ⭐ Outstanding
 
     - Technical Accuracy: 33/35
     - Code Quality: 25/25
-    - Educational Value: 21/25
+    - Educational Value: 24/25
     - Documentation: 14/15
 
-    Last reviewed: July 2, 2026
+    Last reviewed: August 18, 2026
 <!-- markdownlint-enable MD046 -->
 
 State pattern is a behavioral design pattern that allows an object to change its

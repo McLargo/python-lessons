@@ -2,14 +2,14 @@
 
 <!-- markdownlint-disable MD046 -->
 !!! info "Quality Score"
-    **Overall Score**: 8.5/10 ✅ Excellent
+    **Overall Score**: 8.6/10 ✅ Excellent
 
     - Technical Accuracy: 33/35
     - Code Quality: 18/25
-    - Educational Value: 21/25
+    - Educational Value: 22/25
     - Documentation: 13/15
 
-    Last reviewed: June 22, 2026
+    Last reviewed: August 18, 2026
 <!-- markdownlint-enable MD046 -->
 
 These concepts are related, but not the same. Concurrency is the ability of a

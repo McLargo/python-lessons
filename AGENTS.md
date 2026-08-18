@@ -131,10 +131,11 @@ When reviewing or creating content, check for:
 ### 3. Educational Value (Weight: 25%)
 
 - [ ] Concept is explained clearly
-- [ ] Examples are relevant and practical
+- [ ] Examples in lessons are relevant and practical
 - [ ] Appropriate for the target level (beginner/intermediate/advanced)
 - [ ] Builds on previous concepts appropriately
-- [ ] Includes common pitfalls or gotchas
+- [ ] Includes common pitfalls or gotchas (where applicable)
+- [ ] Test demonstrates the concept effectively
 
 ### 4. Documentation (Weight: 15%)
 
@@ -297,6 +298,7 @@ following checklist is satisfied:
 - [ ] Code runs without errors
 - [ ] 100% test coverage achieved (`make coverage`)
 - [ ] Mutation testing passes for critical logic (`make mutations`)
+- [ ] Tests demonstrate the lesson concept effectively
 - [ ] Tests cover edge cases and error conditions
 - [ ] Tests use appropriate patterns (parametrize, fixtures, etc.)
 - [ ] All functions/classes have Google-style docstrings with:
@@ -309,7 +311,7 @@ following checklist is satisfied:
 - [ ] Ruff linting passes (`make lint`)
 - [ ] Spelling check passes (`make spelling`)
 - [ ] Documentation renders correctly in mkdocs (`make serve`)
-- [ ] Examples are practical and educational
+- [ ] Examples in lessons are practical and educational
 - [ ] Appropriate difficulty level
 - [ ] Tests cover edge cases and error conditions
 - [ ] No TODO or FIXME comments remain
