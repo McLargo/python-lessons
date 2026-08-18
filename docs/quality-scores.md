@@ -22,11 +22,12 @@
 | | State Pattern | **9.3/10** | ⭐ Excellent |
 | | Lambda Functions | **9.2/10** | ⭐ Excellent |
 | | Decorators | **9.1/10** | ⭐ Excellent |
+| | Bridge Pattern | **9.1/10** | ⭐ Excellent |
 | | Adapter Pattern | **9.0/10** | ⭐ Excellent |
 | | Strategy Pattern | **8.8/10** | ✅ Excellent |
 | | Observer Pattern | **8.6/10** | ✅ Excellent |
 | | Concurrency/Parallelism | **8.5/10** | ✅ Excellent |
-| **Overall** | **All Lessons** | **9.0/10** | 19 lessons total |
+| **Overall** | **All Lessons** | **9.0/10** | 20 lessons total |
 
 ## Detailed Scores by Level
 
@@ -62,4 +63,5 @@
 | Strategy Pattern | 31 | 23 | 21 | 13 | **8.8** |
 | Observer Pattern | 30 | 24 | 20 | 12 | **8.6** |
 | Adapter Pattern | 32 | 25 | 20 | 13 | **9.0** |
+| Bridge Pattern | 32 | 25 | 21 | 13 | **9.1** |
 | Concurrency/Parallelism | 33 | 18 | 21 | 13 | **8.5** |

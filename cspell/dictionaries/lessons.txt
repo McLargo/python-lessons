@@ -39,3 +39,8 @@ Avensis
 # code owners
 mclargo
 sergioescudero
+
+# bridge pattern
+darkgray
+lightgray
+lightyellow

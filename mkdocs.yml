@@ -81,6 +81,7 @@ nav:
     - "Yield vs return": intermediate/yield_vs_return.md
   - Advanced:
     - "Adapter pattern": advanced/adapter_pattern.md
+    - "Bridge pattern": advanced/bridge_pattern.md
     - "Builder pattern": advanced/builder_pattern.md
     - "Chain of responsibility pattern": advanced/chain_of_responsibility_pattern.md
     - "Concurrency and parallelism": advanced/concurrency_parallelism.md
