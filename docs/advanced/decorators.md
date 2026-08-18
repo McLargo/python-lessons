@@ -2,14 +2,14 @@
 
 <!-- markdownlint-disable MD046 -->
 !!! info "Quality Score"
-    **Overall Score**: 9.1/10 ⭐ Excellent
+    **Overall Score**: 9.2/10 ⭐ Excellent
 
     - Technical Accuracy: 30/35
     - Code Quality: 25/25
-    - Educational Value: 22/25
+    - Educational Value: 23/25
     - Documentation: 14/15
 
-    Last reviewed: June 22, 2026
+    Last reviewed: August 18, 2026
 <!-- markdownlint-enable MD046 -->
 
 A decorator is a structural design pattern in Python that allows to add new

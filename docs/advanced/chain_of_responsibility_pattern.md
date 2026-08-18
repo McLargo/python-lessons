@@ -2,14 +2,14 @@
 
 <!-- markdownlint-disable MD046 -->
 !!! info "Quality Score"
-    **Overall Score**: 9.4/10 ⭐ Outstanding
+    **Overall Score**: 9.7/10 ⭐ Outstanding
 
     - Technical Accuracy: 33/35
     - Code Quality: 25/25
-    - Educational Value: 23/25
+    - Educational Value: 25/25
     - Documentation: 14/15
 
-    Last reviewed: July 7, 2026
+    Last reviewed: August 18, 2026
 <!-- markdownlint-enable MD046 -->
 
 Chain of responsibility is a behavioral design pattern that allows passing

@@ -39,7 +39,3 @@
 - [ ] Achieves minimum quality score of 8.0/10
 - [ ] Includes "When to use" and "When NOT to use" sections
 - [ ] Common pitfalls documented
-
-## Reviewer Notes
-
-<!-- Any specific areas you'd like reviewers to focus on -->

@@ -2,14 +2,14 @@
 
 <!-- markdownlint-disable MD046 -->
 !!! info "Quality Score"
-    **Overall Score**: 9.0/10 ⭐ Excellent
+    **Overall Score**: 9.2/10 ⭐ Excellent
 
     - Technical Accuracy: 32/35
     - Code Quality: 25/25
-    - Educational Value: 20/25
+    - Educational Value: 22/25
     - Documentation: 13/15
 
-    Last reviewed: August 17, 2026
+    Last reviewed: August 18, 2026
 <!-- markdownlint-enable MD046 -->
 
 The adapter pattern is a structural design pattern that allows object with

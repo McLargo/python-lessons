@@ -2,14 +2,14 @@
 
 <!-- markdownlint-disable MD046 -->
 !!! info "Quality Score"
-    **Overall Score**: 8.6/10 ✅ Excellent
+    **Overall Score**: 8.8/10 ✅ Excellent
 
     - Technical Accuracy: 30/35
     - Code Quality: 24/25
-    - Educational Value: 20/25
+    - Educational Value: 22/25
     - Documentation: 12/15
 
-    Last reviewed: June 26, 2026
+    Last reviewed: August 18, 2026
 <!-- markdownlint-enable MD046 -->
 
 The observer pattern is a behavioral design pattern used when you want to notify
