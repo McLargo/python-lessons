@@ -4,6 +4,9 @@
     "config:recommended",
     ":enablePreCommit"
   ],
+  "timezone": "Europe/Madrid",
+  "schedule": ["* 7-8 * * 5"],
+  "prBodyTemplate": "{{{table}}}",
   "constraints": {
     "poetry": ">=2.4.1"
   },
