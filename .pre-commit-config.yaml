@@ -9,14 +9,14 @@ repos:
         - "docs/*"
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.16.5
+    rev: v0.16.6
     hooks:
       - id: ruff-check
         args: ["--fix"]
       - id: ruff-format
 
   - repo: https://github.com/streetsidesoftware/cspell-cli
-    rev: v10.0.1
+    rev: v10.2.0
     hooks:
       - id: cspell
         args: ["-c", "./cspell/cspell.json", "--show-suggestions"]
