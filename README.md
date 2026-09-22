@@ -41,6 +41,7 @@ decisions taken on the project. They are located in the `docs/adr` folder.
 - ADR-004: [Deployment](docs/adr/004-deployment.md)
 - ADR-005: [Dependency Maintenance](docs/adr/005-maintenance.md)
 - ADR-006: [AI Code Agents](docs/adr/006-ai-code-agents.md)
+- ADR-007: [Type Hint](docs/adr/007-type-hint.md)
 
 ## Structure
 

@@ -96,3 +96,9 @@ jobs:
         uses: astral-sh/ruff-action@v4.1.0
         with:
           args: "format ./src --diff"
+
+      # =================================
+      # Run pyrefly type checks
+      # =================================
+      - name: Run pyrefly
+        run: poetry run pyrefly check

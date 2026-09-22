@@ -212,7 +212,7 @@ class TestLoginAdapterProperties:
     @given(
         parts=st.lists(
             st.text(
-                alphabet=st.characters(blacklist_characters="."),
+                alphabet=st.characters(blacklist_characters=["."]),
                 max_size=10,
             ),
             min_size=0,

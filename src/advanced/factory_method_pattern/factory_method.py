@@ -92,7 +92,7 @@ class YamlExporter(Exporter):
             YAML formatted string.
 
         """
-        return yaml.dump(data, default_flow_style=self.default_flow_style)
+        return str(yaml.dump(data, default_flow_style=self.default_flow_style))
 
 
 class ExporterFactory(ABC):

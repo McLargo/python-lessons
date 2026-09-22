@@ -25,7 +25,7 @@ class MockExporter(Exporter):
     def __init__(self):
         """Initialize the mock exporter."""
         self.export_called = False
-        self.last_data = None
+        self.last_data: dict | None = None
 
     def export(self, data: dict) -> str:
         """Export the data and track the call.
@@ -51,7 +51,7 @@ class MockExporterFactory(ExporterFactory):
     def __init__(self):
         """Initialize the mock factory."""
         self.create_called = False
-        self.created_exporter = None
+        self.created_exporter: MockExporter | None = None
 
     def create_exporter(self) -> Exporter:
         """Create a mock exporter and track the call.
@@ -169,6 +169,7 @@ class TestJSONExporterFactory:
         factory = JSONExporterFactory()
         exporter = factory.create_exporter()
 
+        assert isinstance(exporter, JSONExporter)
         assert exporter.indent == 4
 
     def test_created_exporter_works(self):
@@ -198,6 +199,7 @@ class TestYamlExporterFactory:
         factory = YamlExporterFactory()
         exporter = factory.create_exporter()
 
+        assert isinstance(exporter, YamlExporter)
         assert exporter.default_flow_style is False
 
     def test_created_exporter_works(self):
@@ -404,6 +406,7 @@ class TestDataExportServiceWithMocks:
         assert factory.create_called is True
 
         # Verify the exporter was called with correct data
+        assert factory.created_exporter is not None
         assert factory.created_exporter.export_called is True
         assert factory.created_exporter.last_data == {"users": users}
 
@@ -425,6 +428,8 @@ class TestDataExportServiceWithMocks:
 
         # We can inspect what data was passed to the exporter
         # without dealing with format-specific details
+        assert factory.created_exporter is not None
+        assert factory.created_exporter.last_data is not None
         assert factory.created_exporter.last_data["users"] == users
 
     def test_mock_works_alongside_real_factories(self):

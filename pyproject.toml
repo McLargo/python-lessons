@@ -35,6 +35,7 @@ pytest-cov = "^7.1.0"
 ipdb = "^0.13.13"
 codespell = "^2.4.3"
 ruff = "^0.16.4"
+pyrefly = "^0.36.2"
 
 [build-system]
 requires = ["poetry-core"]
@@ -84,3 +85,7 @@ pythonpath = "src"
 paths_to_mutate = ["src/"]
 paths_to_exclude = "**/__init__.py"
 runner = "python -m pytest tests/"
+
+[tool.pyrefly]
+project_includes = ["src", "tests"]
+search_path = ["src"]

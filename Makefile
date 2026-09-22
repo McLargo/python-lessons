@@ -1,4 +1,4 @@
-.PHONY: help check-env python-env install remove clean serve build test lint lint-fix format spelling coverage mutations deploy
+.PHONY: help check-env python-env install remove clean serve build test lint lint-fix format typecheck spelling coverage mutations deploy
 
 default: help
 
@@ -90,6 +90,10 @@ lint-fix: check-env ## Run ruff linting checks and fix issues
 format: check-env ## Format code with ruff
 	@echo "Formatting code with ruff."
 	@poetry run ruff format .
+
+typecheck: check-env ## Run pyrefly type checking
+	@echo "Running pyrefly type checking."
+	@poetry run pyrefly check
 
 spelling: check-env ## Check spelling in source and docs
 	@echo "Checking spelling in Python and Markdown files."

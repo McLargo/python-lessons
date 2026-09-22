@@ -26,8 +26,8 @@ def test_circle_with_args_no_args():
     decimal_precision = 3
     with pytest.raises(TypeError):
         Circle.set_circle_args(
-            radius=radius,
-            decimal_precision=decimal_precision,
+            radius=radius,  # pyrefly: ignore[unexpected-keyword]
+            decimal_precision=decimal_precision,  # pyrefly: ignore[unexpected-keyword]
         )
 
 
@@ -52,7 +52,10 @@ def test_circle_with_kwargs_no_kwargs():
     radius = 3
     decimal_precision = 3
     with pytest.raises(TypeError):
-        Circle.set_circle_kwargs(radius, decimal_precision)
+        Circle.set_circle_kwargs(
+            radius,  # pyrefly: ignore[bad-argument-count]
+            decimal_precision,
+        )
 
 
 def test_dataclass_auto_generated_init_accepts_positional_and_keyword():
