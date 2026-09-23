@@ -17,7 +17,7 @@
 
 - [ ] 100% test coverage achieved (`make test`)
 - [ ] All functions have Google-style docstrings
-- [ ] Type hints are present and correct
+- [ ] Type hints are present and correct (`make typehints`)
 - [ ] Code passes ruff linting (`make lint`)
 - [ ] Code is properly formatted (`make format`)
 - [ ] No spelling errors (`make spelling`)
