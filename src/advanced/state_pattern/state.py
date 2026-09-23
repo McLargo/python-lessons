@@ -197,7 +197,7 @@ class Closed(UserState):
         """
         logging.info("Closed state cannot be enabled.")
 
-    def disabled(self, user: "User") -> bool:  # noqa: ARG002
+    def disabled(self, user: "User") -> None:  # noqa: ARG002
         """Closed state cannot be disabled.
 
         Args:
@@ -205,7 +205,7 @@ class Closed(UserState):
         """
         logging.info("Closed state cannot be disabled.")
 
-    def close(self, user: "User") -> bool:  # noqa: ARG002
+    def close(self, user: "User") -> None:  # noqa: ARG002
         """Closed state is already closed.
 
         Args:

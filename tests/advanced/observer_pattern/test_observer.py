@@ -162,8 +162,8 @@ class TestObserverPropertyBased:
             keys=st.text(min_size=1, max_size=50),
             values=st.one_of(
                 st.text(min_size=0, max_size=100),
-                st.integers(),
-                st.booleans(),
+                st.integers().map(str),
+                st.booleans().map(str),
             ),
             min_size=0,
             max_size=10,

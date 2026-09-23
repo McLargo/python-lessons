@@ -20,8 +20,8 @@ def singleton(cls: type) -> type:
 
     def __new__singleton(cls: type, *args, **kwargs) -> object:  # noqa: ARG001
         if not hasattr(cls, "__singleton"):
-            cls.__singleton = object.__new__(cls)
-        return cls.__singleton
+            setattr(cls, "__singleton", object.__new__(cls))
+        return getattr(cls, "__singleton")
 
-    cls.__new__ = __new__singleton
+    cls.__new__ = __new__singleton  # pyrefly: ignore[bad-assignment]
     return cls

@@ -8,7 +8,7 @@ from typing import Any, Callable
 
 
 def get_list_of_fields_from_a_list_dict(
-    content: list[dict[str, str]],
+    content: list[dict[str, Any]],
     field_to_be_extracted: str,
 ) -> list[str]:
     """Extract and return a given field from a list of dictionaries.

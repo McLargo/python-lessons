@@ -25,7 +25,7 @@ from advanced.strategy_pattern import (
             min_size=1,
         ),
         st.just(" " * 10),
-        st.text(alphabet="123456789", min_size=1),
+        st.text(alphabet=list("123456789"), min_size=1),
         st.just(""),
     ),
 )

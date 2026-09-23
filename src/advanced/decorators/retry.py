@@ -33,7 +33,7 @@ def retry(attempts: int = 3, delay: float = 1.0):
     def decorator(func: Callable):
         @wraps(func)
         def wrapper(*args, **kwargs):
-            exception = None
+            exception: Exception | None = None
             for current_attempt in range(1, attempts + 1):
                 try:
                     logger.debug("Attempt %s", current_attempt)
@@ -45,7 +45,7 @@ def retry(attempts: int = 3, delay: float = 1.0):
                     else:
                         exception = exc
             logger.error("Raising exception, max attempts reached")
-            raise exception
+            raise exception  # type: ignore[unreachable]
 
         return wrapper
 

@@ -17,6 +17,7 @@ pycache
 pydocs
 pydocstyle
 pyproject
+pyrefly
 Pythonic
 pytest
 venv

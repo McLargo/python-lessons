@@ -25,7 +25,7 @@ def exception_uncontrolled() -> None:
     """
     number = 1
     char = "a"
-    number + char  # raise TypeError, cannot sum int&string types
+    number + char  # pyrefly: ignore[unsupported-operation]
 
 
 def exception_controlled() -> None:
@@ -38,7 +38,7 @@ def exception_controlled() -> None:
     number = 1
     char = "a"
     try:
-        number + char  # raise TypeError, cannot sum int&string types
+        number + char  # pyrefly: ignore[unsupported-operation]
     except TypeError:
         logger.warning("Cannot sum int + string. Continue.")
         pass
@@ -58,7 +58,7 @@ def exception_controlled_raise_exception() -> None:
     number = 1
     char = "a"
     try:
-        number + char  # raise TypeError, cannot sum int&string types
+        number + char  # pyrefly: ignore[unsupported-operation]
     except TypeError as exc:
         logger.error("Cannot sum int + string. Raising TypeError.")
         raise exc
@@ -83,7 +83,7 @@ def exception_controlled_raise_custom_exception(
         CustomError: A custom exception wrapping the original TypeError.
     """
     try:
-        number + char  # raise TypeError, cannot sum int&string types
+        number + char  # pyrefly: ignore[unsupported-operation]
     except TypeError as exc:
         logger.error("Cannot sum int + string. Raising CustomError.")
         raise CustomError(
@@ -112,7 +112,7 @@ def exception_with_finally(raise_exception: bool) -> None:
     char = "a"
     try:
         if raise_exception:
-            number + char  # raise TypeError, cannot sum int&string types
+            number + char  # pyrefly: ignore[unsupported-operation]
         else:
             number + 10
     except TypeError as exc:
@@ -142,7 +142,7 @@ def exception_with_else(raise_exception: bool) -> None:
     char = "a"
     try:
         if raise_exception:
-            number + char  # raise TypeError, cannot sum int&string types
+            number + char  # pyrefly: ignore[unsupported-operation]
         else:
             number + 10
     except TypeError as exc:
@@ -170,7 +170,7 @@ def multiple_exceptions_controlled(type_error: bool) -> None:
     char = "a"
     try:
         if type_error:
-            number + char  # raise TypeError, cannot sum int&string types
+            number + char  # pyrefly: ignore[unsupported-operation]
         else:
             int(char)  # raise ValueError, cannot convert str to int
     except (TypeError, ValueError) as exc:

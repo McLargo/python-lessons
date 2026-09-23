@@ -250,7 +250,7 @@ class TestIsbnValidatorProperties:
         )
         return str((10 - total % 10) % 10)
 
-    @given(st.text(alphabet="0123456789", min_size=12, max_size=12))
+    @given(st.text(alphabet=list("0123456789"), min_size=12, max_size=12))
     def test_any_prefix_with_correct_check_digit_is_valid(
         self,
         prefix: str,
@@ -261,7 +261,7 @@ class TestIsbnValidatorProperties:
         assert IsbnValidator.is_valid_isbn(prefix + check) is True
 
     @given(
-        prefix=st.text(alphabet="0123456789", min_size=12, max_size=12),
+        prefix=st.text(alphabet=list("0123456789"), min_size=12, max_size=12),
         position=st.integers(min_value=0, max_value=12),
         delta=st.integers(min_value=1, max_value=9),
     )

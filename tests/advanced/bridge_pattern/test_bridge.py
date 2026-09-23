@@ -17,6 +17,8 @@ from advanced.bridge_pattern import (
 ALL_MODES = [DarkMode, LightMode, ColorBlindMode]
 ALL_ELEMENTS = [Navbar, Footer]
 
+ConcreteElement = Navbar | Footer
+
 
 @pytest.fixture(params=ALL_MODES, ids=["dark", "light", "colorblind"])
 def mode(request: pytest.FixtureRequest) -> Mode:
@@ -25,7 +27,7 @@ def mode(request: pytest.FixtureRequest) -> Mode:
 
 
 @pytest.fixture(params=ALL_ELEMENTS, ids=["navbar", "footer"])
-def element_cls(request: pytest.FixtureRequest) -> type[Element]:
+def element_cls(request: pytest.FixtureRequest) -> type[ConcreteElement]:
     """Yield each concrete Element class (not yet instantiated)."""
     return request.param
 
@@ -88,7 +90,7 @@ class TestBridgeBehavior:
 
     def test_apply_mode_syncs_all_style_attrs(
         self,
-        element_cls: type[Element],
+        element_cls: type[ConcreteElement],
         mode: Mode,
     ) -> None:
         """After construction, the four style attributes match the mode."""
@@ -101,7 +103,7 @@ class TestBridgeBehavior:
 
     def test_render_contains_mode_palette(
         self,
-        element_cls: type[Element],
+        element_cls: type[ConcreteElement],
         mode: Mode,
     ) -> None:
         """The rendered string embeds every value coming from the Mode axis."""
@@ -115,7 +117,7 @@ class TestBridgeBehavior:
 
     def test_render_contains_element_shape(
         self,
-        element_cls: type[Element],
+        element_cls: type[ConcreteElement],
         mode: Mode,
     ) -> None:
         """The rendered string embeds every value coming from Element axis."""
@@ -132,7 +134,7 @@ class TestBridgeBehavior:
     )
     def test_render_uses_correct_html_tag(
         self,
-        element_cls: type[Element],
+        element_cls: type[ConcreteElement],
         open_tag: str,
         close_tag: str,
     ) -> None:
