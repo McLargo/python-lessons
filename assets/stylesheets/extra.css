@@ -1,0 +1,7 @@
+article .md-typeset__table{
+  width: 100%;
+}
+
+article .md-typeset__table table{
+  display: inline-table!important;
+}
