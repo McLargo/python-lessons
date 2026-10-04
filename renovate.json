@@ -27,7 +27,9 @@
     {
       "description": "Group all pre-commit updates",
       "matchManagers": ["pre-commit"],
-      "groupName": "all non-major dependencies"
+      "matchPackageNames": ["!python"],
+      "groupName": "pre-commit dependencies",
+      "groupSlug": "pre-commit-dependencies"
     }
   ],
   "rangeStrategy": "bump",
