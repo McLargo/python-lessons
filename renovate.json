@@ -8,7 +8,7 @@
   "schedule": ["* 7-8 * * 5"],
   "prBodyTemplate": "{{{table}}}",
   "constraints": {
-    "poetry": ">=2.4.3"
+    "poetry": ">=2.5.1"
   },
   "packageRules": [
     {
@@ -30,5 +30,8 @@
       "groupName": "all non-major dependencies"
     }
   ],
-  "rangeStrategy": "bump"
+  "rangeStrategy": "bump",
+  "lockFileMaintenance": {
+    "enabled": true
+  }
 }
