@@ -30,5 +30,8 @@
       "groupName": "all non-major dependencies"
     }
   ],
-  "rangeStrategy": "bump"
+  "rangeStrategy": "bump",
+  "lockFileMaintenance": {
+    "enabled": true
+  }
 }
