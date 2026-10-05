@@ -4,8 +4,7 @@ default: help
 
 PYTHON_VERSION ?= 3.14.7
 POETRY := $(shell which poetry 2> /dev/null)
-UV := $(shell which uv 2> /dev/null)
-VIRTUALENV=$(shell poetry env list | tr -s ' ' | cut -d ' ' -f 1)
+VIRTUALENV=$(shell poetry env info --path 2>/dev/null)
 POETRY_NOT_INSTALLED_MESSAGE := "Poetry could not be found, please run 'make install'"
 PIP := $(if [-z $(shell which pip) ],pip3,pip)
 
@@ -16,7 +15,7 @@ help: ## Show help
 
 check-env: ## Check if Poetry and virtualenv are installed
 	@if [ -z "$(POETRY)" ]; then \
-		echo $(POETRY_NOT_INSTALLED_MESSAGE); \
+		@echo $(POETRY_NOT_INSTALLED_MESSAGE); \
 		exit 1; \
 	fi
 	@if [ -z "$(VIRTUALENV)" ]; then \
@@ -24,20 +23,19 @@ check-env: ## Check if Poetry and virtualenv are installed
 		exit 1; \
 	fi
 
-python-env: ## Point Poetry at Python $(PYTHON_VERSION), installing it via uv if needed
+python-env: ## Point Poetry at Python $(PYTHON_VERSION), installing it via poetry if needed
 	@if [ -z "$(POETRY)" ]; then \
-		echo $(POETRY_NOT_INSTALLED_MESSAGE); \
+		@echo $(POETRY_NOT_INSTALLED_MESSAGE); \
 		exit 1; \
 	fi
 	@echo "Ensuring Poetry uses Python $(PYTHON_VERSION)."
-	@if [ -n "$(UV)" ]; then \
-		uv python install $(PYTHON_VERSION) >/dev/null; \
-		PY_BIN=$$(uv python find $(PYTHON_VERSION)); \
-	elif command -v python$(basename $(PYTHON_VERSION)) >/dev/null 2>&1; then \
-		PY_BIN=$$(command -v python$(basename $(PYTHON_VERSION))); \
-	else \
-		echo "Python $(PYTHON_VERSION) not found and 'uv' is not installed."; \
-		echo "Install uv (https://docs.astral.sh/uv/) or install python$(basename $(PYTHON_VERSION)) manually."; \
+	@PY_BIN=$$(poetry python list "$(PYTHON_VERSION)" | awk -v version="$(PYTHON_VERSION)" '$$1 == version { print $$NF; exit }'); \
+	if [ -z "$$PY_BIN" ]; then \
+		poetry python install "$(PYTHON_VERSION)" || true; \
+		PY_BIN=$$(poetry python list "$(PYTHON_VERSION)" | awk -v version="$(PYTHON_VERSION)" '$$1 == version { print $$NF; exit }'); \
+	fi; \
+	if [ -z "$$PY_BIN" ]; then \
+		@echo "Python $(PYTHON_VERSION) is not installed and Poetry could not install it."; \
 		exit 1; \
 	fi; \
 	echo "Using $$PY_BIN"; \
@@ -45,7 +43,7 @@ python-env: ## Point Poetry at Python $(PYTHON_VERSION), installing it via uv if
 
 install: python-env ## Install required dependencies
 	@if [ -z $(POETRY) ]; then \
-  		echo "Poetry could not be found, installing..."; \
+  		@echo "Poetry could not be found, installing..."; \
 		$(PIP) install poetry; \
 	else \
 		poetry install; \
@@ -56,7 +54,7 @@ install: python-env ## Install required dependencies
 
 remove: check-env ## Remove poetry virtualenv
 	@echo "Removing virtualenv $(VIRTUALENV)."
-	@poetry env remove $(VIRTUALENV)
+	@rm -rf -- "$(VIRTUALENV)"
 
 clean: ## Clean Python cache files and directories
 	@echo "Cleaning Python cache files..."
