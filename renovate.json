@@ -27,7 +27,8 @@
     {
       "description": "Group all non-major dependencies except python",
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
-      "matchPackageNames": ["!python"],
+      "matchPackageNames": ["*", "!python"],
+      "matchDepNames": ["!python"],
       "groupName": "all non-major dependencies",
       "groupSlug": "all-minor-patch"
     },
@@ -40,7 +41,6 @@
     {
       "description": "Group all pre-commit updates",
       "matchManagers": ["pre-commit"],
-      "matchPackageNames": ["!python"],
       "groupName": "pre-commit dependencies",
       "groupSlug": "pre-commit-dependencies"
     }
