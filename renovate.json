@@ -36,6 +36,7 @@
     {
       "description": "Group python version updates",
       "matchPackageNames": ["python"],
+      "separateMajorMinor": false,
       "groupName": "python-updates",
       "groupSlug": "python-major-minor"
     },
