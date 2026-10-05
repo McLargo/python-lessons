@@ -10,6 +10,19 @@
   "constraints": {
     "poetry": ">=2.5.1"
   },
+  "customManagers": [
+    {
+      "customType": "regex",
+      "description": "Update the Python runtime version in the Makefile",
+      "managerFilePatterns": ["/^Makefile$/"],
+      "matchStrings": [
+        "PYTHON_VERSION\\s*\\?=\\s*(?<currentValue>\\d+\\.\\d+\\.\\d+)"
+      ],
+      "datasourceTemplate": "python-version",
+      "depNameTemplate": "python",
+      "versioningTemplate": "python"
+    }
+  ],
   "packageRules": [
     {
       "description": "Group all non-major dependencies except python",
@@ -27,7 +40,9 @@
     {
       "description": "Group all pre-commit updates",
       "matchManagers": ["pre-commit"],
-      "groupName": "all non-major dependencies"
+      "matchPackageNames": ["!python"],
+      "groupName": "pre-commit dependencies",
+      "groupSlug": "pre-commit-dependencies"
     }
   ],
   "rangeStrategy": "bump",
