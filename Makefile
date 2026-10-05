@@ -2,7 +2,7 @@
 
 default: help
 
-PYTHON_VERSION ?= 3.14.7
+PYTHON_VERSION ?= 3.14.8
 POETRY := $(shell which poetry 2> /dev/null)
 UV := $(shell which uv 2> /dev/null)
 VIRTUALENV=$(shell poetry env list | tr -s ' ' | cut -d ' ' -f 1)
