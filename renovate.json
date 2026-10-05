@@ -19,6 +19,7 @@
         "PYTHON_VERSION\\s*\\?=\\s*(?<currentValue>\\d+\\.\\d+\\.\\d+)"
       ],
       "datasourceTemplate": "python-version",
+      "packageNameTemplate": "python",
       "depNameTemplate": "python",
       "versioningTemplate": "python"
     }
@@ -35,13 +36,6 @@
     {
       "description": "Group python version updates",
       "matchPackageNames": ["python"],
-      "groupName": "python-updates",
-      "groupSlug": "python-major-minor"
-    },
-    {
-      "description": "Group the Makefile Python runtime update with Python version updates",
-      "matchFileNames": ["Makefile"],
-      "matchDepNames": ["python"],
       "groupName": "python-updates",
       "groupSlug": "python-major-minor"
     },
