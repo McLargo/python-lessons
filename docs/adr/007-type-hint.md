@@ -1,4 +1,4 @@
-# ADR-007 - Type Hint
+# ADR-007 - Type Hinting
 
 | Creation Date | Status   | Author                                 |
 | :-----------: | :------: | :------------------------------------: |

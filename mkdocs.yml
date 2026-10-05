@@ -67,6 +67,7 @@ nav:
     - "ADR-004 - Deployment": adr/004-deployment.md
     - "ADR-005 - Dependency Maintenance": adr/005-maintenance.md
     - "ADR-006 - AI Code Agents": adr/006-ai-code-agents.md
+    - "ADR-007 - Type Hinting": adr/007-type-hint.md
   - Spec-Driven Development:
     - "Improvement Plan": plans/IMPROVEMENT_PLAN.md
   - Beginner:
