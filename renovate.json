@@ -39,6 +39,13 @@
       "groupSlug": "python-major-minor"
     },
     {
+      "description": "Group the Makefile Python runtime update with Python version updates",
+      "matchFileNames": ["Makefile"],
+      "matchDepNames": ["python"],
+      "groupName": "python-updates",
+      "groupSlug": "python-major-minor"
+    },
+    {
       "description": "Group all pre-commit updates",
       "matchManagers": ["pre-commit"],
       "groupName": "pre-commit dependencies",
