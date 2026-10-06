@@ -2,7 +2,7 @@
 
 default: help
 
-PYTHON_VERSION ?= 3.14.7
+PYTHON_VERSION ?= 3.14.8
 POETRY := $(shell which poetry 2> /dev/null)
 VIRTUALENV=$(shell poetry env info --path 2>/dev/null)
 POETRY_NOT_INSTALLED_MESSAGE := "Poetry could not be found, please run 'make install'"
