@@ -18,15 +18,16 @@
       "matchStrings": [
         "PYTHON_VERSION\\s*\\?=\\s*(?<currentValue>\\d+\\.\\d+\\.\\d+)"
       ],
-      "depNameTemplate": "python/cpython"
+      "datasourceTemplate": "github-tags",
+      "depNameTemplate": "python/cpython",
+      "extractVersionTemplate": "^v(?<version>.*)$"
     }
   ],
   "packageRules": [
     {
       "description": "Group all non-major dependencies except python",
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
-      "matchPackageNames": ["!python"],
-      "matchDepNames": ["!python"],
+      "matchPackageNames": ["!python", "!python/cpython"],
       "groupName": "all non-major dependencies",
       "groupSlug": "all-minor-patch"
     },
