@@ -12,16 +12,17 @@
   },
   "packageRules": [
     {
-      "description": "Group all non-major dependencies except python",
-      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "description": "Group all dependencies except python",
       "matchPackageNames": ["!python"],
-      "groupName": "all non-major dependencies",
-      "groupSlug": "all-minor-patch"
+      "matchDepNames": ["!python"],
+      "separateMajorMinor": false,
+      "groupName": "all dependencies",
+      "groupSlug": "all-dependencies"
     },
     {
       "description": "Group python version updates",
       "matchPackageNames": ["python"],
-      "matchUpdateTypes": ["major", "minor"],
+      "separateMajorMinor": false,
       "groupName": "python-updates",
       "groupSlug": "python-major-minor"
     },
