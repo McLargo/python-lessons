@@ -27,16 +27,19 @@
     {
       "description": "Group all non-major dependencies except python",
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
-      "matchPackageNames": ["!python", "!python/cpython"],
+      "matchPackageNames": ["!python", "!python/cpython", "!actions/setup-python"],
       "groupName": "all non-major dependencies",
       "groupSlug": "all-minor-patch"
     },
     {
-      "description": "Group python version updates",
-      "matchPackageNames": ["python", "python/cpython"],
+      "description": "Group python version updates across all files",
+      "matchPackageNames": ["python", "python/cpython", "actions/setup-python"],
+      "matchDepTypes": ["python-version", "package.dependencies"],
       "separateMajorMinor": false,
-      "groupName": "python-updates",
-      "groupSlug": "python-major-minor"
+      "groupName": "python-runtime",
+      "groupSlug": "python-runtime",
+      "semanticCommitType": "chore",
+      "semanticCommitScope": "deps"
     },
     {
       "description": "Group all pre-commit updates",
