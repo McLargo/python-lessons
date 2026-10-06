@@ -21,7 +21,7 @@
     {
       "description": "Group python version updates across all files",
       "matchPackageNames": ["python"],
-      "groupName": "python upgrade",
+      "groupName": "python-updates",
       "groupSlug": "python-major-minor"
     },
     {
