@@ -20,6 +20,7 @@
       ],
       "datasourceTemplate": "github-tags",
       "depNameTemplate": "python/cpython",
+      "depTypeTemplate": "python-version",
       "extractVersionTemplate": "^v(?<version>.*)$"
     }
   ],
