@@ -21,13 +21,13 @@
     {
       "description": "Group python version updates across all files",
       "matchPackageNames": ["python"],
-      "separateMajorMinor": false,
       "groupName": "python upgrade",
-      "groupSlug": "python-upgrade"
+      "groupSlug": "python-major-minor"
     },
     {
       "description": "Group all pre-commit updates",
       "matchManagers": ["pre-commit"],
+      "matchPackageNames": ["!python"],
       "groupName": "pre-commit dependencies",
       "groupSlug": "pre-commit-dependencies"
     }
