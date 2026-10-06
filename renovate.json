@@ -18,10 +18,7 @@
       "matchStrings": [
         "PYTHON_VERSION\\s*\\?=\\s*(?<currentValue>\\d+\\.\\d+\\.\\d+)"
       ],
-      "datasourceTemplate": "python-version",
-      "packageNameTemplate": "python",
-      "depNameTemplate": "python",
-      "versioningTemplate": "python"
+      "datasourceTemplate": "python-updates"
     }
   ],
   "packageRules": [
