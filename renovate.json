@@ -18,7 +18,7 @@
       "matchStrings": [
         "PYTHON_VERSION\\s*\\?=\\s*(?<currentValue>\\d+\\.\\d+\\.\\d+)"
       ],
-      "datasourceTemplate": "python-updates"
+      "depNameTemplate": "python/cpython"
     }
   ],
   "packageRules": [
@@ -32,7 +32,7 @@
     },
     {
       "description": "Group python version updates",
-      "matchPackageNames": ["python"],
+      "matchPackageNames": ["python", "python/cpython"],
       "separateMajorMinor": false,
       "groupName": "python-updates",
       "groupSlug": "python-major-minor"
