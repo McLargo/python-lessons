@@ -10,36 +10,20 @@
   "constraints": {
     "poetry": ">=2.5.1"
   },
-  "customManagers": [
-    {
-      "customType": "regex",
-      "description": "Update the Python runtime version in the Makefile",
-      "managerFilePatterns": ["/^Makefile$/"],
-      "matchStrings": [
-        "PYTHON_VERSION\\s*\\?=\\s*(?<currentValue>\\d+\\.\\d+\\.\\d+)"
-      ],
-      "datasourceTemplate": "github-tags",
-      "depNameTemplate": "python/cpython",
-      "depTypeTemplate": "python-version",
-      "extractVersionTemplate": "^v(?<version>.*)$"
-    }
-  ],
   "packageRules": [
     {
       "description": "Group all non-major dependencies except python",
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
-      "matchPackageNames": ["!python", "!python/cpython", "!actions/setup-python"],
+      "matchPackageNames": ["!python"],
       "groupName": "all non-major dependencies",
       "groupSlug": "all-minor-patch"
     },
     {
       "description": "Group python version updates across all files",
-      "matchPackageNames": ["python", "python/cpython", "actions/setup-python"],
+      "matchPackageNames": ["python"],
       "separateMajorMinor": false,
-      "groupName": "python-runtime",
-      "groupSlug": "python-runtime",
-      "semanticCommitType": "chore",
-      "semanticCommitScope": "deps"
+      "groupName": "python upgrade",
+      "groupSlug": "python-upgrade"
     },
     {
       "description": "Group all pre-commit updates",
