@@ -16,7 +16,7 @@
       "description": "Group all Python dependencies",
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "matchPackageNames": ["python", "actions/setup-python"],
-      "matchManagers": ["pep621", "poetry", "pyenv", "github-actions"],
+      "matchManagers": ["pep621", "poetry", "github-actions"],
       "groupName": "python dependencies upgrade",
       "groupSlug": "python-upgrade"
     },
