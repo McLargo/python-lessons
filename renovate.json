@@ -13,21 +13,6 @@
 
   "packageRules": [
     {
-      "description": "Group all non-major dependencies except Python",
-      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
-      "matchFileNames": ["**/pyproject.toml"],
-      "matchPackageNames": ["!python"],
-      "groupName": "all non-major dependencies",
-      "groupSlug": "all-minor-patch"
-    },
-    {
-      "description": "Group python version updates",
-      "matchPackageNames": ["python", "actions/setup-python"],
-      "matchManagers": ["pep621", "poetry", "github-actions"],
-      "groupName": "python upgrade",
-      "groupSlug": "python-upgrade"
-    },
-    {
       "description": "Group all pre-commit updates",
       "matchManagers": ["pre-commit"],
       "groupName": "pre-commit dependencies",
