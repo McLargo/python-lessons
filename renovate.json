@@ -27,7 +27,7 @@
       "groupSlug": "pre-commit-dependencies"
     }
   ],
-  "rangeStrategy": "bump",
+  "rangeStrategy": "pin",
   "lockFileMaintenance": {
     "enabled": true
   }
