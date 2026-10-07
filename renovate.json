@@ -15,8 +15,8 @@
     {
       "description": "Group all non-major dependencies except Python",
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
-      "matchFiles": ["**/pyproject.toml"],
-      "excludePackageNames": ["python"],
+      "matchFileNames": ["**/pyproject.toml"],
+      "matchPackageNames": ["!python"],
       "groupName": "all non-major dependencies",
       "groupSlug": "all-minor-patch"
     },
