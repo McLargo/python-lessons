@@ -9,6 +9,12 @@ The most important thing is to be familiar with the project and the structure of
 it. If not, please feel free to clone the repository, read the
 [documentation](./README.md) and play with the code.
 
+The exact Python interpreter version for local development and CI is pinned in
+[.python-version](./.python-version). Run `make python-env` to configure Poetry
+with that version. The Python constraint in [pyproject.toml](./pyproject.toml)
+defines the supported version range; the pinned interpreter must satisfy it.
+Renovate groups updates to both files in the Python upgrade pull request.
+
 ## How to report a bug
 
 If you find a bug, please open an issue in the

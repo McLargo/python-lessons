@@ -1,7 +1,7 @@
 chartboost
-cpython
 elif
 livereload
 mdegis
+pyenv
 snok
 virtualenvs

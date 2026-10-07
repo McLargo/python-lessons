@@ -5,7 +5,7 @@
     ":enablePreCommit"
   ],
   "timezone": "Europe/Madrid",
-  "schedule": ["at any time"],
+  "schedule": ["* 7-8 * * 5"],
   "prBodyTemplate": "{{{table}}}",
   "constraints": {
     "poetry": ">=2.5.1"
@@ -16,14 +16,14 @@
       "description": "Group all non-major dependencies except Python",
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "matchFileNames": ["**/pyproject.toml"],
-      "matchPackageNames": ["!python"],
+      "matchPackageNames": ["!python",  "!actions/setup-python"],
       "groupName": "all non-major dependencies",
       "groupSlug": "all-minor-patch"
     },
     {
       "description": "Group python version updates",
       "matchPackageNames": ["python", "actions/setup-python"],
-      "matchManagers": ["pep621", "poetry", "github-actions"],
+      "matchManagers": ["pep621", "poetry", "pyenv", "github-actions"],
       "groupName": "python upgrade",
       "groupSlug": "python-upgrade"
     },
