@@ -10,26 +10,25 @@
   "constraints": {
     "poetry": ">=2.5.1"
   },
+
   "packageRules": [
     {
-      "description": "Group all dependencies except python",
+      "description": "Group all non-major dependencies except python",
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "matchPackageNames": ["!python"],
       "matchDepNames": ["!python"],
-      "separateMajorMinor": false,
-      "groupName": "all dependencies",
-      "groupSlug": "all-dependencies"
+      "groupName": "all non-major dependencies",
+      "groupSlug": "all-minor-patch"
     },
     {
       "description": "Group python version updates",
       "matchPackageNames": ["python"],
-      "separateMajorMinor": false,
       "groupName": "python-updates",
       "groupSlug": "python-major-minor"
     },
     {
       "description": "Group all pre-commit updates",
       "matchManagers": ["pre-commit"],
-      "matchPackageNames": ["!python"],
       "groupName": "pre-commit dependencies",
       "groupSlug": "pre-commit-dependencies"
     }
