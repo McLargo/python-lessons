@@ -23,23 +23,13 @@ check-env: ## Check if Poetry and virtualenv are installed
 		exit 1; \
 	fi
 
-python-env: ## Point Poetry at Python $(PYTHON_VERSION), installing it via poetry if needed
+python-env: ## Point Poetry at the installed Python $(PYTHON_VERSION)
 	@if [ -z "$(POETRY)" ]; then \
-		@echo $(POETRY_NOT_INSTALLED_MESSAGE); \
+		echo $(POETRY_NOT_INSTALLED_MESSAGE); \
 		exit 1; \
 	fi
 	@echo "Ensuring Poetry uses Python $(PYTHON_VERSION)."
-	@PY_BIN=$$(poetry python list "$(PYTHON_VERSION)" | awk -v version="$(PYTHON_VERSION)" '$$1 == version { print $$NF; exit }'); \
-	if [ -z "$$PY_BIN" ]; then \
-		poetry python install "$(PYTHON_VERSION)" || true; \
-		PY_BIN=$$(poetry python list "$(PYTHON_VERSION)" | awk -v version="$(PYTHON_VERSION)" '$$1 == version { print $$NF; exit }'); \
-	fi; \
-	if [ -z "$$PY_BIN" ]; then \
-		@echo "Python $(PYTHON_VERSION) is not installed and Poetry could not install it."; \
-		exit 1; \
-	fi; \
-	echo "Using $$PY_BIN"; \
-	poetry env use "$$PY_BIN"
+	@$(POETRY) env use "$(PYTHON_VERSION)"
 
 install: python-env ## Install required dependencies
 	@if [ -z $(POETRY) ]; then \
