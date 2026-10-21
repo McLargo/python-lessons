@@ -1,9 +1,10 @@
-.PHONY: help check-env python-env install remove clean serve build test lint lint-fix format typecheck spelling coverage mutations deploy
+.PHONY: help check-env install-python python-env install remove clean serve build test lint lint-fix format typecheck spelling coverage mutations deploy
 
 default: help
 
 PYTHON_VERSION ?= $(shell grep '^python = ' pyproject.toml | sed 's/[^0-9.]*//g')
 POETRY := $(shell which poetry 2> /dev/null)
+UV := $(shell command -v uv 2> /dev/null)
 VIRTUALENV=$(shell poetry env info --path 2>/dev/null)
 POETRY_NOT_INSTALLED_MESSAGE := "Poetry could not be found, please run 'make install'"
 PIP := $(if [-z $(shell which pip) ],pip3,pip)
@@ -11,7 +12,7 @@ PIP := $(if [-z $(shell which pip) ],pip3,pip)
 
 help: ## Show help
 	@echo "\nUsage:\e[1;36m make [target]\e[0m\n"
-	@egrep -h '\s##\s' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf " -\033[36m  %-20s\033[0m %s\n", $$1, $$2}'
+	@egrep -h '\s##\s' $(MAKEFILE_LIST) | awk -v python_version="$(PYTHON_VERSION)" 'BEGIN {FS = ":.*?## "}; {gsub(/PYTHON_VERSION/, python_version, $$2); printf " -\033[36m  %-20s\033[0m %s\n", $$1, $$2}'
 
 check-env: ## Check if Poetry and virtualenv are installed
 	@if [ -z "$(POETRY)" ]; then \
@@ -23,7 +24,15 @@ check-env: ## Check if Poetry and virtualenv are installed
 		exit 1; \
 	fi
 
-python-env: ## Point Poetry at the installed Python $(PYTHON_VERSION)
+install-python: ## Install Python PYTHON_VERSION
+	@if [ -z "$(UV)" ]; then \
+		echo "uv could not be found; install uv before running this target."; \
+		exit 1; \
+	fi
+	@echo "Installing Python $(PYTHON_VERSION) with uv."
+	@$(UV) python install "$(PYTHON_VERSION)"
+
+python-env: install-python ## Point Poetry at Python PYTHON_VERSION
 	@if [ -z "$(POETRY)" ]; then \
 		echo $(POETRY_NOT_INSTALLED_MESSAGE); \
 		exit 1; \
