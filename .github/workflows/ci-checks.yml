@@ -5,28 +5,44 @@ jobs:
    checks:
     runs-on: ubuntu-latest
     steps:
+
       # =================================
       # Check-out repo
       # =================================
-
       - name: Checkout code
         uses: actions/checkout@v7
         with:
           persist-credentials: false
           fetch-depth: 0
+
       # =================================
       # Set-up python
       # =================================
-
       - name: Set up Python
         id: setup-python
         uses: actions/setup-python@v7
         with:
           python-version: "3.14.7"
+
+      # =================================
+      # Verify uv can install the project Python version
+      # =================================
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v10
+        with:
+          enable-cache: false
+
+      - name: Verify uv can download and install the required Python version
+        env:
+          UV_PYTHON_INSTALL_DIR: ${{ runner.temp }}/uv-python-install-check
+        run: |
+          python_version="$(grep '^python = ' pyproject.toml | sed 's/[^0-9.]*//g')"
+          test -n "$python_version"
+          uv python install --reinstall --no-cache "$python_version"
+
       # =================================
       #  Install poetry
       # =================================
-
       - name: Install Poetry
         uses: snok/install-poetry@v1
         with:
@@ -37,7 +53,6 @@ jobs:
       # =================================
       # Load cached venv if cache exists
       # =================================
-
       - name: Load cached venv
         id: cached-poetry-dependencies
         uses: actions/cache@v6
