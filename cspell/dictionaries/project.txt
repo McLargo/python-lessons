@@ -1,5 +1,6 @@
 chartboost
 elif
+gsub
 livereload
 mdegis
 pyenv
